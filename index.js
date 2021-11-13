@@ -51,13 +51,13 @@ function getCarousel() {
         'Orrick',
         'Lulu'
     ];
-    let dice = [':np:',
-        ':cp:',
-        ':hp:',
-        ':ip:',
-        ':dp:',
-        ':sp:',
-        ':tp:'];
+    let dice = ['<:np:408070378443898881>',
+        '<:cp:408070378393567282>',
+        '<:hp:408070378393567272>',
+        '<:ip:408070378288840705>',
+        '<:dp:408070378338910210>',
+        '<:sp:408070378729242634>',
+        '<:tp:835365094253789206>'];
 
     // Returns a random integer from 1 to 10:
     const i = Math.floor(Math.random() * (pbs.length - 1));
@@ -68,7 +68,7 @@ function getCarousel() {
         dice = dice.filter((d) => d !== dice[dIndex]);
     }
 
-    return pbs[i] + ' ' + d.reduce((a, b) => a + b, '');
+    return pbs[i] + ' ' + d.join(',');
 }
 
 //make sure this line is the last line
