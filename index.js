@@ -70,7 +70,7 @@ function getCarousel() {
         dice = dice.filter((d) => d !== dice[dIndex]);
     }
 
-    return pbs[i] + ' ' + d.map((dObj) => dObj.icon).join(',') + ' / ' + d.map((dObj) => dObj.text).join('');
+    return pbs[i] + ' ' + d.map((dObj) => dObj.icon).join(' ') + ' (' + d.map((dObj) => dObj.text).join('') + ')';
 }
 
 //make sure this line is the last line
