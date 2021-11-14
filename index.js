@@ -51,13 +51,15 @@ function getCarousel() {
         'Orrick',
         'Lulu'
     ];
-    let dice = ['<:np:408070378443898881>',
-        '<:cp:408070378393567282>',
-        '<:hp:408070378393567272>',
-        '<:ip:408070378288840705>',
-        '<:dp:408070378338910210>',
-        '<:sp:408070378729242634>',
-        '<:tp:835365094253789206>'];
+    let dice = [
+        { icon: '<:np:408070378443898881>', text: 'N' },
+        { icon: '<:cp:408070378393567282>', text: 'C' },
+        { icon: '<:hp:408070378393567272>', text: 'H' },
+        { icon: '<:ip:408070378288840705>', text: 'I' },
+        { icon: '<:dp:408070378338910210>', text: 'D' },
+        { icon: '<:sp:408070378729242634>', text: 'S' },
+        { icon: '<:tp:835365094253789206>', text: 'T' }
+    ];
 
     // Returns a random integer from 1 to 10:
     const i = Math.floor(Math.random() * (pbs.length - 1));
@@ -68,7 +70,7 @@ function getCarousel() {
         dice = dice.filter((d) => d !== dice[dIndex]);
     }
 
-    return pbs[i] + ' ' + d.join(',');
+    return pbs[i] + ' ' + d.map((dObj) => dObj.icon).join(',') + ' / ' + d.map((dObj) => dObj.text).join('');
 }
 
 //make sure this line is the last line
