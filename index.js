@@ -3,7 +3,14 @@ const { Client, Intents } = require('discord.js');
 const Carousel = require('./algo/carousel')
 
 let carousel = new Carousel();
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({
+    intents: [
+        Intents.FLAGS.DIRECT_MESSAGES,
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES
+    ],
+    partials: ['MESSAGE', 'CHANNEL']
+});
 // put the pb names here
 
 client.on('ready', () => {
