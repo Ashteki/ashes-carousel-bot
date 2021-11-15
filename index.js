@@ -1,9 +1,10 @@
 require('dotenv').config(); //initialize dotenv
 const { Client, Intents } = require('discord.js');
+const Carousel = require('./algo/carousel')
 
+let carousel = new Carousel();
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 // put the pb names here
-let pbs = [];
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -15,14 +16,14 @@ client.on('message', msg => {
     if (['!carousel', '!car'].includes(parts[0])) {
         if (parts.length === 1) {
             // single nameless carousel return
-            msg.reply(getCarouselEntry());
+            msg.reply(carousel.getCarouselEntry());
         }
         else {
             // bulk request
             let reply = '';
             for (let i = 1; i < parts.length; i++) {
                 const part = parts[i];
-                reply += part + ': ' + getCarouselEntry() + '\n';
+                reply += part + ': ' + carousel.getCarouselEntry() + '\n';
                 if (reply.length > 1950) {
                     msg.reply(reply);
                     reply = '';
@@ -32,62 +33,6 @@ client.on('message', msg => {
         }
     }
 });
-
-function getCarouselEntry() {
-    if (pbs.length === 0) {
-        pbs.push(...getPBs());
-    }
-    let dice = [
-        { icon: '<:np:408070378443898881>', text: 'N' },
-        { icon: '<:cp:408070378393567282>', text: 'C' },
-        { icon: '<:hp:408070378393567272>', text: 'H' },
-        { icon: '<:ip:408070378288840705>', text: 'I' },
-        { icon: '<:dp:408070378338910210>', text: 'D' },
-        { icon: '<:sp:408070378729242634>', text: 'S' },
-        { icon: '<:tp:835365094253789206>', text: 'T' }
-    ];
-
-    // Returns a random integer from 1 to 10:
-    const i = Math.floor(Math.random() * (pbs.length - 1));
-    const d = [];
-    for (let j = 0; j < 3; j++) {
-        const dIndex = Math.floor(Math.random() * (dice.length - 1));
-        d[j] = dice[dIndex];
-        dice = dice.filter((d) => d !== dice[dIndex]);
-    }
-
-    const result = pbs[i] + ' ' + d.map((dObj) => dObj.icon).join(' ') + ' (' + d.map((dObj) => dObj.text).join('') + ')';
-    pbs = pbs.filter(p => p !== pbs[i]);
-    return result;
-}
-
-function getPBs() {
-    return ['Coal',
-        'Aradel',
-        'Maeoni',
-        'Jessa',
-        'Noah',
-        'Saria',
-        'Rin',
-        'Victoria',
-        'Brennen',
-        'Leo',
-        'Odette',
-        'Namine',
-        'Jericho',
-        'Echo',
-        'Koji',
-        'Harold',
-        'James',
-        'Astrea',
-        'Sembali',
-        'Fiona',
-        'Xander',
-        'Rimea',
-        'Orrick',
-        'Lulu'
-    ];
-}
 
 //make sure this line is the last line
 client.login(process.env.CLIENT_TOKEN); //login bot using token
