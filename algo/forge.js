@@ -38,7 +38,7 @@ class Forge {
         const deckCards = [];
         // add unique if it is allowed dice types
         const unique = this.getPbUniqueCard(pbData.name);
-        if (this.allowedDiceTypes(unique.dice, dice)) {
+        if (!unique.dice || this.allowedDiceTypes(unique.dice, dice)) {
             deckCards.push(unique);
             deckCards.push(unique);
             deckCards.push(unique);
