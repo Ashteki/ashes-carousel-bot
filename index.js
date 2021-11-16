@@ -1,6 +1,8 @@
 require('dotenv').config(); //initialize dotenv
 const { Client, Intents } = require('discord.js');
-const Carousel = require('./algo/carousel')
+const Carousel = require('./algo/carousel');
+const Forge = require('./algo/forge');
+const TextExporter = require('./export/textexporter');
 
 let carousel = new Carousel();
 const client = new Client({
@@ -38,6 +40,13 @@ client.on('message', msg => {
             }
             msg.reply(reply);
         }
+    }
+
+    if (parts[0] === '!rando') {
+        const caro = carousel.getCarousel();
+        const diceString = caro.dice.map((dObj) => dObj.text).join('');
+        const deckText = new TextExporter().export(new Forge().createDeck(caro.pb.stub, diceString));
+        msg.reply(deckText);
     }
 });
 

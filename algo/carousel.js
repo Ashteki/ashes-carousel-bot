@@ -4,6 +4,12 @@ class Carousel {
     }
 
     getCarouselEntry() {
+        const caro = this.getCarousel();
+        const diceIcons = caro.dice.map((dObj) => dObj.icon).join(' ');
+        return caro.pb.name + ' ' + diceIcons + ' (' + caro.dice.map((dObj) => dObj.text).join('') + ')';
+    }
+
+    getCarousel() {
         if (this.pbs.length === 0) {
             this.pbs.push(...this.getPBs());
         }
@@ -26,36 +32,42 @@ class Carousel {
             dice = dice.filter((d) => d !== dice[dIndex]);
         }
 
-        const result = this.pbs[i] + ' ' + d.map((dObj) => dObj.icon).join(' ') + ' (' + d.map((dObj) => dObj.text).join('') + ')';
-        this.pbs = this.pbs.filter(p => p !== this.pbs[i]);
-        return result;
+        const caro = {
+            pb: this.pbs[i],
+            dice: d
+        }
+
+        this.pbs = this.pbs.filter(p => p !== caro.pb);
+
+        return caro;
     }
 
     getPBs() {
-        return ['Coal',
-            'Aradel',
-            'Maeoni',
-            'Jessa',
-            'Noah',
-            'Saria',
-            'Rin',
-            'Victoria',
-            'Brennen',
-            'Leo',
-            'Odette',
-            'Namine',
-            'Jericho',
-            'Echo',
-            'Koji',
-            'Harold',
-            'James',
-            'Astrea',
-            'Sembali',
-            'Fiona',
-            'Xander',
-            'Rimea',
-            'Orrick',
-            'Lulu'
+        return [
+            { stub: 'coal-roarkwin', name: 'Coal' },
+            { stub: 'aradel-summergaard', name: 'Aradel' },
+            { stub: 'maeoni-viper', name: 'Maeoni' },
+            { stub: 'jessa-na-ni', name: 'Jessa' },
+            { stub: 'noah-redmoon', name: 'Noah' },
+            { stub: 'saria-guideman', name: 'Saria' },
+            { stub: 'rin-northfell', name: 'Rin' },
+            { stub: 'victoria-glassfire', name: 'Victoria' },
+            { stub: 'brennen-blackcloud', name: 'Brennen' },
+            { stub: 'leo-sunshadow', name: 'Leo' },
+            { stub: 'odette-diamondcrest', name: 'Odette' },
+            { stub: 'namine-hymntide', name: 'Namine' },
+            { stub: 'jericho-reborn', name: 'Jericho' },
+            { stub: 'echo-greystorm', name: 'Echo' },
+            { stub: 'koji-wolfcub', name: 'Koji' },
+            { stub: 'harold-westraven', name: 'Harold' },
+            { stub: 'james-endersight', name: 'James' },
+            { stub: 'astrea', name: 'Astrea' },
+            { stub: 'sembali-grimtongue', name: 'Sembali' },
+            { stub: 'fiona-mercywind', name: 'Fiona' },
+            { stub: 'xander-heartsblood', name: 'Xander' },
+            { stub: 'rimea-careworn', name: 'Rimea' },
+            { stub: 'orrick-gilstream', name: 'Orrick' },
+            { stub: 'lulu-firststone', name: 'Lulu' }
         ];
     }
 }
