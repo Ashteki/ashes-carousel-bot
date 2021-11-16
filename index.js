@@ -13,7 +13,6 @@ const client = new Client({
     ],
     partials: ['MESSAGE', 'CHANNEL']
 });
-// put the pb names here
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);

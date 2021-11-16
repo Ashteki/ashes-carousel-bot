@@ -44,12 +44,15 @@ class Forge {
             deckCards.push(unique);
         }
 
+        // draw 30 cards
         while (deckCards.length < 30) {
             const nextCard = this.getPlayableCard();
-            if (deckCards.filter(c => c === nextCard).length < 3) {
+            if (this.cardCanBeAdded(deckCards, nextCard, pbData)) {
                 deckCards.push(nextCard);
             }
         }
+
+        // process cards to card counts
         var cardCounts = [];
         deckCards.forEach(c => {
             const cc = cardCounts.find(cc => cc.id === c.stub);
@@ -64,11 +67,35 @@ class Forge {
             }
         });
 
+        const diceCounts = { total: 0 };
+        dice.forEach(d => {
+            diceCounts[d.name] = deckCards.filter(dc => dc.dice && dc.dice.includes(d.name)).length;
+            diceCounts.total += diceCounts[d.name];
+        });
+        let diceTotal = 0;
+        dice.forEach(d => {
+            d.count = Math.round(diceCounts[d.name] / diceCounts.total * 10);
+            diceTotal += d.count;
+        })
+        if (diceTotal === 9) {
+            dice[0].count += 1;
+        }
+
         return {
             cards: Object.values(cardCounts),
             phoenixborn: pbData,
             dice: dice
         };
+    }
+
+    cardCanBeAdded(deckCards, nextCard, pbData) {
+        if (nextCard.type === 'Ready Spell') {
+            const readySpellCount = deckCards.filter(c => c.type === 'Ready Spell').length;
+            if (readySpellCount > pbData.spellboard) {
+                return false;
+            }
+        }
+        return deckCards.filter(c => c === nextCard).length < 3;
     }
 
     diceCharToMagicType(dChar) {
