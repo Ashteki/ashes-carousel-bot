@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const _ = require('underscore');
 
 const PathToSubModulePacks = path.join(__dirname, '../data');
 
