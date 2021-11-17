@@ -5,12 +5,12 @@ describe("Forge tests", function () {
     const forge = new Forge();
     it("create an ashes live deck within dice types", function () {
         // carousel should return pb stub and dice combo
-        const deck = forge.createDeck('maeoni-viper', 'HNI');
+        const deck = forge.createDeck('maeoni-viper', 'HND');
         expect(deck).not.toBeNull();
         expect(deck.dice.length).toBeGreaterThan(0);
         expect(deck.dice[0].name).toBe('charm');
         expect(deck.dice[1].name).toBe('natural');
-        expect(deck.dice[2].name).toBe('illusion');
+        expect(deck.dice[2].name).toBe('divine');
         expect(deck.phoenixborn.name).toBe('Maeoni Viper');
         expect(deck.phoenixborn.life).toBe(20);
         expect(deck.cards.every(c => c.count < 4)).toBeTrue();

@@ -13,6 +13,7 @@ class TextExporter {
             }
             result += c.count + ' ' + c.card.name + '\n';
         });
+
         return result;
     }
 }

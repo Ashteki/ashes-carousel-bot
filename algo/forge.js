@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const _ = require('underscore');
 
 const PathToSubModulePacks = path.join(__dirname, '../data');
 
@@ -26,6 +27,7 @@ class Forge {
     buildDeck(pbStub, dice) {
         var pbData = this.getCard(pbStub);
 
+        // get legal cards in dice color
         this.legalCards = this.playableCards.filter(card => {
             // allowed dice types only
             return (!card.dice || this.allowedDiceTypes(card.dice, dice)) &&
@@ -35,19 +37,21 @@ class Forge {
 
         // get 30 cards
         const deckCards = [];
-        // add unique if it is allowed dice types
+        // add unique if it is allowed in dice types
         const unique = this.getPbUniqueCard(pbData.name);
         if (!unique.dice || this.allowedDiceTypes(unique.dice, dice)) {
-            deckCards.push(unique);
-            deckCards.push(unique);
-            deckCards.push(unique);
+            this.addCardToStack(unique, deckCards, 3);
         }
 
         // draw 30 cards
         while (deckCards.length < 30) {
-            const nextCard = this.getPlayableCard();
+            let nextCard = this.getPlayableCard();
+            // if (deckCards.length === 3) {
+            //     nextCard = this.getPlayableCard(c => c.stub === 'summon-emperor-lion');
+            // }
+            // const nextCard = this.getPlayableCard();
             if (this.cardCanBeAdded(deckCards, nextCard, pbData)) {
-                deckCards.push(nextCard);
+                this.addCardToStack(nextCard, deckCards);
             }
         }
 
@@ -66,6 +70,7 @@ class Forge {
             }
         });
 
+        // work out dice counts
         const diceCounts = { total: 0 };
         dice.forEach(d => {
             diceCounts[d.name] = deckCards.filter(dc => dc.dice && dc.dice.includes(d.name)).length;
@@ -87,15 +92,38 @@ class Forge {
         };
     }
 
+    addCardToStack(card, stack, quantity = 1) {
+        const extras = this.getCardExtras(card);
+        const amount = extras && extras.quantity ? extras.quantity : quantity;
+        for (let i = 0; i < amount; i++) {
+            stack.push(card);
+        }
+        if (extras && extras.also && typeof extras.also === 'function') {
+            extras.also(stack)
+        }
+    }
+
     cardCanBeAdded(deckCards, nextCard, pbData) {
-        if (nextCard.type === 'Ready Spell') {
-            const readySpellCount = deckCards.filter(c => c.type === 'Ready Spell').length;
+        if (nextCard.type === 'Ready Spell' && !deckCards.includes(nextCard)) {
+            const readySpellCount = _.uniq(deckCards).filter(c => c.type === 'Ready Spell' && !c.name.includes('Law')).length;
             if (readySpellCount > pbData.spellboard) {
                 return false;
             }
         }
+        if (this.getSpaceNeeded(nextCard) > 30 - deckCards.length) {
+            return false;
+        }
         return deckCards.filter(c => c === nextCard).length < 3;
     }
+
+    getSpaceNeeded(card) {
+        const extras = this.getCardExtras(card);
+        if (extras) {
+            return extras.spaceNeeded;
+        } else
+            return 1;
+    }
+
 
     diceCharToMagicType(dChar) {
         let magics = [
@@ -139,13 +167,41 @@ class Forge {
         return this.playableCards.find(c => c.phoenixborn === name);
     }
 
-    getPlayableCard() {
-        return this.getRandomCard(this.legalCards);
+    getPlayableCard(filter = undefined) {
+        let source = this.legalCards;
+        if (filter) {
+            source = this.legalCards.filter(filter);
+        }
+        return this.getRandomCard(source);
+    }
+
+    findCards(quantity, filter) {
+        const result = [];
+        for (let i = 0; i < quantity; i++) {
+            result.push(this.getPlayableCard(filter));
+        }
+        return result;
     }
 
     getRandomCard(source) {
         const i = Math.floor(Math.random() * (source.length - 1));
         return source[i];
+    }
+
+    getCardExtras(card) {
+        switch (card.stub) {
+            case 'summon-emperor-lion': return ({
+                spaceNeeded: 3, also: (stack) => {
+                    const laws = this.findCards(2, (card) => card.name.includes('Law'))
+                    stack.push(...laws);
+                }
+            })
+            case 'summon-fallen': return ({
+                spaceNeeded: 3, quantity: 3
+            })
+            default:
+                return undefined;
+        }
     }
 }
 
