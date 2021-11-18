@@ -87,8 +87,31 @@ class Forge {
             dice[0].count += 1;
         }
 
+        const conjurationCounts = [];
+        deckCards.concat(pbData).forEach(c => {
+            if (c.conjurations) {
+                c.conjurations.forEach(conj => {
+                    const cc = conjurationCounts.find(co => co.id === conj.stub);
+                    if (!cc) {
+                        conjurationCounts.push({
+                            id: conj.stub,
+                            card: conj,
+                            count: 0
+                        });
+                    }
+                });
+            }
+        });
+        conjurationCounts.forEach(cc => {
+            const conj = this.allCards.find(c => c.stub === cc.id);
+            if (conj) {
+                cc.count = conj.copies;
+            }
+        })
+
         return {
-            cards: Object.values(cardCounts),
+            cards: cardCounts,
+            conjurations: conjurationCounts,
             phoenixborn: pbData,
             dice: dice
         };

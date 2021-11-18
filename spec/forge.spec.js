@@ -23,6 +23,7 @@ describe("Forge tests", function () {
         });
         // unique is in dice type so put it in x3
         expect(deck.cards.find(c => c.id === 'summon-silver-snake').count).toBe(3);
+        expect(deck.conjurations.length).toBeGreaterThan(0);
 
         console.log(new TextExporter().export(deck));
     });

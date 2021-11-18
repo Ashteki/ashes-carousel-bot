@@ -13,6 +13,10 @@ class TextExporter {
             }
             result += c.count + ' ' + c.card.name + '\n';
         });
+        result += '**Conjurations**\n';
+        deck.conjurations.forEach(c => {
+            result += c.count + ' ' + c.card.name + '\n';
+        });
 
         return result;
     }
