@@ -1,3 +1,4 @@
+const Carousel = require("../algo/carousel");
 const Forge = require("../algo/forge");
 const TextExporter = require("../export/textexporter");
 
@@ -36,5 +37,22 @@ describe("Forge tests", function () {
         expect(deck.dice[1].name).toBe('natural');
         expect(deck.dice[2].name).toBe('illusion');
         expect(deck.cards.find(c => c.id === 'summon-silver-snake')).toBeUndefined();
+    });
+
+    it('generates bulk amounts', function () {
+        let car = new Carousel();
+        console.log('# | Phoenixborn | Action Spell | Ally |Ready Spell | Alteration Spell | Reaction Spell')
+        for (let i = 0; i < 20; i++) {
+            const caro = car.getCarousel()
+            const diceString = caro.dice.map((dObj) => dObj.text).join('');
+            const deck = forge.createDeck(caro.pb.stub, diceString);
+            console.log(i, '|', caro.pb.name, diceString, ' | ',
+                deck.cards.filter(c => c.card.type === 'Action Spell').length, ' | ',
+                deck.cards.filter(c => c.card.type === 'Ally').length, ' | ',
+                deck.cards.filter(c => c.card.type === 'Ready Spell').length, ' | ',
+                deck.cards.filter(c => c.card.type === 'Alteration Spell').length, ' | ',
+                deck.cards.filter(c => c.card.type === 'Reaction Spell').length,
+            );
+        }
     });
 });

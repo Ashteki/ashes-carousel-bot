@@ -1,11 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('underscore');
+const ExtrasFactory = require('./extrasFactory');
 
 const PathToSubModulePacks = path.join(__dirname, '../data');
 
 class Forge {
     constructor() {
+        this.extrasFactory = new ExtrasFactory();
         const conjuredCards = ['Conjuration', 'Conjured Alteration Spell'];
         this.cardsByCode = this.loadCards(PathToSubModulePacks);
         this.allCards = Object.values(this.cardsByCode);
@@ -50,7 +52,7 @@ class Forge {
             //     nextCard = this.getPlayableCard(c => c.stub === 'summon-emperor-lion');
             // }
             // const nextCard = this.getPlayableCard();
-            if (this.cardCanBeAdded(deckCards, nextCard, pbData)) {
+            if (this.cardCanBeAdded(deckCards, nextCard, pbData, dice)) {
                 this.addCardToStack(nextCard, deckCards);
             }
         }
@@ -93,31 +95,36 @@ class Forge {
     }
 
     addCardToStack(card, stack, quantity = 1) {
-        const extras = this.getCardExtras(card);
+        const extras = this.getCardExtras(card, stack);
         const amount = extras && extras.quantity ? extras.quantity : quantity;
         for (let i = 0; i < amount; i++) {
             stack.push(card);
         }
         if (extras && extras.also && typeof extras.also === 'function') {
-            extras.also(stack)
+            extras.also(stack, this)
         }
     }
 
-    cardCanBeAdded(deckCards, nextCard, pbData) {
+    cardCanBeAdded(deckCards, nextCard, pbData, dice) {
         if (nextCard.type === 'Ready Spell' && !deckCards.includes(nextCard)) {
             const readySpellCount = _.uniq(deckCards).filter(c => c.type === 'Ready Spell' && !c.name.includes('Law')).length;
             if (readySpellCount > pbData.spellboard) {
                 return false;
             }
         }
-        if (this.getSpaceNeeded(nextCard) > 30 - deckCards.length) {
+        if (nextCard.stub === 'royal-charm') {
+            if (!dice.some(d => d.name === 'divine' || d.name === 'charm')) {
+                return false;
+            }
+        }
+        if (this.getSpaceNeeded(nextCard, deckCards) > 30 - deckCards.length) {
             return false;
         }
         return deckCards.filter(c => c === nextCard).length < 3;
     }
 
-    getSpaceNeeded(card) {
-        const extras = this.getCardExtras(card);
+    getSpaceNeeded(card, stack) {
+        const extras = this.getCardExtras(card, stack);
         if (extras) {
             return extras.spaceNeeded;
         } else
@@ -188,20 +195,8 @@ class Forge {
         return source[i];
     }
 
-    getCardExtras(card) {
-        switch (card.stub) {
-            case 'summon-emperor-lion': return ({
-                spaceNeeded: 3, also: (stack) => {
-                    const laws = this.findCards(2, (card) => card.name.includes('Law'))
-                    stack.push(...laws);
-                }
-            })
-            case 'summon-fallen': return ({
-                spaceNeeded: 3, quantity: 3
-            })
-            default:
-                return undefined;
-        }
+    getCardExtras(card, stack) {
+        return this.extrasFactory.getCardExtras(card, stack);
     }
 }
 
