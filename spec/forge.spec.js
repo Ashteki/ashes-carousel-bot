@@ -47,7 +47,7 @@ describe("Forge tests", function () {
             const caro = car.getCarousel()
             const diceString = caro.dice.map((dObj) => dObj.text).join('');
             const deck = forge.createDeck(caro.pb.stub, diceString);
-            console.log(i, '|', caro.pb.name, diceString, ' | ',
+            console.log(i, '|', caro.pb.name, diceString, deck.dice.reduce((agg, d) => agg + d.count, ''), ' | ',
                 deck.cards.filter(c => c.card.type === 'Action Spell').length, ' | ',
                 deck.cards.filter(c => c.card.type === 'Ally').length, ' | ',
                 deck.cards.filter(c => c.card.type === 'Ready Spell').length, ' | ',

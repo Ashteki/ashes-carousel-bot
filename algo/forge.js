@@ -73,19 +73,7 @@ class Forge {
         });
 
         // work out dice counts
-        const diceCounts = { total: 0 };
-        dice.forEach(d => {
-            diceCounts[d.name] = deckCards.filter(dc => dc.dice && dc.dice.includes(d.name)).length;
-            diceCounts.total += diceCounts[d.name];
-        });
-        let diceTotal = 0;
-        dice.forEach(d => {
-            d.count = Math.round(diceCounts[d.name] / diceCounts.total * 10);
-            diceTotal += d.count;
-        })
-        if (diceTotal === 9) {
-            dice[0].count += 1;
-        }
+        this.setDiceCounts(dice, deckCards);
 
         const conjurationCounts = [];
         deckCards.concat(pbData).forEach(c => {
@@ -115,6 +103,40 @@ class Forge {
             phoenixborn: pbData,
             dice: dice
         };
+    }
+
+    setDiceCounts(dice, deckCards) {
+        const diceCounts = { total: 0 };
+        dice.forEach(d => {
+            diceCounts[d.name] = deckCards.filter(dc => dc.dice && dc.dice.includes(d.name)).length;
+            diceCounts.total += diceCounts[d.name];
+        });
+        let diceTotal = 0;
+        dice.forEach(d => {
+            d.count = Math.round(diceCounts[d.name] / diceCounts.total * 10);
+            diceTotal += d.count;
+        });
+        switch (diceTotal) {
+            case 12:
+                this.removeDie(2, dice);
+                break;
+            case 11:
+                this.removeDie(1, dice);
+                break;
+            case 9:
+                dice[0].count += 1;
+                break;
+            default:
+                break;
+        }
+    }
+
+    removeDie(count, dice) {
+        for (let i = 0; i < count; i++) {
+            let options = dice.filter(d => d.count > 1);
+            const j = Math.floor(Math.random() * (options.length - 1));
+            dice[j].count -= 1;
+        }
     }
 
     addCardToStack(card, stack, quantity = 1) {
