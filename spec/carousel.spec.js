@@ -7,4 +7,10 @@ describe("Carousel tests", function () {
         console.log(entry);
         expect(entry).not.toBeNull();
     });
+
+    it("coal-off mode returns coal with dice", function () {
+        let caro = carousel.getCarousel('coal-roarkwin');
+        console.log(caro);
+        expect(caro.pb.stub).toBe('coal-roarkwin');
+    });
 });

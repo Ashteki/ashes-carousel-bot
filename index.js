@@ -47,6 +47,14 @@ client.on('message', msg => {
         const deckText = new TextExporter().export(new Forge().createDeck(caro.pb.stub, diceString));
         msg.reply(deckText);
     }
+
+    if (parts[0] === '!coaloff') {
+        const caro = carousel.getCarousel('coal-roarkwin');
+        const diceString = caro.dice.map((dObj) => dObj.text).join('');
+        const deck = new Forge().createDeck(caro.pb.stub, diceString, { maxCardCount: 1, noExtras: true });
+        const deckText = new TextExporter().export(deck);
+        msg.reply(deckText);
+    }
 });
 
 //make sure this line is the last line

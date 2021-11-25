@@ -28,7 +28,6 @@ describe("Forge tests", function () {
         console.log(new TextExporter().export(deck));
     });
 
-
     it("leaves out unique if not in dice type", function () {
         // carousel should return pb stub and dice combo
         const deck = forge.createDeck('maeoni-viper', 'CNI');
@@ -38,6 +37,15 @@ describe("Forge tests", function () {
         expect(deck.dice[1].name).toBe('natural');
         expect(deck.dice[2].name).toBe('illusion');
         expect(deck.cards.find(c => c.id === 'summon-silver-snake')).toBeUndefined();
+    });
+
+    it("creates a coal-off deck if asked", function () {
+        // carousel should return pb stub and dice combo
+        const deck = forge.createDeck('coal-roarkwin', 'CNI', { maxCardCount: 1, noExtras: true });
+        expect(deck.phoenixborn.stub).toBe('coal-roarkwin')
+        expect(deck).not.toBeNull();
+        expect(deck.dice.length).toBe(3);
+        expect(deck.cards.length).toBe(30); // all 1x for coal-off
     });
 
     it('generates bulk amounts', function () {

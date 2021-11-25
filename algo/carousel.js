@@ -9,7 +9,7 @@ class Carousel {
         return caro.pb.name + ' ' + diceIcons + ' (' + caro.dice.map((dObj) => dObj.text).join('') + ')';
     }
 
-    getCarousel() {
+    getCarousel(pbStub = null) {
         if (this.pbs.length === 0) {
             this.pbs.push(...this.getPBs());
         }
@@ -23,8 +23,16 @@ class Carousel {
             { icon: '<:tp:835365094253789206>', text: 'T' }
         ];
 
-        // Returns a random integer from 1 to 10:
-        const i = Math.floor(Math.random() * (this.pbs.length - 1));
+        let pb = null;
+        if (pbStub) {
+            pb = this.pbs.find(pb => pb.stub === pbStub)
+        }
+        if (!pb) {
+            // Returns a random integer from 1 to pb count:
+            const i = Math.floor(Math.random() * (this.pbs.length - 1));
+            pb = this.pbs[i];
+        }
+
         const d = [];
         for (let j = 0; j < 3; j++) {
             const dIndex = Math.floor(Math.random() * (dice.length - 1));
@@ -33,7 +41,7 @@ class Carousel {
         }
 
         const caro = {
-            pb: this.pbs[i],
+            pb: pb,
             dice: d
         }
 

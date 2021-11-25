@@ -15,18 +15,19 @@ class Forge {
         this.playableCards = this.allCards.filter((c) => ![...conjuredCards, 'Phoenixborn'].includes(c.type));
     }
 
-    createDeck(pbStub, diceString) {
+    createDeck(pbStub, diceString, constraints = {}) {
         const dice = diceString.split('').map(c => ({ name: this.diceCharToMagicType(c), count: 0 }));
 
         const deck = this.buildDeck(
             pbStub,
-            dice
+            dice,
+            constraints
         );
 
         return deck;
     }
 
-    buildDeck(pbStub, dice) {
+    buildDeck(pbStub, dice, constraints) {
         var pbData = this.getCard(pbStub);
 
         // get legal cards in dice color
@@ -42,7 +43,7 @@ class Forge {
         // add unique if it is allowed in dice types
         const unique = this.getPbUniqueCard(pbData.name);
         if (!unique.dice || this.allowedDiceTypes(unique.dice, dice)) {
-            this.addCardToStack(unique, deckCards, 3);
+            this.addCardToStack(unique, deckCards, Math.min(constraints.maxCardCount, 3), constraints);
         }
 
         // draw 30 cards
@@ -52,8 +53,8 @@ class Forge {
             //     nextCard = this.getPlayableCard(c => c.stub === 'summon-emperor-lion');
             // }
             // const nextCard = this.getPlayableCard();
-            if (this.cardCanBeAdded(deckCards, nextCard, pbData, dice)) {
-                this.addCardToStack(nextCard, deckCards);
+            if (this.cardCanBeAdded(deckCards, nextCard, pbData, dice, constraints)) {
+                this.addCardToStack(nextCard, deckCards, 1, constraints);
             }
         }
 
@@ -139,9 +140,13 @@ class Forge {
         }
     }
 
-    addCardToStack(card, stack, quantity = 1) {
-        const extras = this.getCardExtras(card, stack);
-        const amount = extras && extras.quantity ? extras.quantity : quantity;
+    addCardToStack(card, stack, quantity = 1, constraints) {
+        let amount = quantity;
+        let extras = null;
+        if (!constraints.noExtras) {
+            const extras = this.getCardExtras(card, stack);
+            amount = extras && extras.quantity ? extras.quantity : quantity;
+        }
         for (let i = 0; i < amount; i++) {
             stack.push(card);
         }
@@ -150,22 +155,25 @@ class Forge {
         }
     }
 
-    cardCanBeAdded(deckCards, nextCard, pbData, dice) {
-        if (nextCard.type === 'Ready Spell' && !deckCards.includes(nextCard)) {
-            const readySpellCount = _.uniq(deckCards).filter(c => c.type === 'Ready Spell' && !c.name.includes('Law')).length;
-            if (readySpellCount > pbData.spellboard) {
+    cardCanBeAdded(deckCards, nextCard, pbData, dice, constraints) {
+        if (!constraints.noExtras) {
+            if (nextCard.type === 'Ready Spell' && !deckCards.includes(nextCard)) {
+                const readySpellCount = _.uniq(deckCards).filter(c => c.type === 'Ready Spell' && !c.name.includes('Law')).length;
+                if (readySpellCount > pbData.spellboard) {
+                    return false;
+                }
+            }
+            if (nextCard.stub === 'royal-charm') {
+                if (!dice.some(d => d.name === 'divine' || d.name === 'charm')) {
+                    return false;
+                }
+            }
+            if (this.getSpaceNeeded(nextCard, deckCards) > 30 - deckCards.length) {
                 return false;
             }
         }
-        if (nextCard.stub === 'royal-charm') {
-            if (!dice.some(d => d.name === 'divine' || d.name === 'charm')) {
-                return false;
-            }
-        }
-        if (this.getSpaceNeeded(nextCard, deckCards) > 30 - deckCards.length) {
-            return false;
-        }
-        return deckCards.filter(c => c === nextCard).length < 3;
+        const cardCount = deckCards.filter(c => c === nextCard).length;
+        return constraints.maxCardCount ? cardCount < constraints.maxCardCount : cardCount < 3;
     }
 
     getSpaceNeeded(card, stack) {
