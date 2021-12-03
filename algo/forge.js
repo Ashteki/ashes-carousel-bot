@@ -135,7 +135,7 @@ class Forge {
     removeDie(count, dice) {
         for (let i = 0; i < count; i++) {
             let options = dice.filter(d => d.count > 1);
-            const j = Math.floor(Math.random() * (options.length - 1));
+            const j = Math.floor(Math.random() * (options.length));
             dice[j].count -= 1;
         }
     }
@@ -244,7 +244,7 @@ class Forge {
     }
 
     getRandomCard(source) {
-        const i = Math.floor(Math.random() * (source.length - 1));
+        const i = Math.floor(Math.random() * (source.length));
         return source[i];
     }
 

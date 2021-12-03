@@ -29,13 +29,13 @@ class Carousel {
         }
         if (!pb) {
             // Returns a random integer from 1 to pb count:
-            const i = Math.floor(Math.random() * (this.pbs.length - 1));
+            const i = Math.floor(Math.random() * (this.pbs.length));
             pb = this.pbs[i];
         }
 
         const d = [];
         for (let j = 0; j < 3; j++) {
-            const dIndex = Math.floor(Math.random() * (dice.length - 1));
+            const dIndex = Math.floor(Math.random() * (dice.length));
             d[j] = dice[dIndex];
             dice = dice.filter((d) => d !== dice[dIndex]);
         }
