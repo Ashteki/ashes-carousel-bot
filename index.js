@@ -55,6 +55,19 @@ client.on('message', msg => {
         const deckText = new TextExporter().export(deck);
         msg.reply(deckText);
     }
+
+    if (parts[0] === '!lfg') {
+        if (parts.length === 1 || (parts.length === 2 && parts[1] === 'on')) {
+            const lfgRole = msg.guild.roles.cache.find(r => r.name === 'lfg');
+            msg.member.roles.add(lfgRole);
+            msg.channel.send(`${lfgRole} ${msg.author.username} is looking for a game!`);
+        }
+        if ((parts.length === 2 && parts[1] === 'off')) {
+            const lfgRole = msg.guild.roles.cache.find(r => r.name === 'lfg');
+            msg.member.roles.remove(lfgRole);
+            msg.channel.send(msg.author.username + ' lfg off');
+        }
+    }
 });
 
 //make sure this line is the last line
