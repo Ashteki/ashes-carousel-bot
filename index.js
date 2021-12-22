@@ -64,7 +64,7 @@ client.on('message', msg => {
 
         if (parts.length === 1 || (parts.length === 2 && parts[1] === 'on')) {
             msg.member.roles.add(lfgRole);
-            msg.channel.send(`${lfgRole} ${msg.author.username} is looking for a game!`);
+            msg.channel.send(msg.author.username + ' added to the @lfg role');
         }
         if ((parts.length === 2 && parts[1] === 'off')) {
             msg.member.roles.remove(lfgRole);
