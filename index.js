@@ -1,5 +1,5 @@
 require('dotenv').config(); //initialize dotenv
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, MessageEmbed } = require('discord.js');
 const Carousel = require('./algo/carousel');
 const Forge = require('./algo/forge');
 const TextExporter = require('./export/textexporter');
@@ -62,13 +62,49 @@ client.on('message', msg => {
             msg.channel.send('no lfg role found');
         }
 
+        if (parts[1] === 'list') {
+            const memberNames = lfgRole.members.map(m => m.displayName);
+            const listEmbed = new MessageEmbed()
+                .setTitle('Users who are lfg:')
+                .setDescription(memberNames.join('\n'));
+
+            msg.channel.send({ embeds: [listEmbed] });
+        }
+
         if (parts.length === 1 || (parts.length === 2 && parts[1] === 'on')) {
             msg.member.roles.add(lfgRole);
-            msg.channel.send(msg.author.username + ' added to the @lfg role');
+            msg.channel.send(msg.member.displayName + ' added to the @lfg role');
         }
         if ((parts.length === 2 && parts[1] === 'off')) {
             msg.member.roles.remove(lfgRole);
-            msg.channel.send(msg.author.username + ' lfg off');
+            msg.channel.send(msg.member.displayName + ' lfg off');
+        }
+    }
+
+    if (parts[0].toLowerCase() === '!ffl') {
+        const lfgRole = msg.guild.roles.cache.find(r => r.name === 'first-five-league');
+        if (!lfgRole) {
+            msg.channel.send('no ffl role found');
+        }
+
+        if (parts[1] === 'list') {
+            const memberNames = lfgRole.members.map(m => m.displayName);
+            const listEmbed = new MessageEmbed()
+                .setTitle('Users who are in the league:')
+                .setDescription(memberNames.join('\n'));
+
+            msg.channel.send({ embeds: [listEmbed] });
+        }
+
+        if (parts.length === 2) {
+            if (parts[1] === 'join') {
+                msg.member.roles.add(lfgRole);
+                msg.channel.send(msg.member.displayName + ' joined the first five league!');
+            }
+            if (parts[1] === 'drop') {
+                msg.member.roles.remove(lfgRole);
+                msg.channel.send(msg.member.displayName + ' dropped');
+            }
         }
     }
 });
