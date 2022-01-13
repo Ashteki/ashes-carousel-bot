@@ -9,7 +9,8 @@ const client = new Client({
     intents: [
         Intents.FLAGS.DIRECT_MESSAGES,
         Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS
     ],
     partials: ['MESSAGE', 'CHANNEL']
 });
@@ -63,7 +64,9 @@ client.on('message', msg => {
         }
 
         if (parts[1] === 'list') {
-            const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
+            const members = lfgRole.members;
+            console.log(members.length);
+            const memberNames = members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
                 .setTitle('Users who are lfg:')
