@@ -63,7 +63,8 @@ client.on('message', msg => {
         }
 
         if (parts[1] === 'list') {
-            const memberNames = lfgRole.members.map(m => m.displayName);
+            const memberNames = lfgRole.members.sort((a, b) => a < b ? -1 : 1)
+                .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
                 .setTitle('Users who are lfg:')
                 .setDescription(memberNames.join('\n'));
@@ -82,13 +83,14 @@ client.on('message', msg => {
     }
 
     if (parts[0].toLowerCase() === '!ffl') {
-        const lfgRole = msg.guild.roles.cache.find(r => r.name === 'first-five-league');
+        let lfgRole = msg.guild.roles.cache.find(r => r.name === 'first-five-league');
         if (!lfgRole) {
             msg.channel.send('no ffl role found');
         }
 
         if (parts[1] === 'list') {
-            const memberNames = lfgRole.members.map(m => m.displayName);
+            const memberNames = lfgRole.members.sort((a, b) => a < b ? -1 : 1)
+                .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
                 .setTitle('Users who are in the league:')
                 .setDescription(memberNames.join('\n'));
