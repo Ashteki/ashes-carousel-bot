@@ -63,7 +63,7 @@ client.on('message', msg => {
         }
 
         if (parts[1] === 'list') {
-            const memberNames = lfgRole.members.sort((a, b) => a < b ? -1 : 1)
+            const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
                 .setTitle('Users who are lfg:')
@@ -89,7 +89,7 @@ client.on('message', msg => {
         }
 
         if (parts[1] === 'list') {
-            const memberNames = lfgRole.members.sort((a, b) => a < b ? -1 : 1)
+            const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
                 .setTitle('Users who are in the league:')
