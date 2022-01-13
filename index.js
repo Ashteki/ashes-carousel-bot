@@ -65,7 +65,7 @@ client.on('message', msg => {
 
         if (parts[1] === 'list') {
             const members = lfgRole.members;
-            console.log(members.length);
+            console.log(members.size);
             const memberNames = members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
