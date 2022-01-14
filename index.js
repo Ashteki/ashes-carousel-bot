@@ -80,7 +80,7 @@ client.on('message', msg => {
             const memberNames = members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
-                .setTitle('Users who are lfg:')
+                .setTitle(`Players who are lfg (${memberNames.length}):`)
                 .setDescription(memberNames.join('\n'));
 
             msg.channel.send({ embeds: [listEmbed] });
@@ -106,7 +106,7 @@ client.on('message', msg => {
             const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const listEmbed = new MessageEmbed()
-                .setTitle('Users who are in the league:')
+                .setTitle(`Players in the league (${memberNames.length}):`)
                 .setDescription(memberNames.join('\n'));
 
             msg.channel.send({ embeds: [listEmbed] });
