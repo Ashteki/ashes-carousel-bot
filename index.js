@@ -20,6 +20,16 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+function takeOne(array) {
+    if (!array.length) {
+        return null;
+    }
+    const randomIndex = Math.floor(Math.random() * array.length);
+    const randomItem = array[randomIndex];
+    array.splice(randomIndex, 1);
+    return randomItem;
+}
+
 client.on('message', msg => {
     const parts = msg.content.split(' ');
     // only response if carousel is requested
@@ -106,14 +116,14 @@ client.on('message', msg => {
             const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
             const pairCount = Math.round(memberNames.length / 2);
-            const pairs = memberNames.slice(0, pairCount).map((m) => ({ player1: m }));
-            const remainder = memberNames.slice(pairCount);
+            const pairs = [];
+            for (let i = 0; i < pairCount; i++) {
+                const p1 = takeOne(memberNames);
+                pairs.push({ player1: p1 });
+            }
             pairs.forEach((p) => {
-                if (remainder.length) {
-                    const randomIndex = Math.floor(Math.random() * remainder.length);
-                    const randomPlayer = remainder[randomIndex];
-                    p.player2 = randomPlayer;
-                    remainder.splice(randomIndex, 1);
+                if (memberNames.length) {
+                    p.player2 = takeOne(memberNames);
                 } else {
                     p.player2 = 'BYE';
                 }
