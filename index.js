@@ -102,6 +102,29 @@ client.on('message', msg => {
             msg.channel.send({ embeds: [listEmbed] });
         }
 
+        if (parts[1] === 'pair') {
+            const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
+                .map(m => m.displayName);
+            const pairCount = Math.round(memberNames.length / 2);
+            const pairs = memberNames.slice(0, pairCount).map((m) => ({ player1: m }));
+            const remainder = memberNames.slice(pairCount);
+            pairs.forEach((p) => {
+                if (remainder.length) {
+                    const randomIndex = Math.floor(Math.random() * remainder.length);
+                    const randomPlayer = remainder[randomIndex];
+                    p.player2 = randomPlayer;
+                    remainder.splice(randomIndex, 1);
+                } else {
+                    p.player2 = 'BYE';
+                }
+            })
+            const listEmbed = new MessageEmbed()
+                .setTitle('Random pairings:')
+                .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+
+            msg.channel.send({ embeds: [listEmbed] });
+        }
+
         if (parts.length === 2) {
             if (parts[1] === 'join') {
                 msg.member.roles.add(lfgRole);
