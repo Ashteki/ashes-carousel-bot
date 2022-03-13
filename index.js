@@ -1,8 +1,11 @@
 require('dotenv').config(); //initialize dotenv
 const { Client, Intents, MessageEmbed } = require('discord.js');
+const AshesLive = require('./algo/asheslive');
 const Carousel = require('./algo/carousel');
 const Forge = require('./algo/forge');
+const Validator = require('./algo/validator');
 const TextExporter = require('./export/textexporter');
+const util = require('./util');
 
 let carousel = new Carousel();
 const client = new Client({
@@ -30,7 +33,7 @@ function takeOne(array) {
     return randomItem;
 }
 
-client.on('message', msg => {
+client.on('message', async msg => {
     const parts = msg.content.split(' ');
     // only response if carousel is requested
     if (['!carousel', '!car'].includes(parts[0])) {
@@ -147,11 +150,43 @@ client.on('message', msg => {
         }
     }
 
-    if (parts[0].toLowerCase() === '!trinity') {
+    if (['!trinity', '!tri'].includes(parts[0])) {
         const deckUrl = parts[1];
+        const regex = /[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/;
+        let uuid = deckUrl.match(regex);
+        try {
+            let response = await util.httpRequest(`https://api.ashes.live/v2/decks/shared/${uuid}`);
 
+            if (response[0] === '<') {
+                logger.error('Deck failed to download: %s %s', deck.uuid, response);
+
+                throw new Error('Invalid response from api. Please try again later.');
+            }
+
+            deckResponse = JSON.parse(response);
+        } catch (error) {
+            logger.error(`Unable to get deck ${deck.uuid}`, error);
+
+            throw new Error('Invalid response from Api. Please try again later.');
+        }
+
+        if (!deckResponse || !deckResponse.cards) {
+            throw new Error('Invalid response from Api. Please try again later.');
+        }
+
+        let newDeck = new AshesLive().parseAshesLiveDeckResponse('user', deckResponse);
+        const res = new Validator().validateTrinityDeck(newDeck)
+        let message = newDeck.name + ' is ';
+        message += !res.valid ? 'not ' : '';
+        message += 'valid for trinity format:\n'
+        message += 'Master Set: ';
+        message += res.core ? 'Yes\n' : 'No\n';
+        message += 'Deluxe: ' + res.deluxe.join(', ') + '\n';
+        message += `Packs (${res.packs.length}): ` + res.packs.join(', ') + '\n';
+        msg.channel.send(message);
     }
 });
+
 
 //make sure this line is the last line
 client.login(process.env.CLIENT_TOKEN); //login bot using token
