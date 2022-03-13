@@ -45,7 +45,10 @@ class Carousel {
             dice: d
         }
 
-        this.pbs = this.pbs.filter(p => p !== caro.pb);
+        // don't remove for coal-off
+        if (!pbStub) {
+            this.pbs = this.pbs.filter((p) => p !== caro.pb);
+        }
 
         return caro;
     }

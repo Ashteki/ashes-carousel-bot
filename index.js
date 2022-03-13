@@ -146,6 +146,11 @@ client.on('message', msg => {
             }
         }
     }
+
+    if (parts[0].toLowerCase() === '!trinity') {
+        const deckUrl = parts[1];
+
+    }
 });
 
 //make sure this line is the last line
