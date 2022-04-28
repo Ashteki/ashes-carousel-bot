@@ -176,14 +176,18 @@ client.on('message', async msg => {
 
         let newDeck = new AshesLive().parseAshesLiveDeckResponse('user', deckResponse);
         const res = new Validator().validateTrinityDeck(newDeck)
-        let message = newDeck.name + ' is ';
-        message += !res.valid ? 'not ' : '';
-        message += 'valid for trinity format:\n'
-        message += 'Master Set: ';
+        let header = newDeck.name + ' is ';
+        header += !res.valid ? 'not ' : '';
+        header += 'valid for trinity format:\n'
+        let message = 'Master Set: ';
         message += res.core ? 'Yes\n' : 'No\n';
         message += 'Deluxe: ' + res.deluxe.join(', ') + '\n';
         message += `Packs (${res.packs.length}): ` + res.packs.join(', ') + '\n';
-        msg.channel.send(message);
+        const listEmbed = new MessageEmbed()
+            .setTitle(header)
+            .setDescription(message);
+
+        msg.channel.send({ embeds: [listEmbed] });
     }
 });
 

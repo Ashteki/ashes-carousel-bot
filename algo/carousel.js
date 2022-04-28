@@ -78,7 +78,9 @@ class Carousel {
             { stub: 'xander-heartsblood', name: 'Xander' },
             { stub: 'rimea-careworn', name: 'Rimea' },
             { stub: 'orrick-gilstream', name: 'Orrick' },
-            { stub: 'lulu-firststone', name: 'Lulu' }
+            { stub: 'lulu-firststone', name: 'Lulu' },
+            { stub: 'dimona-odinstar', name: 'Dimona' },
+            { stub: 'hope-everthorn', name: 'Hope' }
         ];
     }
 }
