@@ -80,7 +80,9 @@ class Carousel {
             { stub: 'orrick-gilstream', name: 'Orrick' },
             { stub: 'lulu-firststone', name: 'Lulu' },
             { stub: 'dimona-odinstar', name: 'Dimona' },
-            { stub: 'hope-everthorn', name: 'Hope' }
+            { stub: 'hope-everthorn', name: 'Hope' },
+            { stub: 'tristan-darkwater', name: 'Tristan' },
+            { stub: 'rowan-umberend', name: 'Rowan' }
         ];
     }
 }
