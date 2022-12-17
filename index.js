@@ -35,6 +35,10 @@ function takeOne(array) {
 
 client.on('message', async msg => {
     const parts = msg.content.split(' ');
+    let command = null;
+    if (parts.length > 0 && parts[0].length > 0) {
+        command = parts[0].slice(1).toLocaleLowerCase();
+    }
     // only response if carousel is requested
     if (['!carousel', '!car'].includes(parts[0])) {
         if (parts.length === 1) {
@@ -98,54 +102,61 @@ client.on('message', async msg => {
             msg.channel.send(msg.member.displayName + ' lfg off');
         }
     }
+    const roleNames = {
+        ffl: 'first-five-league',
+        phx: 'phoenix-league'
+    }
 
-    if (parts[0].toLowerCase() === '!ffl') {
-        let lfgRole = msg.guild.roles.cache.find(r => r.name === 'first-five-league');
-        if (!lfgRole) {
-            msg.channel.send('no ffl role found');
-        }
-
-        if (parts[1] === 'list') {
-            const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
-                .map(m => m.displayName);
-            const listEmbed = new MessageEmbed()
-                .setTitle(`Players in the league (${memberNames.length}):`)
-                .setDescription(memberNames.join('\n'));
-
-            msg.channel.send({ embeds: [listEmbed] });
-        }
-
-        if (parts[1] === 'pair') {
-            const memberNames = lfgRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
-                .map(m => m.displayName);
-            const pairCount = Math.round(memberNames.length / 2);
-            const pairs = [];
-            for (let i = 0; i < pairCount; i++) {
-                const p1 = takeOne(memberNames);
-                pairs.push({ player1: p1 });
-            }
-            pairs.forEach((p) => {
-                if (memberNames.length) {
-                    p.player2 = takeOne(memberNames);
-                } else {
-                    p.player2 = 'BYE';
-                }
-            })
-            const listEmbed = new MessageEmbed()
-                .setTitle('Random pairings:')
-                .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
-
-            msg.channel.send({ embeds: [listEmbed] });
+    // check for role command
+    if (Object.keys(roleNames).includes(command)) {
+        let discordRole = msg.guild.roles.cache.find(r => r.name === roleNames[command]);
+        if (!discordRole) {
+            msg.channel.send('role not found: ' + command);
+            return;
         }
 
         if (parts.length === 2) {
-            if (parts[1] === 'join') {
-                msg.member.roles.add(lfgRole);
-                msg.channel.send(msg.member.displayName + ' joined the first five league!');
+            const action = parts[1];
+            if (action === 'list') {
+                const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
+                    .map(m => m.displayName);
+                const listEmbed = new MessageEmbed()
+                    .setTitle(`Players in the league (${memberNames.length}):`)
+                    .setDescription(memberNames.join('\n'));
+
+                msg.channel.send({ embeds: [listEmbed] });
             }
-            if (parts[1] === 'drop') {
-                msg.member.roles.remove(lfgRole);
-                msg.channel.send(msg.member.displayName + ' dropped');
+
+            if (action === 'pair') {
+                const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
+                    .map(m => m.displayName);
+                const pairCount = Math.round(memberNames.length / 2);
+                const pairs = [];
+                for (let i = 0; i < pairCount; i++) {
+                    const p1 = takeOne(memberNames);
+                    pairs.push({ player1: p1 });
+                }
+                pairs.forEach((p) => {
+                    if (memberNames.length) {
+                        p.player2 = takeOne(memberNames);
+                    } else {
+                        p.player2 = 'BYE';
+                    }
+                })
+                const listEmbed = new MessageEmbed()
+                    .setTitle('Random pairings:')
+                    .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+
+                msg.channel.send({ embeds: [listEmbed] });
+            }
+
+            if (action === 'join') {
+                msg.member.roles.add(discordRole);
+                msg.channel.send(msg.member.displayName + ' joined ' + roleNames[command] + '!');
+            }
+            if (action === 'drop') {
+                msg.member.roles.remove(discordRole);
+                msg.channel.send(msg.member.displayName + ' left ' + roleNames[command]);
             }
         }
     }
