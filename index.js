@@ -143,7 +143,7 @@ client.on('message', async msg => {
 
                     msg.channel.send({ embeds: [listEmbed] });
                 } catch (e) {
-                    msg.channel.send('unable to pair due to error:', e);
+                    msg.channel.send('unable to pair due to error:', e.stack);
                 }
             }
 
@@ -158,7 +158,7 @@ client.on('message', async msg => {
 
                     msg.channel.send({ embeds: [listEmbed] });
                 } catch (e) {
-                    msg.channel.send('unable to get latest due to error:', e);
+                    msg.channel.send('unable to get latest due to error:', e.stack);
                 }
             }
 
@@ -179,7 +179,7 @@ client.on('message', async msg => {
                         msg.channel.send('not found');
                     }
                 } catch (e) {
-                    msg.channel.send('unable to get latest due to error:', e);
+                    msg.channel.send('unable to get latest due to error:', e.stack);
                 }
             }
 
