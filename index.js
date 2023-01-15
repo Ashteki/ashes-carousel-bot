@@ -3,9 +3,12 @@ const { Client, Intents, MessageEmbed } = require('discord.js');
 const AshesLive = require('./algo/asheslive');
 const Carousel = require('./algo/carousel');
 const Forge = require('./algo/forge');
+const NamePairer = require('./algo/NamePairer');
 const Validator = require('./algo/validator');
+const BotDataService = require('./data/BotDataService');
 const TextExporter = require('./export/textexporter');
 const util = require('./util');
+
 
 let carousel = new Carousel();
 const client = new Client({
@@ -22,16 +25,6 @@ const client = new Client({
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
-
-function takeOne(array) {
-    if (!array.length) {
-        return null;
-    }
-    const randomIndex = Math.floor(Math.random() * array.length);
-    const randomItem = array[randomIndex];
-    array.splice(randomIndex, 1);
-    return randomItem;
-}
 
 client.on('message', async msg => {
     const parts = msg.content.split(' ');
@@ -115,8 +108,9 @@ client.on('message', async msg => {
             return;
         }
 
-        if (parts.length === 2) {
+        if (parts.length > 1) {
             const action = parts[1];
+
             if (action === 'list') {
                 const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                     .map(m => m.displayName);
@@ -128,26 +122,65 @@ client.on('message', async msg => {
             }
 
             if (action === 'pair') {
-                const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
-                    .map(m => m.displayName);
-                const pairCount = Math.round(memberNames.length / 2);
-                const pairs = [];
-                for (let i = 0; i < pairCount; i++) {
-                    const p1 = takeOne(memberNames);
-                    pairs.push({ player1: p1 });
-                }
-                pairs.forEach((p) => {
-                    if (memberNames.length) {
-                        p.player2 = takeOne(memberNames);
-                    } else {
-                        p.player2 = 'BYE';
-                    }
-                })
-                const listEmbed = new MessageEmbed()
-                    .setTitle('Random pairings:')
-                    .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+                try {
+                    const save = parts.length > 2 && parts[2] === 's';
 
-                msg.channel.send({ embeds: [listEmbed] });
+                    const dataService = new BotDataService();
+                    const latest = await dataService.getLatest(command);
+
+                    const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
+                        .map(m => m.displayName);
+                    const pairer = new NamePairer();
+                    const pairs = pairer.pair(memberNames, latest?.pairings);
+
+                    if (save) {
+                        dataService.saveLatest(command, pairs);
+                    }
+
+                    const listEmbed = new MessageEmbed()
+                        .setTitle('Random pairings:')
+                        .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+
+                    msg.channel.send({ embeds: [listEmbed] });
+                } catch (e) {
+                    msg.channel.send('unable to pair due to error:', e);
+                }
+            }
+
+            if (action === 'latest') {
+                try {
+                    const dataService = new BotDataService();
+                    const latest = await dataService.getLatest(command);
+
+                    const listEmbed = new MessageEmbed()
+                        .setTitle(command + ' latest:')
+                        .setDescription(latest.datePaired + '\n' + latest.pairings.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+
+                    msg.channel.send({ embeds: [listEmbed] });
+                } catch (e) {
+                    msg.channel.send('unable to get latest due to error:', e);
+                }
+            }
+
+            if (action === 'previous') {
+                try {
+                    const dataService = new BotDataService();
+                    const latestTwo = await dataService.getPrevious(command);
+
+                    if (latestTwo.length === 2) {
+                        latest = latestTwo[1];
+
+                        const listEmbed = new MessageEmbed()
+                            .setTitle(command + ' previous:')
+                            .setDescription(latest.datePaired + '\n' + latest.pairings.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+
+                        msg.channel.send({ embeds: [listEmbed] });
+                    } else {
+                        msg.channel.send('not found');
+                    }
+                } catch (e) {
+                    msg.channel.send('unable to get latest due to error:', e);
+                }
             }
 
             if (action === 'join') {
