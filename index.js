@@ -136,13 +136,14 @@ client.on('message', async msg => {
                     if (save) {
                         dataService.saveLatest(command, pairs);
                     }
-
                     const listEmbed = new MessageEmbed()
                         .setTitle('Random pairings:')
                         .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
 
                     msg.channel.send({ embeds: [listEmbed] });
                 } catch (e) {
+                    console.log('error', e);
+
                     msg.channel.send('unable to pair due to error:', e.message);
                 }
             }
@@ -158,6 +159,8 @@ client.on('message', async msg => {
 
                     msg.channel.send({ embeds: [listEmbed] });
                 } catch (e) {
+                    console.log('error', e);
+
                     msg.channel.send('unable to get latest due to error:', e.message);
                 }
             }
@@ -179,6 +182,8 @@ client.on('message', async msg => {
                         msg.channel.send('not found');
                     }
                 } catch (e) {
+                    console.log('error', e);
+
                     msg.channel.send('unable to get latest due to error:', e.message);
                 }
             }
