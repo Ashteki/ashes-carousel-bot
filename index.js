@@ -123,8 +123,6 @@ client.on('message', async msg => {
 
             if (action === 'pair') {
                 try {
-                    const save = parts.length > 2 && parts[2] === 's';
-
                     const dataService = new BotDataService();
                     const latest = await dataService.getLatest(command);
 
@@ -133,9 +131,8 @@ client.on('message', async msg => {
                     const pairer = new NamePairer();
                     const pairs = pairer.pair(memberNames, latest?.pairings);
 
-                    if (save) {
-                        dataService.saveLatest(command, pairs);
-                    }
+                    dataService.saveLatest(command, pairs);
+
                     const listEmbed = new MessageEmbed()
                         .setTitle('Random pairings:')
                         .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
