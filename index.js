@@ -1,5 +1,5 @@
 require('dotenv').config(); //initialize dotenv
-const { Client, Intents, MessageEmbed } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, Events, EmbedBuilder } = require('discord.js');
 const AshesLive = require('./algo/asheslive');
 const Carousel = require('./algo/carousel');
 const Forge = require('./algo/forge');
@@ -13,20 +13,21 @@ const util = require('./util');
 let carousel = new Carousel();
 const client = new Client({
     intents: [
-        Intents.FLAGS.DIRECT_MESSAGES,
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_PRESENCES,
-        Intents.FLAGS.GUILD_MEMBERS
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildMembers
     ],
-    partials: ['MESSAGE', 'CHANNEL']
+    partials: [Partials.Message, Partials.Channel]
 });
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', async msg => {
+client.on(Events.MessageCreate, async msg => {
     const parts = msg.content.split(' ');
     let command = null;
     if (parts.length > 0 && parts[0].length > 0) {
@@ -79,7 +80,7 @@ client.on('message', async msg => {
             console.log(members.size);
             const memberNames = members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                 .map(m => m.displayName);
-            const listEmbed = new MessageEmbed()
+            const listEmbed = new EmbedBuilder()
                 .setTitle(`Players who are lfg (${memberNames.length}):`)
                 .setDescription(memberNames.join('\n'));
 
@@ -114,7 +115,7 @@ client.on('message', async msg => {
             if (action === 'list') {
                 const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                     .map(m => m.displayName);
-                const listEmbed = new MessageEmbed()
+                const listEmbed = new EmbedBuilder()
                     .setTitle(`Players in the league (${memberNames.length}):`)
                     .setDescription(memberNames.join('\n'));
 
@@ -133,7 +134,7 @@ client.on('message', async msg => {
 
                     dataService.saveLatest(command, pairs);
 
-                    const listEmbed = new MessageEmbed()
+                    const listEmbed = new EmbedBuilder()
                         .setTitle('Random pairings:')
                         .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
 
@@ -150,7 +151,7 @@ client.on('message', async msg => {
                     const dataService = new BotDataService();
                     const latest = await dataService.getLatest(command);
 
-                    const listEmbed = new MessageEmbed()
+                    const listEmbed = new EmbedBuilder()
                         .setTitle(command + ' latest:')
                         .setDescription(latest.datePaired + '\n' + latest.pairings.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
 
@@ -170,7 +171,7 @@ client.on('message', async msg => {
                     if (latestTwo.length === 2) {
                         latest = latestTwo[1];
 
-                        const listEmbed = new MessageEmbed()
+                        const listEmbed = new EmbedBuilder()
                             .setTitle(command + ' previous:')
                             .setDescription(latest.datePaired + '\n' + latest.pairings.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
 
@@ -229,7 +230,7 @@ client.on('message', async msg => {
         message += res.core ? 'Yes\n' : 'No\n';
         message += 'Deluxe: ' + res.deluxe.join(', ') + '\n';
         message += `Packs (${res.packs.length}): ` + res.packs.join(', ') + '\n';
-        const listEmbed = new MessageEmbed()
+        const listEmbed = new EmbedBuilder()
             .setTitle(header)
             .setDescription(message);
 
