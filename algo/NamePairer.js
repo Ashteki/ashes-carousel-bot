@@ -1,3 +1,5 @@
+const uuid = require('uuid');
+
 class NamePairer {
     pair(names, avoidMatches = []) {
         const namesCopy = [...names];
@@ -33,6 +35,8 @@ class NamePairer {
                 // can't re-pair only one pair
             }
         }
+
+        pairs.forEach((p) => p.id = uuid.v1());
 
         return pairs;
     }
