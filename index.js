@@ -69,6 +69,22 @@ client.on(Events.MessageCreate, async msg => {
         msg.reply(deckText);
     }
 
+    if (parts[0] === '!link') {
+        // update a user's ashteki name
+        const ashtekiName = parts[1];
+        if (!ashtekiName) {
+            const myNameLink = await getMyNameLink(msg.member.displayName);
+            if (myNameLink) {
+                msg.channel.send(`Your discord name is linked to ${myNameLink.ashtekiName}`);
+            } else {
+                msg.channel.send(`Your discord name is not linked`);
+            }
+            return;
+        }
+        // 1. check if ashteki name is in use
+        doLinkAction(ashtekiName, msg);
+    }
+
     if (parts[0] === '!lfg') {
         const lfgRole = msg.guild.roles.cache.find(r => r.name === 'lfg');
         if (!lfgRole) {
@@ -237,6 +253,28 @@ client.on(Events.MessageCreate, async msg => {
         msg.channel.send({ embeds: [listEmbed] });
     }
 });
+
+async function getMyNameLink(name) {
+    const dataService = new BotDataService();
+    return await dataService.getNameLinkByDiscordName(name);
+}
+
+async function doLinkAction(ashtekiName, msg) {
+    const dataService = new BotDataService();
+    const targetNameLink = await dataService.getNameLinkByAshtekiName(ashtekiName);
+    if (targetNameLink) {
+        msg.channel.send(`Ashteki name ${ashtekiName} is already linked to ${targetNameLink.discordName}`);
+    } else {
+        const myNameLink = await dataService.getNameLinkByDiscordName(msg.member.displayName);
+        if (myNameLink) {
+            await dataService.updateNameLink(msg.member.displayName, ashtekiName);
+            msg.channel.send(`Your discord name is now linked to ${ashtekiName}`);
+        } else {
+            dataService.insertNameLink(msg.member.displayName, ashtekiName);
+            msg.channel.send(`Added link: ${ashtekiName} to ${msg.member.displayName}`);
+        }
+    }
+}
 
 
 //make sure this line is the last line
