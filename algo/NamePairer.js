@@ -1,42 +1,85 @@
 const uuid = require('uuid');
 
 class NamePairer {
-    pair(names, avoidMatches = []) {
+
+    pair(names, previousPairings = []) {
+
+        let sampleSize = 10;
+        let oldestPairing = new Date(Date.now());
+        for (let i = 0; i < previousPairings.length; i++) {
+            if (oldestPairing > new Date(previousPairings[i].pairingDate)) {
+                oldestPairing = new Date(previousPairings[i].pairingDate);
+            }
+        }
+
+        const pairingsAdjusted = previousPairings.map((m) => {
+            return m.pairings.map((n) => {
+                return {
+                    "date": m.pairingDate,
+                    "p1": n.player1,
+                    "p2": n.player2
+                }
+            });
+        }).flat(1);
+
+        let bestPairing = { "score": 0, "pairing": [] };
+        for (let i = 0; i < sampleSize; i++) {
+            let newPairing = this.createRandomPairing(names, pairingsAdjusted, oldestPairing);
+            if (bestPairing.score < newPairing.score) {
+                bestPairing = newPairing;
+            }
+        }
+        return bestPairing.pairing;
+    }
+
+    createRandomPairing(names, previousPairings, oldestPairing) {
+        let score = 0;
+        let pairing = this.makePairs(names);
+        score = this.scorePairing(pairing, previousPairings, oldestPairing);
+        return { "score": score, "pairing": pairing };
+    }
+
+    scorePairing(pairing, previousPairings, oldestPairing) {
+        let score = 0;
+        for (let i = 0; i < pairing.length; i++) {
+            let pairScore = 0;
+            for (let j = 0; j < previousPairings.length; j++) {
+                if ((previousPairings[j].p1 === pairing[i].player1 && previousPairings[j].p2 === pairing[i].player2)
+                    || (previousPairings[j].p1 === pairing[i].player2 && previousPairings[j].p2 === pairing[i].player1)) {
+                    pairScore += this.weeksDiff(new Date(previousPairings[j].date), new Date(Date.now()));//this multicasting is stupid but 
+                    break;
+                }
+            }
+            if (pairScore === 0) {
+                pairScore = (this.weeksDiff(oldestPairing, new Date(Date.now())) + 1);
+            }
+            score += pairScore;
+        }
+
+        return score;
+    }
+
+    weeksDiff(date1, date2) {
+        let Difference_In_Time = date2.getTime() - date1.getTime();
+        return Math.round(Difference_In_Time / (1000 * 3600 * 24 * 7));
+    }
+
+    makePairs(names) {
         const namesCopy = [...names];
         const pairCount = Math.round(namesCopy.length / 2);
         const pairs = [];
+
         for (let i = 0; i < pairCount; i++) {
-            const p1 = this.takeOne(namesCopy);
-            pairs.push({ player1: p1 });
+        const p1 = this.takeOne(namesCopy);
+        pairs.push({ player1: p1 });
         }
         pairs.forEach((p) => {
-            if (namesCopy.length) {
+        if (namesCopy.length) {
                 p.player2 = this.takeOne(namesCopy);
             } else {
-                p.player2 = 'BYE';
+                p.player2 = "BYE";
             }
-        })
-
-        // re-pair check
-        for (let i = 0; i < pairs.length; i++) {
-            const pair = pairs[i];
-            const avoid = this.getAvoidName(avoidMatches, pair.player1);
-            if (avoid === pair.player2) {
-                if (i > 0) {
-                    // swap with record 1
-                    pair.player2 = pairs[0].player2;
-                    pairs[0].player2 = avoid;
-                }
-                if (i === 0 && pairs.length > 1) {
-                    // swap with record 2 if on first record
-                    pair.player2 = pairs[1].player2;
-                    pairs[1].player2 = avoid;
-                }
-                // can't re-pair only one pair
-            }
-        }
-
-        pairs.forEach((p) => p.id = uuid.v1());
+        });
 
         return pairs;
     }
@@ -51,14 +94,6 @@ class NamePairer {
         // success
         array.splice(randomIndex, 1);
         return randomItem;
-    }
-
-    getAvoidName(avoidMatches, player) {
-        const match = avoidMatches.find((m) => m.player1 === player || m.player2 === player);
-        if (!match) {
-            return '';
-        }
-        return match.player1 === player ? match.player2 : match.player1;
     }
 }
 

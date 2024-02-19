@@ -142,11 +142,12 @@ client.on(Events.MessageCreate, async msg => {
                 try {
                     const dataService = new BotDataService();
                     const latest = await dataService.getLatest(command);
+                    const previousTen = await dataService.getPrevious(command, 10);
 
                     const memberNames = discordRole.members.sort((a, b) => a.displayName.toLowerCase() < b.displayName.toLowerCase() ? -1 : 1)
                         .map(m => m.displayName);
                     const pairer = new NamePairer();
-                    const pairs = pairer.pair(memberNames, latest?.pairings);
+                    const pairs = pairer.pair(memberNames, previousTen);
 
                     dataService.saveLatest(command, pairs);
 
