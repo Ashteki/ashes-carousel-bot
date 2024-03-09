@@ -11,7 +11,14 @@ describe("Pairing tests", function () {
     });
 
     it("avoid rematching daniel with felix", function () {
-        const avoid = [{ player1: 'daniel', player2: 'felix' }]
+        const avoid = [{
+            "_id": { "$oid": "63c43a82552274f68fc0dfb0" },
+            "tag": "phx",
+            "pairingDate": "13-JAN-2023",
+            "pairings": [
+                { player1: 'daniel', player2: 'felix' }]
+        }];
+
         for (let index = 0; index < 20; index++) {
             const pairs = pairer.pair(names, avoid)
             console.log(pairs);

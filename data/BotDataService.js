@@ -22,12 +22,12 @@ class BotDataService {
         });
     }
 
-    async getPrevious(tag) {
+    async getPrevious(tag, amount) {
         return this.pairings.find(
             { "tag": tag },
             {
                 sort: { _id: -1 },
-                limit: 2
+                limit: amount
             }
         ).catch((err) => {
             console.log('Unable to fetch latest 2 pairings', err);
