@@ -149,7 +149,7 @@ client.on(Events.MessageCreate, async msg => {
                     const pairer = new NamePairer();
                     const pairs = pairer.pair(memberNames, previousTen);
 
-                    if (pairs) {
+                    if (pairs?.length) {
                         dataService.saveLatest(command, pairs);
 
                         const listEmbed = new EmbedBuilder()

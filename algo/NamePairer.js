@@ -15,7 +15,7 @@ class NamePairer {
         const pairingsAdjusted = previousPairings.map((m) => {
             return m.pairings.map((n) => {
                 return {
-                    "date": m.pairingDate,
+                    "date": m.datePaired,
                     "p1": n.player1,
                     "p2": n.player2
                 }
@@ -70,11 +70,11 @@ class NamePairer {
         const pairs = [];
 
         for (let i = 0; i < pairCount; i++) {
-        const p1 = this.takeOne(namesCopy);
-        pairs.push({ player1: p1 });
+            const p1 = this.takeOne(namesCopy);
+            pairs.push({ player1: p1 });
         }
         pairs.forEach((p) => {
-        if (namesCopy.length) {
+            if (namesCopy.length) {
                 p.player2 = this.takeOne(namesCopy);
             } else {
                 p.player2 = "BYE";
