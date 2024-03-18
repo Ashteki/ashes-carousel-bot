@@ -149,13 +149,18 @@ client.on(Events.MessageCreate, async msg => {
                     const pairer = new NamePairer();
                     const pairs = pairer.pair(memberNames, previousTen);
 
-                    dataService.saveLatest(command, pairs);
+                    if (pairs) {
+                        dataService.saveLatest(command, pairs);
 
-                    const listEmbed = new EmbedBuilder()
-                        .setTitle('Random pairings:')
-                        .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
+                        const listEmbed = new EmbedBuilder()
+                            .setTitle('Random pairings:')
+                            .setDescription(pairs.map((p, i) => `${i + 1}. ${p.player1} vs ${p.player2}`).join('\n'));
 
-                    msg.channel.send({ embeds: [listEmbed] });
+                        msg.channel.send({ embeds: [listEmbed] });
+                    } else {
+                        msg.channel.send('unable to pair: null pairing returned from pairer');
+
+                    }
                 } catch (e) {
                     console.log('error', e);
 
