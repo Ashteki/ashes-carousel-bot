@@ -71,7 +71,7 @@ class NamePairer {
 
         for (let i = 0; i < pairCount; i++) {
             const p1 = this.takeOne(namesCopy);
-            pairs.push({ player1: p1 });
+            pairs.push({ player1: p1, id: uuid.v1() });
         }
         pairs.forEach((p) => {
             if (namesCopy.length) {
