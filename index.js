@@ -8,6 +8,7 @@ const Validator = require('./algo/validator');
 const BotDataService = require('./data/BotDataService');
 const TextExporter = require('./export/textexporter');
 const util = require('./util');
+const AshesLiveHelper = require('./algo/AshesLiveHelper');
 
 
 let carousel = new Carousel();
@@ -28,30 +29,30 @@ client.on('ready', () => {
 });
 
 client.on(Events.MessageCreate, async msg => {
+    if (msg.content[0] !== '!') {
+        const regex = /\[[\w\s]+\]/;
+        let cardSearch = msg.content.match(regex);
+        if (cardSearch) {
+            await doCardLookup(cardSearch, msg);
+        }
+        return;
+    }
+
     const parts = msg.content.split(' ');
     let command = null;
     if (parts.length > 0 && parts[0].length > 0) {
         command = parts[0].slice(1).toLocaleLowerCase();
     }
+
+    if (parts[0] === '!c') {
+        await doCardLookup(msg.content.substring(3), msg);
+        return;
+    }
+
     // only response if carousel is requested
     if (['!carousel', '!car'].includes(parts[0])) {
-        if (parts.length === 1) {
-            // single nameless carousel return
-            msg.reply(carousel.getCarouselEntry());
-        }
-        else {
-            // bulk request
-            let reply = '';
-            for (let i = 1; i < parts.length; i++) {
-                const part = parts[i];
-                reply += part + ': ' + carousel.getCarouselEntry() + '\n';
-                if (reply.length > 1950) {
-                    msg.reply(reply);
-                    reply = '';
-                }
-            }
-            msg.reply(reply);
-        }
+        doCarouselResponse(parts, msg);
+        return;
     }
 
     if (parts[0] === '!rando') {
@@ -83,6 +84,7 @@ client.on(Events.MessageCreate, async msg => {
         }
         // 1. check if ashteki name is in use
         doLinkAction(ashtekiName, msg);
+        return;
     }
 
     if (parts[0] === '!lfg') {
@@ -259,6 +261,34 @@ client.on(Events.MessageCreate, async msg => {
         msg.channel.send({ embeds: [listEmbed] });
     }
 });
+
+async function doCardLookup(searchText, msg) {
+    const ashesLiveHelper = new AshesLiveHelper;
+    const cardDetails = await ashesLiveHelper.findCard(searchText);
+    if (cardDetails?.imageUrl) {
+        msg.channel.send(cardDetails.imageUrl);
+    }
+}
+
+function doCarouselResponse(parts, msg) {
+    if (parts.length === 1) {
+        // single nameless carousel return
+        msg.reply(carousel.getCarouselEntry());
+    }
+    else {
+        // bulk request
+        let reply = '';
+        for (let i = 1; i < parts.length; i++) {
+            const part = parts[i];
+            reply += part + ': ' + carousel.getCarouselEntry() + '\n';
+            if (reply.length > 1950) {
+                msg.reply(reply);
+                reply = '';
+            }
+        }
+        msg.reply(reply);
+    }
+}
 
 async function getMyNameLink(name) {
     const dataService = new BotDataService();
