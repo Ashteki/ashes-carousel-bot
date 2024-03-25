@@ -229,14 +229,14 @@ client.on(Events.MessageCreate, async msg => {
             let response = await util.httpRequest(`https://api.ashes.live/v2/decks/shared/${uuid}`);
 
             if (response[0] === '<') {
-                logger.error('Deck failed to download: %s %s', deck.uuid, response);
+                console.log('Deck failed to download: %s %s', deck.uuid, response);
 
                 throw new Error('Invalid response from api. Please try again later.');
             }
 
             deckResponse = JSON.parse(response);
         } catch (error) {
-            logger.error(`Unable to get deck ${deck.uuid}`, error);
+            console.log(`Unable to get deck ${deck.uuid}`, error);
 
             throw new Error('Invalid response from Api. Please try again later.');
         }

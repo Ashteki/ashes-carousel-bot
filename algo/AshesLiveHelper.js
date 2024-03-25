@@ -4,28 +4,26 @@ class AshesLiveHelper {
     async findCard(searchText) {
         let searchResponse = null;
         try {
-            let response = await util.httpRequest(`https://api.ashes.live/v2/cards?q=${searchText}&sort=type`);
+            let response = await util.httpRequest(`https://api.ashes.live/v2/cards/fuzzy-lookup?q=${searchText}`);
 
             if (response[0] !== '{') {
-                logger.error('Failed to query ashes.live: %s %s', searchText, response);
+                console.log('Failed to query ashes.live: %s %s', searchText, response);
 
                 throw new Error('Invalid response from api. Please try again later.');
             }
 
             searchResponse = JSON.parse(response);
         } catch (error) {
-            logger.error(`Unable to get deck ${deck.uuid}`, error);
+            console.log(`Unable to get card ${searchResponse}`, error);
 
             throw new Error('Invalid response from Api. Please try again later.');
         }
 
-        if (searchResponse?.count > 0) {
-            const firstMatch = searchResponse.results[0];
-
+        if (searchResponse.stub) {
             return {
-                name: firstMatch.name,
-                imageUrl: `https://cdn.ashes.live/images/cards/${firstMatch.stub}.jpg`,
-                url: `https://ashes.live/cards/${firstMatch.stub}`
+                name: searchResponse.name,
+                imageUrl: `https://cdn.ashes.live/images/cards/${searchResponse.stub}.jpg`,
+                url: `https://ashes.live/cards/${searchResponse.stub}`
             }
         } else {
             return null;

@@ -14,7 +14,7 @@ function httpRequest(url, options = {}) {
                 return reject(err);
             }
 
-            if (res.statusCode !== 200) {
+            if (res.statusCode !== 200 && res.statusCode !== 404) {
                 let err = new Error('Request failed');
                 err.statusCode = res.statusCode;
 

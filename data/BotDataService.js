@@ -82,7 +82,7 @@ class BotDataService {
 
     async updateNameLink(discordName, ashtekiName) {
         return this.nameLinks.update({ discordName: discordName }, { $set: { ashtekiName: ashtekiName } }).catch((err) => {
-            logger.error('Error setting name link', err);
+            console.log('Error setting name link', err);
             throw new Error('Error setting name link');
         });
     }
