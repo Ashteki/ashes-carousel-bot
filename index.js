@@ -266,7 +266,15 @@ async function doCardLookup(searchText, msg) {
     const ashesLiveHelper = new AshesLiveHelper;
     const cardDetails = await ashesLiveHelper.findCard(searchText);
     if (cardDetails?.imageUrl) {
-        msg.channel.send(cardDetails.imageUrl);
+        const listEmbed = new EmbedBuilder()
+            .setTitle(cardDetails.name)
+            .setURL(cardDetails.url)
+            .setImage(cardDetails.imageUrl)
+            .setColor(0x5e6e6e);
+
+        msg.channel.send({ embeds: [listEmbed] });
+
+        // msg.channel.send(cardDetails.imageUrl);
     }
 }
 

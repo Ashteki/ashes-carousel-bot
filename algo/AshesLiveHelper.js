@@ -23,6 +23,7 @@ class AshesLiveHelper {
             const firstMatch = searchResponse.results[0];
 
             return {
+                name: firstMatch.name,
                 imageUrl: `https://cdn.ashes.live/images/cards/${firstMatch.stub}.jpg`,
                 url: `https://ashes.live/cards/${firstMatch.stub}`
             }
