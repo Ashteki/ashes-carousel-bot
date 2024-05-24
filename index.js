@@ -223,44 +223,80 @@ client.on(Events.MessageCreate, async msg => {
 
     if (['!trinity', '!tri'].includes(parts[0])) {
         const deckUrl = parts[1];
-        const regex = /[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/;
-        let uuid = deckUrl.match(regex);
         try {
-            let response = await util.httpRequest(`https://api.ashes.live/v2/decks/shared/${uuid}`);
 
-            if (response[0] === '<') {
-                console.log('Deck failed to download: %s %s', deck.uuid, response);
+            let deckResponse = await getAshesLiveDeck(deckUrl);
 
-                throw new Error('Invalid response from api. Please try again later.');
-            }
+            let newDeck = new AshesLive().parseAshesLiveDeckResponse('user', deckResponse);
+            const res = new Validator().validateTrinityDeck(newDeck)
+            let header = newDeck.name + ' is ';
+            header += !res.valid ? 'not ' : '';
+            header += 'valid for trinity format:\n'
+            let message = 'Master Set: ';
+            message += res.core ? 'Yes\n' : 'No\n';
+            message += 'Deluxe: ' + res.deluxe.join(', ') + '\n';
+            message += `Packs (${res.packs.length}): ` + res.packs.join(', ') + '\n';
+            const listEmbed = new EmbedBuilder()
+                .setTitle(header)
+                .setDescription(message);
 
-            deckResponse = JSON.parse(response);
-        } catch (error) {
-            console.log(`Unable to get deck ${deck.uuid}`, error);
-
-            throw new Error('Invalid response from Api. Please try again later.');
+            msg.channel.send({ embeds: [listEmbed] });
+        } catch (err) {
+            msg.channel.send("error: " + err.message);
         }
+    }
 
-        if (!deckResponse || !deckResponse.cards) {
-            throw new Error('Invalid response from Api. Please try again later.');
+    if (['!catspill', '!cat'].includes(parts[0])) {
+        const deckUrl = parts[1];
+        try {
+            let deckResponse = await getAshesLiveDeck(deckUrl);
+
+            let newDeck = new AshesLive().parseAshesLiveDeckResponse('user', deckResponse);
+            const res = new Validator().validateCatSpill(newDeck)
+            let header = newDeck.name + '\n *is ';
+            header += !res.valid ? 'not* ' : '*';
+            header += 'valid for cat spill format:\n'
+            let message = `**Banned:**: (${res.banned.length})\n ` + res.banned.join('\n ') + '\n';
+            message += `**Partials**: (${res.partial.length})\n `
+            res.partial.forEach(p => {
+                message += `${p.id} - ${p.count}`;
+            });
+            const listEmbed = new EmbedBuilder()
+                .setTitle(header)
+                .setDescription(message);
+
+            msg.channel.send({ embeds: [listEmbed] });
+        } catch (err) {
+            msg.channel.send("error: " + err.message);
         }
-
-        let newDeck = new AshesLive().parseAshesLiveDeckResponse('user', deckResponse);
-        const res = new Validator().validateTrinityDeck(newDeck)
-        let header = newDeck.name + ' is ';
-        header += !res.valid ? 'not ' : '';
-        header += 'valid for trinity format:\n'
-        let message = 'Master Set: ';
-        message += res.core ? 'Yes\n' : 'No\n';
-        message += 'Deluxe: ' + res.deluxe.join(', ') + '\n';
-        message += `Packs (${res.packs.length}): ` + res.packs.join(', ') + '\n';
-        const listEmbed = new EmbedBuilder()
-            .setTitle(header)
-            .setDescription(message);
-
-        msg.channel.send({ embeds: [listEmbed] });
     }
 });
+
+async function getAshesLiveDeck(deckUrl) {
+    let deckResponse;
+    const regex = /[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/;
+    let uuid = deckUrl.match(regex);
+    try {
+        let response = await util.httpRequest(`https://api.ashes.live/v2/decks/shared/${uuid}`);
+
+        if (response[0] === '<') {
+            console.log('Deck failed to download: %s %s', deck.uuid, response);
+
+            throw new Error('Invalid response from api. Please try again later.');
+        }
+
+        deckResponse = JSON.parse(response);
+    } catch (error) {
+        console.log(`Unable to get deck ${uuid}`, error);
+
+        throw new Error('Invalid response from Api. Please try again later.');
+    }
+
+    if (!deckResponse || !deckResponse.cards) {
+        throw new Error('Invalid response from Api. Please try again later.');
+    }
+    return deckResponse;
+}
 
 async function doCardLookup(searchText, msg) {
     const ashesLiveHelper = new AshesLiveHelper;

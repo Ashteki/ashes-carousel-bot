@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const PathToSubModulePacks = path.join(__dirname, '../data');
+const PathToSubModulePacks = path.join(__dirname, '../data/cards');
+const catSpill = require('../data/catspill.json');
 
 class Validator {
     constructor() {
@@ -50,6 +51,36 @@ class Validator {
             }
         });
         result.valid = result.deluxe.length < 2 && result.packs.length < 4;
+        return result;
+    }
+
+    validateCatSpill(deck) {
+        const result = {
+            valid: true,
+            banned: [],
+            partial: []
+        };
+        const cats = catSpill;
+        deck.cards.forEach(c => {
+            if (catSpill.banned.includes(c.id)) {
+                result.banned.push(c.id);
+                result.valid = false;
+            };
+
+            if (catSpill.partial.includes(c.id)) {
+                let entry = result.partial.find(e => e.id === c.id);
+                if (!entry) {
+                    entry = { id: c.id, count: 0 };
+                    result.partial.push(entry);
+                }
+                entry.count++;
+                if (entry.count > 1) {
+                    result.valid = false;
+                }
+            }
+        });
+
+
         return result;
     }
 }
