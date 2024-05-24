@@ -259,7 +259,7 @@ client.on(Events.MessageCreate, async msg => {
             let message = `**Banned:**: (${res.banned.length})\n ` + res.banned.join('\n ') + '\n';
             message += `**Partials**: (${res.partial.length})\n `
             res.partial.forEach(p => {
-                message += `${p.id} - ${p.count}`;
+                message += `${p.id} - ${p.count}\n`;
             });
             const listEmbed = new EmbedBuilder()
                 .setTitle(header)
