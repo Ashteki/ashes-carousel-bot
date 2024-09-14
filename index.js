@@ -284,9 +284,11 @@ client.on(Events.MessageCreate, async msg => {
             let message = `**Pb Precon:**: ${res.pbPrecon?.name || 'NO MATCH!'}\n `;
             message += `**Channel Magic**: ${res.channelMagic}\n `;
             message += `**Card Counts**:\n `;
-            res.precons.forEach(p => {
-                message += `${p.name}: ${p.count}\n`;
-            });
+            res.precons
+                .sort((a, b) => a.count > b.count ? -1 : 1)
+                .forEach(p => {
+                    message += `${p.name}: ${p.count}\n`;
+                });
             const listEmbed = new EmbedBuilder()
                 .setTitle(header)
                 .setDescription(message);
