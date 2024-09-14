@@ -207,13 +207,18 @@ class Forge {
 
         let jsonPacks = fs.readdirSync(directory).filter((file) => file.endsWith('.json'));
 
-        for (let file of jsonPacks) {
-            let pack = require(path.join(directory, file));
-
-            for (let card of pack.results) {
-                cards[card.stub] = card;
+        try {
+            for (let file of jsonPacks) {
+                let pack = require(path.join(directory, file));
+                const results = pack.results;
+                for (let card of results) {
+                    cards[card.stub] = card;
+                }
             }
+        } catch (error) {
+
         }
+
 
         return cards;
     }

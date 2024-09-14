@@ -1,0 +1,2202 @@
+[
+  {
+    "precon_id": 28,
+    "name": "The Scholar of Ruin",
+    "phoenixborn": [
+      {
+        "id": "rowan-umberend",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "ceremonial",
+        "count": 5
+      },
+      {
+        "magic": "time",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "chant-of-erosion",
+        "count": 3
+      },
+      {
+        "id": "chant-of-hostility",
+        "count": 3
+      },
+      {
+        "id": "crypt-guardian",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "discovery",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "eras-end",
+        "count": 3
+      },
+      {
+        "id": "excavate",
+        "count": 3
+      },
+      {
+        "id": "knowledge-seeker",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "rapture",
+        "count": 3
+      },
+      {
+        "id": "ritualist",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-ruin-dweller",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "eroding",
+        "count": 3
+      },
+      {
+        "id": "reborn-chimera",
+        "count": 1
+      },
+      {
+        "id": "red-raindrop",
+        "count": 3
+      },
+      {
+        "id": "ruin-dweller",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 27,
+    "name": "The Ocean's Guard",
+    "phoenixborn": [
+      {
+        "id": "tristan-darkwater",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 5
+      },
+      {
+        "magic": "time",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "darkwater-hunter",
+        "count": 3
+      },
+      {
+        "id": "oceans-gift",
+        "count": 3
+      },
+      {
+        "id": "stand-still",
+        "count": 3
+      },
+      {
+        "id": "summon-prism-tetra",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-radiant-leviathan",
+        "count": 3
+      },
+      {
+        "id": "summon-seafoam-snapper",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-tidal-crab",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "tidal-shift",
+        "count": 3
+      },
+      {
+        "id": "tsunami-shot",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "wave-crash",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "prism-tetra",
+        "count": 9
+      },
+      {
+        "id": "radiant-leviathan",
+        "count": 1
+      },
+      {
+        "id": "seafoam-snapper",
+        "count": 2
+      },
+      {
+        "id": "tidal-crab",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 26,
+    "name": "The Artist of Dreams",
+    "phoenixborn": [
+      {
+        "id": "hope-everthorn",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "illusion",
+        "count": 5
+      },
+      {
+        "magic": "time",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "double-down",
+        "count": 3
+      },
+      {
+        "id": "dream-fracture",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "dreamlock-mage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "ensnare",
+        "count": 3
+      },
+      {
+        "id": "keepsake",
+        "count": 3
+      },
+      {
+        "id": "realm-walker",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reimagine",
+        "count": 3
+      },
+      {
+        "id": "summon-fox-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-wishing-wing",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "void-pulse",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "fox-spirit",
+        "count": 3
+      },
+      {
+        "id": "wishing-wing",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 25,
+    "name": "The Queen of Lightning",
+    "phoenixborn": [
+      {
+        "id": "dimona-odinstar",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "divine",
+        "count": 5
+      },
+      {
+        "magic": "time",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "adept-duelist",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "blessing-of-lightning",
+        "count": 3
+      },
+      {
+        "id": "crystal-archer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "crystal-armor",
+        "count": 3
+      },
+      {
+        "id": "disengage",
+        "count": 3
+      },
+      {
+        "id": "piercing-light",
+        "count": 3
+      },
+      {
+        "id": "rayward-knight",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "rayward-recruit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reinforce",
+        "count": 3
+      },
+      {
+        "id": "summon-cloudburst-gryphon",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "cloudburst-gryphon",
+        "count": 2
+      },
+      {
+        "id": "empyrean-mount",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 24,
+    "name": "The Messengers of Peace",
+    "phoenixborn": [
+      {
+        "id": "orrick-gilstream",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "charm",
+        "count": 5
+      },
+      {
+        "magic": "time",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "captivate",
+        "count": 3
+      },
+      {
+        "id": "concentration",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "fate-reflection",
+        "count": 3
+      },
+      {
+        "id": "flock-shepherd",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "generosity",
+        "count": 3
+      },
+      {
+        "id": "recollect",
+        "count": 3
+      },
+      {
+        "id": "rile-the-meek",
+        "count": 3
+      },
+      {
+        "id": "summon-ash-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-ruby-cobra",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sunshield-sentry",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "ash-spirit",
+        "count": 3
+      },
+      {
+        "id": "ruby-cobra",
+        "count": 3
+      },
+      {
+        "id": "the-awakened-state",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "precon_id": 23,
+    "name": "The Gorrenrock Survivors",
+    "phoenixborn": [
+      {
+        "id": "lulu-firststone",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "natural",
+        "count": 5
+      },
+      {
+        "magic": "time",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "backtrack",
+        "count": 3
+      },
+      {
+        "id": "canyon-shelter",
+        "count": 3
+      },
+      {
+        "id": "fighting-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "gorrenrock-brawler",
+        "count": 3
+      },
+      {
+        "id": "hunting-weapons",
+        "count": 3
+      },
+      {
+        "id": "inflame",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "phoenix-barrage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-emberoot-lizard",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-omen-bringer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "survival-of-the-fittest",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "emberoot-lizard",
+        "count": 3
+      },
+      {
+        "id": "omen-bringer",
+        "count": 2
+      },
+      {
+        "id": "spark",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 22,
+    "name": "The Breaker of Fate",
+    "phoenixborn": [
+      {
+        "id": "jericho-reborn",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 10,
+        "magic": "time"
+      }
+    ],
+    "cards": [
+      {
+        "id": "accelerate",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "blink",
+        "count": 3
+      },
+      {
+        "id": "flash-strike",
+        "count": 3
+      },
+      {
+        "id": "foresight",
+        "count": 3
+      },
+      {
+        "id": "outmatch",
+        "count": 3
+      },
+      {
+        "id": "standard-bearer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "stasis",
+        "count": 3
+      },
+      {
+        "id": "summon-time-hopper",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-turtle-guard",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "swift-messenger",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "time-hopper",
+        "count": 4
+      },
+      {
+        "id": "turtle-guard",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 21,
+    "name": "The Grave King",
+    "phoenixborn": [
+      {
+        "id": "james-endersight",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 5,
+        "magic": "divine"
+      },
+      {
+        "count": 5,
+        "magic": "ceremonial"
+      }
+    ],
+    "cards": [
+      {
+        "id": "vengeance",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-fallen",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "chant-of-sacrifice",
+        "count": 3
+      },
+      {
+        "id": "revival-pact",
+        "count": 3
+      },
+      {
+        "id": "rising-horde",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "immortal-commander",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reaping-angel",
+        "count": 3
+      },
+      {
+        "id": "grave-knight",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "rally-the-troops",
+        "count": 3
+      },
+      {
+        "id": "reclaim-soul",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "fallen",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "precon_id": 20,
+    "name": "The Protector of Argaia",
+    "phoenixborn": [
+      {
+        "id": "fiona-mercywind",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 5,
+        "magic": "sympathy"
+      },
+      {
+        "count": 5,
+        "magic": "charm"
+      }
+    ],
+    "cards": [
+      {
+        "id": "mind-maze",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "confusion-spores",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-majestic-titan",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-nightsong-cricket",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-mind-fog-owl",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "return-to-soil",
+        "count": 3
+      },
+      {
+        "id": "essence-druid",
+        "count": 3
+      },
+      {
+        "id": "exhortation",
+        "count": 3
+      },
+      {
+        "id": "new-ideas",
+        "count": 3
+      },
+      {
+        "id": "seeds-of-aggression",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "majestic-titan",
+        "count": 1
+      },
+      {
+        "id": "nightsong-cricket",
+        "count": 4
+      },
+      {
+        "id": "mind-fog-owl",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 19,
+    "name": "The Ghost Guardian",
+    "phoenixborn": [
+      {
+        "id": "rimea-careworn",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 5,
+        "magic": "sympathy"
+      },
+      {
+        "count": 5,
+        "magic": "illusion"
+      }
+    ],
+    "cards": [
+      {
+        "id": "ancestral-army",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "hollow",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "battle-seer",
+        "count": 3
+      },
+      {
+        "id": "dark-presence",
+        "count": 3
+      },
+      {
+        "id": "summon-ghostly-mount",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-ancestor-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "resonance",
+        "count": 3
+      },
+      {
+        "id": "augury",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "memorialize",
+        "count": 3
+      },
+      {
+        "id": "shared-sorrow",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "ancestor-spirit",
+        "count": 2
+      },
+      {
+        "id": "pale-steed-mount",
+        "count": 1
+      },
+      {
+        "id": "nightmare-mount",
+        "count": 1
+      },
+      {
+        "id": "shining-hydra",
+        "count": 1
+      },
+      {
+        "id": "spectral-charger-mount",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "precon_id": 18,
+    "name": "The King of Titans",
+    "phoenixborn": [
+      {
+        "id": "xander-heartsblood",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 5,
+        "magic": "natural"
+      },
+      {
+        "count": 5,
+        "magic": "divine"
+      }
+    ],
+    "cards": [
+      {
+        "id": "earthquake",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "law-of-domination",
+        "count": 3
+      },
+      {
+        "id": "mass-heal",
+        "count": 3
+      },
+      {
+        "id": "natures-wrath",
+        "count": 3
+      },
+      {
+        "id": "pain-shaman",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "raptor-herder",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sacred-ground",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-archasaurus-mount",
+        "count": 3
+      },
+      {
+        "id": "summon-cerasaurus-mount",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-shining-hydra",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "archasaurus-mount",
+        "count": 1
+      },
+      {
+        "id": "cerasaurus-mount",
+        "count": 2
+      },
+      {
+        "id": "raptor-hatchling",
+        "count": 3
+      },
+      {
+        "id": "shining-hydra",
+        "count": 1
+      },
+      {
+        "id": "shining-hydra-head",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 17,
+    "name": "The Demons of Darmas",
+    "phoenixborn": [
+      {
+        "id": "harold-westraven",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 5,
+        "magic": "sympathy"
+      },
+      {
+        "count": 5,
+        "magic": "ceremonial"
+      }
+    ],
+    "cards": [
+      {
+        "id": "summon-vampire-bat-swarm",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "drain-vitality",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "beast-mage",
+        "count": 3
+      },
+      {
+        "id": "beast-warrior",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "master-vampire",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "psychic-vampire",
+        "count": 3
+      },
+      {
+        "id": "dark-reaping",
+        "count": 3
+      },
+      {
+        "id": "transmute-magic",
+        "count": 3
+      },
+      {
+        "id": "adrenaline-rush",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "consume-soul",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "hunters-mark",
+        "count": 1
+      },
+      {
+        "id": "vampire-bat-swarm",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 16,
+    "name": "The Spirits of Memoria",
+    "phoenixborn": [
+      {
+        "id": "sembali-grimtongue",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "count": 5,
+        "magic": "illusion"
+      },
+      {
+        "count": 5,
+        "magic": "divine"
+      }
+    ],
+    "cards": [
+      {
+        "id": "angelic-rescue",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "celestial-knight",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "chained-creations",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "gates-thrown-open",
+        "count": 3
+      },
+      {
+        "id": "law-of-grace",
+        "count": 3
+      },
+      {
+        "id": "purify",
+        "count": 3
+      },
+      {
+        "id": "shadow-guard",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "shepherd-of-lost-souls",
+        "count": 3
+      },
+      {
+        "id": "summon-admonisher",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-spectral-assassin",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "admonisher",
+        "count": 3
+      },
+      {
+        "id": "spectral-assassin",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "precon_id": 15,
+    "name": "The Boy Among Wolves",
+    "phoenixborn": [
+      {
+        "id": "koji-wolfcub",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 5
+      },
+      {
+        "magic": "natural",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "join-the-hunt",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-indiglow-creeper",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-biter",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sleeping-bear",
+        "count": 3
+      },
+      {
+        "id": "jungle-warrior",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "temple-elder",
+        "count": 3
+      },
+      {
+        "id": "hunt-master",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "explosive-growth",
+        "count": 3
+      },
+      {
+        "id": "invigorate",
+        "count": 3
+      },
+      {
+        "id": "lick-wounds",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "panther-spirit",
+        "count": 3
+      },
+      {
+        "id": "indiglow-creeper",
+        "count": 3
+      },
+      {
+        "id": "luminous-seedling",
+        "count": 3
+      },
+      {
+        "id": "brilliant-thorn",
+        "count": 6
+      },
+      {
+        "id": "biter",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "precon_id": 14,
+    "name": "The Goddess of Ishra",
+    "phoenixborn": [
+      {
+        "id": "astrea",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "charm",
+        "count": 5
+      },
+      {
+        "magic": "divine",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "royal-charm",
+        "count": 3
+      },
+      {
+        "id": "summon-light-bringer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-steadfast-guardian",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-weeping-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "kneel",
+        "count": 3
+      },
+      {
+        "id": "mark-of-the-goddess",
+        "count": 3
+      },
+      {
+        "id": "imperial-ninja",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sun-sister",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "call-to-action",
+        "count": 3
+      },
+      {
+        "id": "devotion",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "light-bringer",
+        "count": 2
+      },
+      {
+        "id": "steadfast-guardian",
+        "count": 1
+      },
+      {
+        "id": "weeping-spirit",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "precon_id": 13,
+    "name": "The Masters of Gravity",
+    "phoenixborn": [
+      {
+        "id": "echo-greystorm",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "divine",
+        "count": 5
+      },
+      {
+        "magic": "sympathy",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "changing-winds",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "gravity-training",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "law-of-fear",
+        "count": 3
+      },
+      {
+        "id": "summon-mirror-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "chaos-gravity",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "enlightenment",
+        "count": 3
+      },
+      {
+        "id": "light-swordsman",
+        "count": 3
+      },
+      {
+        "id": "polarity-mage",
+        "count": 3
+      },
+      {
+        "id": "sonic-swordsman",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "holy-relics",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "enhanced-strength",
+        "count": 3
+      },
+      {
+        "id": "mirror-spirit",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 12,
+    "name": "The Song of Soaksend",
+    "phoenixborn": [
+      {
+        "id": "namine-hymntide",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "guilt-link",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-salamander-monk",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "magic-syphon",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-squall-stallion",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "encore",
+        "count": 3
+      },
+      {
+        "id": "shatter-pulse",
+        "count": 3
+      },
+      {
+        "id": "crescendo",
+        "count": 3
+      },
+      {
+        "id": "string-mage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "flute-mage",
+        "count": 3
+      },
+      {
+        "id": "river-skald",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "salamander-monk",
+        "count": 2
+      },
+      {
+        "id": "salamander-monk-spirit",
+        "count": 3
+      },
+      {
+        "id": "squall-stallion",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 11,
+    "name": "The Law of Lions",
+    "phoenixborn": [
+      {
+        "id": "odette-diamondcrest",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "divine",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "law-of-sight",
+        "count": 3
+      },
+      {
+        "id": "summon-winged-lioness",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "law-of-assurance",
+        "count": 3
+      },
+      {
+        "id": "summon-emperor-lion",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sword-of-virtue",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "heal",
+        "count": 3
+      },
+      {
+        "id": "meteor",
+        "count": 3
+      },
+      {
+        "id": "power-through",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "shield-mage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "holy-knight",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "emperor-lion",
+        "count": 1
+      },
+      {
+        "id": "winged-lioness",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "precon_id": 10,
+    "name": "The Roaring Rose",
+    "phoenixborn": [
+      {
+        "id": "leo-sunshadow",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "charm",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "amplify",
+        "count": 3
+      },
+      {
+        "id": "anguish",
+        "count": 3
+      },
+      {
+        "id": "beast-tamer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "change-psyche",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "dispel",
+        "count": 3
+      },
+      {
+        "id": "memory-theft",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "mind-probe",
+        "count": 3
+      },
+      {
+        "id": "remorse",
+        "count": 3
+      },
+      {
+        "id": "summon-nightshade-swallow",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-orchid-dove",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "glow-finch",
+        "count": 1
+      },
+      {
+        "id": "nightshade-swallow",
+        "count": 3
+      },
+      {
+        "id": "orchid-dove",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 9,
+    "name": "The Duchess of Deception",
+    "phoenixborn": [
+      {
+        "id": "victoria-glassfire",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "illusion",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "body-inversion",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "copycat",
+        "count": 3
+      },
+      {
+        "id": "figures-in-the-fog",
+        "count": 3
+      },
+      {
+        "id": "flash-archer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "particle-shield",
+        "count": 3
+      },
+      {
+        "id": "secret-door",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-shadow-hound",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-shadow-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "to-shadows",
+        "count": 3
+      },
+      {
+        "id": "vanish",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "shadow-hound",
+        "count": 2
+      },
+      {
+        "id": "shadow-spirit",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 8,
+    "name": "The Children of Blackcloud",
+    "phoenixborn": [
+      {
+        "id": "brennen-blackcloud",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "ceremonial",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "blackcloud-ninja",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "blood-chains",
+        "count": 3
+      },
+      {
+        "id": "chant-of-worship",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "choke",
+        "count": 3
+      },
+      {
+        "id": "crimson-bomber",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-dread-wraith",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "fester",
+        "count": 3
+      },
+      {
+        "id": "fire-archer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "regress",
+        "count": 3
+      },
+      {
+        "id": "safeguard",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "dread-wraith",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 7,
+    "name": "The Frostdale Giants",
+    "phoenixborn": [
+      {
+        "id": "rin-northfell",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "natural",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "crystal-shield",
+        "count": 3
+      },
+      {
+        "id": "deep-freeze",
+        "count": 3
+      },
+      {
+        "id": "freezing-blast",
+        "count": 3
+      },
+      {
+        "id": "frost-bite",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "frost-fang",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "frozen-crown",
+        "count": 3
+      },
+      {
+        "id": "ice-trap",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "rins-fury",
+        "count": 3
+      },
+      {
+        "id": "summon-frostback-bear",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-ice-golem",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "frostback-bear",
+        "count": 2
+      },
+      {
+        "id": "ice-golem",
+        "count": 3
+      },
+      {
+        "id": "ice-buff",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "precon_id": 6,
+    "name": "The Shadows of Viros",
+    "phoenixborn": [
+      {
+        "id": "noah-redmoon",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "illusion",
+        "count": 5
+      },
+      {
+        "magic": "ceremonial",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "small-sacrifice",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-masked-wolf",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-false-demon",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sleight-of-hand",
+        "count": 3
+      },
+      {
+        "id": "bound-soul",
+        "count": 3
+      },
+      {
+        "id": "resummon",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-sleeping-widows",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "shadow-strike",
+        "count": 3
+      },
+      {
+        "id": "fade-away",
+        "count": 3
+      },
+      {
+        "id": "stormwind-sniper",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "masked-wolf",
+        "count": 5
+      },
+      {
+        "id": "false-demon",
+        "count": 2
+      },
+      {
+        "id": "sleeping-widow",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "precon_id": 5,
+    "name": "The Bloodwoods Queen",
+    "phoenixborn": [
+      {
+        "id": "jessa-na-ni",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "charm",
+        "count": 5
+      },
+      {
+        "magic": "ceremonial",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "fear",
+        "count": 3
+      },
+      {
+        "id": "blood-transfer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-blood-puppet",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "cut-the-strings",
+        "count": 3
+      },
+      {
+        "id": "undying-heart",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "redirect",
+        "count": 3
+      },
+      {
+        "id": "final-cry",
+        "count": 3
+      },
+      {
+        "id": "blood-archer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "living-doll",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "blood-shaman",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "blood-puppet",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "precon_id": 4,
+    "name": "The Cloudsea Siren",
+    "phoenixborn": [
+      {
+        "id": "saria-guideman",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "charm",
+        "count": 5
+      },
+      {
+        "magic": "illusion",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "purge",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-three-eyed-owl",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-seaside-raven",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "abundance",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "hidden-power",
+        "count": 3
+      },
+      {
+        "id": "seal",
+        "count": 3
+      },
+      {
+        "id": "strange-copy",
+        "count": 3
+      },
+      {
+        "id": "sympathy-pain",
+        "count": 3
+      },
+      {
+        "id": "rose-fire-dancer",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "enchanted-violinist",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "three-eyed-owl",
+        "count": 2
+      },
+      {
+        "id": "seaside-raven",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "precon_id": 3,
+    "name": "The Mist Guardian",
+    "phoenixborn": [
+      {
+        "id": "aradel-summergaard",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "natural",
+        "count": 5
+      },
+      {
+        "magic": "illusion",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "shifting-mist",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-mist-spirit",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-blue-jaguar",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reflections-in-the-water",
+        "count": 3
+      },
+      {
+        "id": "mist-typhoon",
+        "count": 3
+      },
+      {
+        "id": "out-of-the-mist",
+        "count": 3
+      },
+      {
+        "id": "root-armor",
+        "count": 3
+      },
+      {
+        "id": "steady-gaze",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "massive-growth",
+        "count": 3
+      },
+      {
+        "id": "summon-butterfly-monk",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "blue-jaguar",
+        "count": 2
+      },
+      {
+        "id": "mist-spirit",
+        "count": 10
+      },
+      {
+        "id": "butterfly-monk",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 2,
+    "name": "The Snakes in Silver",
+    "phoenixborn": [
+      {
+        "id": "maeoni-viper",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "charm",
+        "count": 5
+      },
+      {
+        "magic": "natural",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "call-upon-the-realms",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-silver-snake",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "refresh",
+        "count": 3
+      },
+      {
+        "id": "empower",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "hypnotize",
+        "count": 3
+      },
+      {
+        "id": "open-memories",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "molten-gold",
+        "count": 3
+      },
+      {
+        "id": "transfer",
+        "count": 3
+      },
+      {
+        "id": "golden-veil",
+        "count": 3
+      },
+      {
+        "id": "summon-gilder",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "gilder",
+        "count": 2
+      },
+      {
+        "id": "silver-snake",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "precon_id": 1,
+    "name": "The Iron Men",
+    "phoenixborn": [
+      {
+        "id": "coal-roarkwin",
+        "count": 1
+      }
+    ],
+    "dicepool": [
+      {
+        "magic": "natural",
+        "count": 5
+      },
+      {
+        "magic": "ceremonial",
+        "count": 5
+      }
+    ],
+    "cards": [
+      {
+        "id": "expand-energy",
+        "count": 3
+      },
+      {
+        "id": "strengthen",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "cover",
+        "count": 3
+      },
+      {
+        "id": "chant-of-revenge",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-iron-rhino",
+        "count": 3
+      },
+      {
+        "id": "anchornaut",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "iron-worker",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "hammer-knight",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "one-hundred-blades",
+        "count": 3
+      },
+      {
+        "id": "close-combat",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "iron-rhino",
+        "count": 1
+      }
+    ]
+  }
+]

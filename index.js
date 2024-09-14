@@ -270,6 +270,32 @@ client.on(Events.MessageCreate, async msg => {
             msg.channel.send("error: " + err.message);
         }
     }
+
+    if (['!heroic2', '!rrp'].includes(parts[0])) {
+        const deckUrl = parts[1];
+        try {
+            let deckResponse = await getAshesLiveDeck(deckUrl);
+
+            let newDeck = new AshesLive().parseAshesLiveDeckResponse('user', deckResponse);
+            const res = new Validator().validateRedRainsHeroicLevel2(newDeck)
+            let header = newDeck.name + '\n*is ';
+            header += !res.valid ? 'NOT* ' : '* ';
+            header += 'valid for RR Heroic L2 format:\n'
+            let message = `**Pb Precon:**: ${res.pbPrecon?.name || 'NO MATCH!'}\n `;
+            message += `**Channel Magic**: ${res.channelMagic}\n `;
+            message += `**Card Counts**:\n `;
+            res.precons.forEach(p => {
+                message += `${p.name}: ${p.count}\n`;
+            });
+            const listEmbed = new EmbedBuilder()
+                .setTitle(header)
+                .setDescription(message);
+
+            msg.channel.send({ embeds: [listEmbed] });
+        } catch (err) {
+            msg.channel.send("error: " + err.message);
+        }
+    }
 });
 
 async function getAshesLiveDeck(deckUrl) {

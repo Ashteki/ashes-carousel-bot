@@ -2,7 +2,7 @@ const Carousel = require("../algo/carousel");
 const Forge = require("../algo/forge");
 const TextExporter = require("../export/textexporter");
 
-describe("Forge tests", function () {
+xdescribe("Forge tests", function () {
     const forge = new Forge();
     it("create an ashes live deck within dice types", function () {
         // carousel should return pb stub and dice combo

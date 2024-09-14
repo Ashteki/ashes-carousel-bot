@@ -41,17 +41,18 @@ class NamePairer {
 
     scorePairing(pairing, previousPairings, oldestPairing) {
         let score = 0;
-        for (let i = 0; i < pairing.length; i++) {
+        for (const testPair of pairing) {
             let pairScore = 0;
-            for (let j = 0; j < previousPairings.length; j++) {
-                if ((previousPairings[j].p1 === pairing[i].player1 && previousPairings[j].p2 === pairing[i].player2)
-                    || (previousPairings[j].p1 === pairing[i].player2 && previousPairings[j].p2 === pairing[i].player1)) {
-                    pairScore += this.weeksDiff(new Date(previousPairings[j].date), new Date(Date.now()));//this multicasting is stupid but 
+            for (const previous of previousPairings) {
+                if ((previous.p1 === testPair.player1 && previous.p2 === testPair.player2)
+                    || (previous.p1 === testPair.player2 && previous.p2 === testPair.player1)) {
+                    pairScore += this.weeksDiff(new Date(previous.date), new Date());
                     break;
                 }
             }
+
             if (pairScore === 0) {
-                pairScore = (this.weeksDiff(oldestPairing, new Date(Date.now())) + 1);
+                pairScore = (this.weeksDiff(oldestPairing, new Date()) + 1);
             }
             score += pairScore;
         }

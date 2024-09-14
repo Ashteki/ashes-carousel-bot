@@ -1,5 +1,4 @@
 {
-    "count": 351,
     "results": [
         {
             "name": "Abundance",
@@ -42,6 +41,31 @@
                 "time:class": 1
             },
             "text": "Draw 1 card. Change 2 dice in your active pool to a side of your choice. You may take up to 2 additional side actions this turn."
+        },
+        {
+            "name": "Adaptodon",
+            "stub": "adaptodon",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Battlefield",
+            "text": "Adapt: [[side]]: Attach a [[Fire Adaptation]] or [[Ice Adaptation]] conjured alteration spell to this unit if it has neither attached to it.",
+            "conjurations": [
+                {
+                    "name": "Ice Adaptation",
+                    "stub": "ice-adaptation"
+                },
+                {
+                    "name": "Fire Adaptation",
+                    "stub": "fire-adaptation"
+                }
+            ],
+            "attack": 1,
+            "life": 2,
+            "recover": 0,
+            "copies": 2
         },
         {
             "name": "Adept Duelist",
@@ -279,6 +303,48 @@
             "copies": 1
         },
         {
+            "name": "Armor of Valor",
+            "stub": "armor-of-valor",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Phoenixborn",
+            "cost": [
+                "[[side]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "* Valor 1: After this Phoenixborn is dealt damage while guarding or resolving its ability, prevent 1 damage from being received.",
+            "phoenixborn": "Odette Diamondcrest"
+        },
+        {
+            "name": "Arrogance",
+            "stub": "arrogance",
+            "type": "Reaction Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Discard",
+            "cost": [
+                "1 [[charm:class]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "magicCost": {
+                "charm:class": 1
+            },
+            "text": "You may play this spell after you declare attackers. Choose an attacking unit. For the remainder of the turn, the chosen unit cannot be blocked or guarded against by units with a charm die on them."
+        },
+        {
             "name": "Ash Spirit",
             "stub": "ash-spirit",
             "type": "Conjuration",
@@ -349,6 +415,21 @@
                 "time:power": 1
             },
             "text": "You may play this spell after an opponent declares attackers. Choose a target attacking ally and place it into its owner's hand."
+        },
+        {
+            "name": "Bastion Badger",
+            "stub": "bastion-badger",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Battlefield",
+            "text": "Unit Guard: This unit may guard a unit that is being attacked.\n\nExploit 2: While this unit is in battle with a unit with a charm die on it, the attack value of this unit is increased by 2.",
+            "attack": 1,
+            "life": 3,
+            "recover": 0,
+            "copies": 2
         },
         {
             "name": "Battle Seer",
@@ -567,6 +648,27 @@
             "recover": 2
         },
         {
+            "name": "Blood Brawl",
+            "stub": "blood-brawl",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "Resolve the following effect once for each wound token on units you control:\n\nYou may deal 1 damage to a target unit an opponent controls."
+        },
+        {
             "name": "Blood Chains",
             "stub": "blood-chains",
             "type": "Action Spell",
@@ -596,12 +698,45 @@
                 "stub": "master-set"
             },
             "placement": "Battlefield",
+            "effectMagicCost": {
+                "basic": 1
+            },
             "text": "Cursed 1: At the end of each round, place 1 wound token on your Phoenixborn.\n\nSelf Inflict 1: [[side]] - 1 [[basic]]: Deal 1 damage to this unit.",
             "attack": 0,
             "life": 2,
             "recover": 0,
             "copies": 5,
             "effectRepeats": true
+        },
+        {
+            "name": "Blood Puppeteer",
+            "stub": "blood-puppeteer",
+            "type": "Ally",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:power]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:power": 1
+            },
+            "text": "Stitch: When this unit comes into play, place a [[Blood Puppet]] conjuration onto your battlefield.\n\n* Restitch: When this unit is destoyed, you may discard a [[Blood Puppet]] you control to place a [[Blood Puppet]] conjuration onto a target opponent's battlefield.",
+            "conjurations": [
+                {
+                    "name": "Blood Puppet",
+                    "stub": "blood-puppet"
+                }
+            ],
+            "attack": 1,
+            "life": 1,
+            "recover": 1
         },
         {
             "name": "Blood Shaman",
@@ -643,6 +778,10 @@
                 "charm",
                 "ceremonial"
             ],
+            "effectMagicCost": {
+                "charm:class": 1,
+                "ceremonial:class": 1
+            },
             "text": "[[side]] - [[exhaust]] - 1 [[charm:class]] - 1 [[ceremonial:class]]: Deal 2 damage to a target unit you control. If you do, you may remove 2 wound tokens from another unit you control or remove 1 wound token from your Phoenixborn."
         },
         {
@@ -676,7 +815,25 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "illusion:class": 1
+            },
             "text": "[[side]] - [[exhaust]] - 1 [[illusion:class]]: Swap a target unit's printed attack value with its printed life value for the remainder of the turn."
+        },
+        {
+            "name": "Bone Crow",
+            "stub": "bone-crow",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Battlefield",
+            "text": "Feast 1: When this unit is declared as an attacker, add 1 to its attack value for the remainder of the turn if it is targeting a card with any wound tokens on it.",
+            "attack": 1,
+            "life": 1,
+            "recover": 0,
+            "copies": 4
         },
         {
             "name": "Bound Soul",
@@ -700,6 +857,27 @@
             "text": "Search your discard pile for an ally and place it into your hand."
         },
         {
+            "name": "Bravery",
+            "stub": "bravery",
+            "type": "Reaction Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Discard",
+            "cost": [
+                "1 [[divine:class]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "divine:class": 1
+            },
+            "text": "You may play this spell after a unit you control is dealt damage. Prevent that damage from being received.",
+            "phoenixborn": "Xander Heartsblood"
+        },
+        {
             "name": "Brennen Blackcloud",
             "stub": "brennen-blackcloud",
             "type": "Phoenixborn",
@@ -710,9 +888,9 @@
             "dice": [
                 "ceremonial"
             ],
-            "text": "Spirit Burn: [[side]] - [[exhaust]] - 1 [[ceremonial:class]]: Destroy a unit you control to deal 2 damage to a target Phoenixborn.",
+            "text": "Spirit Burn: [[main]] - [[exhaust]] - 1 [[ceremonial:class]]: Destroy an ally you control to deal 2 damage to a target Phoenixborn.",
             "battlefield": 5,
-            "life": 18,
+            "life": 16,
             "spellboard": 3
         },
         {
@@ -746,6 +924,21 @@
             "copies": 2
         },
         {
+            "name": "Calamity Golem",
+            "stub": "calamity-golem",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Battlefield",
+            "text": "Rancor: When this unit is declared as an attacker, deal damage to a target unit an opponent controls equal to the number of wound tokens on this unit.",
+            "attack": 3,
+            "life": 5,
+            "recover": 0,
+            "copies": 1
+        },
+        {
             "name": "Call To Action",
             "stub": "call-to-action",
             "type": "Reaction Spell",
@@ -766,7 +959,7 @@
             "text": "You may play this spell after an opponent declares attackers. Remove 1 exhaustion token from a target unit you control."
         },
         {
-            "name": "Call Upon The Realms",
+            "name": "Call Upon the Realms",
             "stub": "call-upon-the-realms",
             "type": "Action Spell",
             "release": {
@@ -894,6 +1087,28 @@
             "text": "Deal 2 damage to a target conjuration an opponent controls. If that destroys the conjuration, after it is destroyed, place 1 exhaustion token on a ready spell that target opponent controls that has a printed effect that can place that conjuration onto the battlefield."
         },
         {
+            "name": "Change of Heart",
+            "stub": "change-of-heart",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Phoenixborn",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "This spell can only be attached to an unexhausted Phoenixborn you control.\n\n* You cannot activate your Phoenixborn's ability.\n\n[[side]] - [[exhaust]]: Choose an ally you control and place it into your hand to deal 1 damage to a target unit an opponent controls.",
+            "phoenixborn": "Brennen Blackcloud"
+        },
+        {
             "name": "Change Psyche",
             "stub": "change-psyche",
             "type": "Action Spell",
@@ -940,6 +1155,75 @@
             "text": "When this spell comes into play, you may draw 2 cards. If you do, choose 2 cards in your hand and place each one on the top or bottom of your draw pile.\n\n[[side]] - [[exhaust]]: Draw 1 card. Change 1 die in your active pool to a side of your choice."
         },
         {
+            "name": "Channel Magic",
+            "stub": "channel-magic",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Draw 1 card. Remove 1 wound token from a target Phoenixborn. Raise 3 dice in your active pool one level."
+        },
+        {
+            "name": "Chant of Erosion",
+            "stub": "chant-of-erosion",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "After an ally you control is destroyed, place 1 status token on this spell if it has no status tokens on it.\n\n[[main]] - [[exhaust]]: Remove 1 status token from this spell to attach an [[Eroding]] conjured alteration spell to a target unit.",
+            "conjurations": [
+                {
+                    "name": "Eroding",
+                    "stub": "eroding"
+                }
+            ]
+        },
+        {
+            "name": "Chant of Hostility",
+            "stub": "chant-of-hostility",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "After an ally you control is destroyed, place 1 status token on this spell if it has no status tokens on it.\n\n[[side]] - [[exhaust]]: Remove 1 status token from this spell to add 1 to the attack value of a target unit you control for the remainder of the turn."
+        },
+        {
             "name": "Chant of Revenge",
             "stub": "chant-of-revenge",
             "type": "Ready Spell",
@@ -980,6 +1264,27 @@
                 "ceremonial:class": 1
             },
             "text": "[[side]] - [[exhaust]]: Destroy a unit you control."
+        },
+        {
+            "name": "Chant of Transfusion",
+            "stub": "chant-of-transfusion",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "After an ally you control is destroyed, place 1 status token on this spell if it has no status tokens on it.\n\n[[main]] or [[side]] - [[exhaust]]: Remove 1 status token from this spell to move 1 wound token from a target unit onto another target unit."
         },
         {
             "name": "Chant of Worship",
@@ -1034,6 +1339,34 @@
             "phoenixborn": "Echo Greystorm"
         },
         {
+            "name": "Chimera Charmer",
+            "stub": "chimera-charmer",
+            "type": "Ally",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[charm:power]]",
+                "1 [[charm:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "charm:class": 1,
+                "charm:power": 1
+            },
+            "text": "Subdue: When this unit comes into play, you may choose a charm die in your exhausted pool and resolve its dice power without paying its cost.\n\nImbued: This unit's attack value is increased by 1 for each unit an opponent controls with a charm die on it.",
+            "attack": 2,
+            "life": 4,
+            "recover": 2
+        },
+        {
             "name": "Choke",
             "stub": "choke",
             "type": "Action Spell",
@@ -1053,6 +1386,39 @@
                 "ceremonial:class": 1
             },
             "text": "Place 1 exhaustion token on a target unexhausted Phoenixborn an opponent controls. Deal 1 damage to that target Phoenixborn."
+        },
+        {
+            "name": "Clashing Tempers",
+            "stub": "clashing-tempers",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[natural:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "natural:class": 1
+            },
+            "text": "Choose 2 units you control. If you do, attach a [[Fire Adaptation]] conjured alteration spell to one and an [[Ice Adaptation]] conjured alteration spell to the other.",
+            "conjurations": [
+                {
+                    "name": "Ice Adaptation",
+                    "stub": "ice-adaptation"
+                },
+                {
+                    "name": "Fire Adaptation",
+                    "stub": "fire-adaptation"
+                }
+            ]
         },
         {
             "name": "Close Combat",
@@ -1260,6 +1626,35 @@
             "recover": 0
         },
         {
+            "name": "Crypt Guardian",
+            "stub": "crypt-guardian",
+            "type": "Ally",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:power]]",
+                "1 [[time:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "ceremonial",
+                "time"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "time:class": 1,
+                "ceremonial:power": 1
+            },
+            "text": "**Unit Guard:** This unit may guard a unit that is being attacked.\n\n**Shackle 1:** At the end of the round or when this unit is destroyed as a result of a spell, ability, or dice power, you may place 1 exhaustion token on a target unexhausted unit.",
+            "attack": 2,
+            "life": 4,
+            "recover": 1
+        },
+        {
             "name": "Crystal Archer",
             "stub": "crystal-archer",
             "type": "Ally",
@@ -1278,8 +1673,8 @@
                 "time"
             ],
             "magicCost": {
-                "divine:class": 1,
-                "time:class": 1
+                "time:class": 1,
+                "divine:class": 1
             },
             "text": "Preemptive Shot 1: When this unit is declared as an attacker, blocker, or guard, you may deal 1 damage to a target unit an opponent controls.",
             "attack": 2,
@@ -1300,6 +1695,9 @@
                 "1 [[divine:class]]"
             ],
             "dice": [
+                "divine"
+            ],
+            "altDice": [
                 "divine",
                 "time"
             ],
@@ -1336,7 +1734,7 @@
             "life": "+2"
         },
         {
-            "name": "Cut The Strings",
+            "name": "Cut the Strings",
             "stub": "cut-the-strings",
             "type": "Ready Spell",
             "release": {
@@ -1350,6 +1748,10 @@
             "dice": [
                 "ceremonial"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "ceremonial:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]] - 1 [[basic]]: Deal 2 damage to a unit you control. If you do, you may discard a target alteration spell."
         },
         {
@@ -1393,6 +1795,51 @@
                 "ceremonial:class": 1
             },
             "text": "Destroy a unit you control to change 5 dice in your active pool to a side of your choice."
+        },
+        {
+            "name": "Darkwater Hunter",
+            "stub": "darkwater-hunter",
+            "type": "Ally",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "2 [[time:class]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "magicCost": {
+                "time:class": 2
+            },
+            "text": "~ **Blood Scent:** After 1 or more wound tokens are placed on an opponent's Phoenixborn, you may play this unit from your hand without paying its main action cost.\n\n**Stalk:** This unit cannot be guarded against.",
+            "attack": 3,
+            "life": 2,
+            "recover": 1
+        },
+        {
+            "name": "Dealer's Choice",
+            "stub": "dealers-choice",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[charm:class]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "magicCost": {
+                "charm:class": 1
+            },
+            "text": "Choose two cards a target opponent controls, at least one of which must be a unit. If you do, that opponent must place 1 exhaustion token on one of the chosen cards."
         },
         {
             "name": "Deep Freeze",
@@ -1461,6 +1908,35 @@
             "spellboard": 3
         },
         {
+            "name": "Discovery",
+            "stub": "discovery",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]",
+                "1 [[discard]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Attach a [[Red Raindrop]] conjured alteration spell to your Phoenixborn. Then, shuffle this card into your draw pile.",
+            "conjurations": [
+                {
+                    "name": "Red Raindrop",
+                    "stub": "red-raindrop"
+                }
+            ],
+            "phoenixborn": "Rowan Umberend"
+        },
+        {
             "name": "Disengage",
             "stub": "disengage",
             "type": "Reaction Spell",
@@ -1502,6 +1978,22 @@
             "text": "Remove 2 status tokens from a target card or choose a target alteration spell. If that alteration spell is a conjured alteration spell, return it to its owner's conjuration pile. Otherwise, shuffle it into its owner's draw pile."
         },
         {
+            "name": "Divinity Mount",
+            "stub": "divinity-mount",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "text": "Lightning Breath 1: When this unit is declared as an attacker, you may deal 1 damage to all units a target opponent controls.\n\n* Queen Rider: When this unit is destroyed, place 3 wounds on your Phoenixborn.",
+            "phoenixborn": "Dimona Odinstar",
+            "attack": 3,
+            "life": 3,
+            "recover": 3,
+            "copies": 1
+        },
+        {
             "name": "Double Down",
             "stub": "double-down",
             "type": "Reaction Spell",
@@ -1540,11 +2032,15 @@
                 ],
                 "1 [[basic]]"
             ],
-            "dice": [
-                "ceremonial"
+            "altDice": [
+                "ceremonial",
+                "sympathy"
             ],
             "magicCost": {
                 "basic": 1
+            },
+            "effectMagicCost": {
+                "ceremonial:class / sympathy:class": 1
             },
             "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]]: Deal 1 damage to a target unit. If you do, remove 1 wound token from a target unit.\n\n[[side]] - [[exhaust]] - 1 [[sympathy:class]]: Remove 1 status token from a target unit. If you do, place 1 status token on a target unit."
         },
@@ -1644,6 +2140,34 @@
             "spellboard": 3
         },
         {
+            "name": "Ember Heart",
+            "stub": "ember-heart",
+            "type": "Ally",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[natural:power]]",
+                "1 [[natural:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "natural:class": 1,
+                "natural:power": 1
+            },
+            "text": "Take Up: When this unit comes into play, you may choose an alteration spell attached to an exhausted unit you control and attach it to this unit.\n\nAlert: Do not place exhaustion tokens on this unit as a result of its countering.",
+            "attack": 3,
+            "life": 4,
+            "recover": 2
+        },
+        {
             "name": "Emberoot Lizard",
             "stub": "emberoot-lizard",
             "type": "Conjuration",
@@ -1657,6 +2181,27 @@
             "life": 2,
             "recover": 0,
             "copies": 3
+        },
+        {
+            "name": "Embrace",
+            "stub": "embrace",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Phoenixborn",
+            "cost": [
+                "[[side]]",
+                "1 [[charm:class]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "magicCost": {
+                "charm:class": 1
+            },
+            "text": "After any player's Phoenixborn is dealt damage by an attack, spell, ability, or dice power another player controls, discard this spell and prevent that damage from being received."
         },
         {
             "name": "Emperor Lion",
@@ -1691,6 +2236,9 @@
             ],
             "magicCost": {
                 "basic": 1
+            },
+            "effectMagicCost": {
+                "natural:class / sympathy:class": 1
             },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:class]] or 1 [[sympathy:class]]: Place 1 status token on a target unit you control.\n\nFocus 1: Then, you may remove any number of status tokens from a unit you control. Deal damage to a target unit equal to the number of status tokens removed."
         },
@@ -1807,6 +2355,42 @@
             "text": "You may play this spell after an opponent declares a guard. Deal 2 damage to that target guarding unit or Phoenixborn."
         },
         {
+            "name": "Era's End",
+            "stub": "eras-end",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "[[side]]",
+                "1 [[time:class]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "magicCost": {
+                "time:class": 1
+            },
+            "text": "Resolve all effects that trigger at the end of the round on unexhausted cards currently in play, in the order of your choice."
+        },
+        {
+            "name": "Eroding",
+            "stub": "eroding",
+            "type": "Conjured Alteration Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Unit",
+            "text": "At the end of the round, deal 1 damage to the attached unit, and then discard this spell.",
+            "attack": "-1",
+            "recover": "-1",
+            "copies": 3
+        },
+        {
             "name": "Essence Druid",
             "stub": "essence-druid",
             "type": "Ally",
@@ -1834,6 +2418,44 @@
             "attack": 2,
             "life": 4,
             "recover": 2
+        },
+        {
+            "name": "Eternity Flame",
+            "stub": "eternity-flame",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Battlefield",
+            "text": "Engulf: When this unit comes into play, you may destroy a target unit an opponent controls with a charm die on it. If you do, deal 2 damage to that opponent's target Phoenixborn.",
+            "attack": 3,
+            "life": 3,
+            "recover": 0,
+            "copies": 1
+        },
+        {
+            "name": "Excavate",
+            "stub": "excavate",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[time:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "time:class": 1
+            },
+            "text": "Discard 3 cards off the top of your draw pile. If you do, place 1 of them into your hand and deal 3 damage to a target unit."
         },
         {
             "name": "Exhortation",
@@ -1957,6 +2579,25 @@
             "copies": 2
         },
         {
+            "name": "Farewell",
+            "stub": "farewell",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "[[side]]",
+                "X [[charm:class]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "text": "Discard a target unit an opponent controls with a life value of X. If you do, discard X cards off the top of that target opponent's draw pile."
+        },
+        {
             "name": "Fate Reflection",
             "stub": "fate-reflection",
             "type": "Reaction Spell",
@@ -2045,7 +2686,7 @@
             "text": "After a unit you control with 1 or more status tokens on it is destroyed, place 1 status token on this spell.\n\n[[side]] - [[exhaust]]: Add X to the attack value of a target unit you control for the remainder of the turn. Then, move 1 status token from this spell onto that unit.\n\nX = the number of status tokens on this spell."
         },
         {
-            "name": "Figures In The Fog",
+            "name": "Figures in the Fog",
             "stub": "figures-in-the-fog",
             "type": "Reaction Spell",
             "release": {
@@ -2085,6 +2726,28 @@
             "text": "You may play this spell after a unit you control is destroyed. Deal 2 damage to a target Phoenixborn."
         },
         {
+            "name": "Final Stand",
+            "stub": "final-stand",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "If you have no cards in your hand, deal 4 damage to a target unit an opponent controls.\n\nIf there are 12 or more wound tokens on your Phoenixborn, deal 2 damage to a target Phoenixborn.",
+            "phoenixborn": "Coal Roarkwin"
+        },
+        {
             "name": "Fiona Mercywind",
             "stub": "fiona-mercywind",
             "type": "Phoenixborn",
@@ -2096,6 +2759,19 @@
             "battlefield": 6,
             "life": 15,
             "spellboard": 5
+        },
+        {
+            "name": "Fire Adaptation",
+            "stub": "fire-adaptation",
+            "type": "Conjured Alteration Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Unit",
+            "text": "When attaching this spell, you may deal 1 damage to a target unit an opponent controls.",
+            "attack": "+1",
+            "copies": 2
         },
         {
             "name": "Fire Archer",
@@ -2238,7 +2914,28 @@
             "magicCost": {
                 "time:class": 1
             },
-            "text": "During the draw cards step, you may draw 1 additional card.\n\n[[main]] - [[exhaust]]: Look at the top 2 cards of a target player's draw pile. Place 1 of those cards on the bottom of that draw pile, and the place the other card on the top of that draw pile."
+            "text": "During the draw cards step, you may draw 1 additional card.\n\n[[main]] - [[exhaust]]: Look at the top 2 cards of a target player's draw pile. Place 1 of those cards on the bottom of that draw pile, and place the other card on the top of that draw pile."
+        },
+        {
+            "name": "Fork Lightning",
+            "stub": "fork-lightning",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[divine:class]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "divine:class": 1
+            },
+            "text": "Choose two target units an opponent controls. If you do, deal 1 damage to each targeted unit."
         },
         {
             "name": "Fox Spirit",
@@ -2306,6 +3003,9 @@
             "dice": [
                 "natural"
             ],
+            "effectMagicCost": {
+                "natural:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:class]]: Deal 1 damage to a target unit or Phoenixborn.\n\nFocus 1: You may change the activation cost of this ability to [[main]] - [[exhaust]] - 1 [[basic]]."
         },
         {
@@ -2331,6 +3031,21 @@
             "attack": 3,
             "life": 1,
             "recover": 1
+        },
+        {
+            "name": "Frost Frog",
+            "stub": "frost-frog",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Battlefield",
+            "text": "Cold Snap 1: When this unit is declared as an attacker, you may add 1 to its attack value for the remainder of the turn or place an exhaustion token on a target unit an opponent controls with a life value of 1 or less.",
+            "attack": 1,
+            "life": 1,
+            "recover": 0,
+            "copies": 3
         },
         {
             "name": "Frozen Crown",
@@ -2403,6 +3118,31 @@
             "text": "Resolve one of the effects listed below. Choose a target opponent to resolve a different effect of their choice. Then, resolve the last unchosen effect.\n\n- Remove 1 exhaustion token from your Phoenixborn or a ready spell you control.\n\n- Remove 2 wound tokens from your Phoenixborn or a unit you control.\n\n- Draw 3 cards."
         },
         {
+            "name": "Gifted Rose",
+            "stub": "gifted-rose",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Phoenixborn",
+            "cost": [
+                "[[side]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "effectMagicCost": {
+                "basic": 1
+            },
+            "text": "* The attached Phoenixborn cannot guard.\n\n* Reject: [[side]] - 1 [[basic]] or 1 [[discard]]: Discard this spell.",
+            "phoenixborn": "Leo Sunshadow"
+        },
+        {
             "name": "Gilder",
             "stub": "gilder",
             "type": "Conjuration",
@@ -2416,6 +3156,51 @@
             "life": 2,
             "recover": 0,
             "copies": 2
+        },
+        {
+            "name": "Glaciate",
+            "stub": "glaciate",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[main]]",
+                "1 [[natural:class]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "natural:class": 1
+            },
+            "text": "* This unit is considered to be exhausted. Prevent all damage dealt to this unit from being received.\n\n* Fleeting: Discard this card at the end of this round."
+        },
+        {
+            "name": "Glory Aspirant",
+            "stub": "glory-aspirant",
+            "type": "Ally",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Lionize: When this unit comes into play, search your draw pile. You may reveal a card with a [[divine:power]] in its play cost and place it into your hand. Shuffle your draw pile. Then, change 1 divine die in your active pool to a side of your choice.",
+            "attack": 1,
+            "life": 1,
+            "recover": 1
         },
         {
             "name": "Glow Finch",
@@ -2483,7 +3268,8 @@
             "text": "* Brawl 1: After a unit is destroyed, if this unit had been declared as an attacker, blocker, or guard this turn, place 1 status token on this unit.\n\n* Comeback: [[main]] - 1 [[basic]]: If there are 6 or more tokens of any type on this unit, remove all tokens from this unit.",
             "attack": 4,
             "life": 5,
-            "recover": 1
+            "recover": 1,
+            "effectRepeats": true
         },
         {
             "name": "Grave Knight",
@@ -2526,9 +3312,13 @@
             "cost": [
                 "[[main]]"
             ],
-            "dice": [
-                "divine"
+            "altDice": [
+                "divine",
+                "sympathy"
             ],
+            "effectMagicCost": {
+                "divine:class / sympathy:class": 1
+            },
             "text": "[[main]] or [[side]] - [[exhaust]] - 1 [[divine:class]] or 1 [[sympathy:class]]: Attach an [[Enhanced Strength]] conjured alteration spell to a target exhausted unit you control.",
             "conjurations": [
                 {
@@ -2586,6 +3376,53 @@
             "attack": 3,
             "life": 4,
             "recover": 2
+        },
+        {
+            "name": "Hand of Shield",
+            "stub": "hand-of-shield",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "text": "Unit Guard: This unit may guard a unit that is being attacked.",
+            "attack": 0,
+            "life": 2,
+            "recover": 0,
+            "copies": 3
+        },
+        {
+            "name": "Hand of Spear",
+            "stub": "hand-of-spear",
+            "type": "Ally",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[divine:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "divine:class": 1
+            },
+            "text": "Raise Shield: When this unit comes into play, place a [[Hand of Shield]] conjuration onto your battlefield.\n\nQuick Strike: While this unit is attacking, it deals its damage before units in battle with it.",
+            "conjurations": [
+                {
+                    "name": "Hand of Shield",
+                    "stub": "hand-of-shield"
+                }
+            ],
+            "attack": 2,
+            "life": 1,
+            "recover": 1
         },
         {
             "name": "Harold Westraven",
@@ -2730,6 +3567,19 @@
             "life": "+2"
         },
         {
+            "name": "Hope Everthorn",
+            "stub": "hope-everthorn",
+            "type": "Phoenixborn",
+            "release": {
+                "name": "The Artist of Dreams",
+                "stub": "the-artist-of-dreams"
+            },
+            "text": "Duplicate: [[side]] - [[exhaust]] - 1 [[basic]]: Choose a conjuration you control with a life value of 1. Place a copy of that conjuration onto your battlefield. At the end of this turn, destroy that copy.",
+            "battlefield": 6,
+            "life": 17,
+            "spellboard": 5
+        },
+        {
             "name": "Hunter's Mark",
             "stub": "hunters-mark",
             "type": "Conjured Alteration Spell",
@@ -2741,19 +3591,6 @@
             "text": "When this unit receives damage, place twice the normal number of wound tokens on it.\n\nWhile this unit is the target of an attack, no guard may be declared.",
             "phoenixborn": "Harold Westraven",
             "copies": 1
-        },
-        {
-            "name": "Hope Everthorn",
-            "stub": "hope-everthorn",
-            "type": "Phoenixborn",
-            "release": {
-                "name": "The Artist of Dreams",
-                "stub": "the-artist-of-dreams"
-            },
-            "text": "Duplicate: [[side]] - [[exhaust]] - 1 [[basic]]: Choose a conjuration you control with a life value of 1. Place a copy of that conjuration onto your battlefield. At the end of this turn, destroy that copy",
-            "battlefield": 6,
-            "life": 17,
-            "spellboard": 5
         },
         {
             "name": "Hunting Weapons",
@@ -2827,7 +3664,23 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 2
+            },
             "text": "[[side]] - [[exhaust]] - 2 [[charm:class]]: Choose a target unit you control to gain the following ability for the remainder of the turn.\n\nBypass: This unit cannot be blocked or guarded."
+        },
+        {
+            "name": "Ice Adaptation",
+            "stub": "ice-adaptation",
+            "type": "Conjured Alteration Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Unit",
+            "text": "When attaching this spell, you may place 1 exhaustion token on a target unexhausted unit an opponent controls with an attack value of 1 or less.",
+            "life": "+1",
+            "copies": 2
         },
         {
             "name": "Ice Buff",
@@ -2948,7 +3801,7 @@
             "attack": 2,
             "life": 1,
             "recover": 0,
-            "copies": 3
+            "copies": 1
         },
         {
             "name": "Inflame",
@@ -2971,6 +3824,47 @@
             },
             "text": "This unit now has the following ability:\n\nThreatening: This unit must be blocked, if able.",
             "attack": "+1"
+        },
+        {
+            "name": "Infuriate",
+            "stub": "infuriate",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[side]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "This unit now has the following abilities:\n\nFrenzy 2: When this unit is declared as an attacker, deal 2 damage to it.\n\n* Rage 1: Add 1 to this unit's attack value for each wound token on this unit."
+        },
+        {
+            "name": "Intercession",
+            "stub": "intercession",
+            "type": "Reaction Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Discard",
+            "cost": [
+                "1 [[divine:power]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "divine:power": 1
+            },
+            "text": "You may play this spell after an opponent declares an attacker that is targeting a unit you control. Choose another unit you control to gain the following abilities for the remainder of the turn:\n\nUnit Guard: This unit may guard a unit that is being attacked.\n\nAlert: Do not place exhaustion tokens on this unit as a result of its countering."
         },
         {
             "name": "Invigorate",
@@ -3086,7 +3980,7 @@
             "effectRepeats": true
         },
         {
-            "name": "Join The Hunt",
+            "name": "Join the Hunt",
             "stub": "join-the-hunt",
             "type": "Ready Spell",
             "release": {
@@ -3105,6 +3999,54 @@
                 "sympathy:class": 1
             },
             "text": "[[side]] - [[exhaust]]: Choose a target unit you control to gain the following ability for the remainder of the turn:\n\nGroup Tactics 2: After you declare three or more attackers, you may add 2 to this unit's attack value for the remainder of the turn."
+        },
+        {
+            "name": "Judgment",
+            "stub": "judgment",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "[[side]]",
+                "2 [[basic]]",
+                "1 [[discard]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 2
+            },
+            "text": "Destroy all units.",
+            "phoenixborn": "Astrea"
+        },
+        {
+            "name": "Jungle Forager",
+            "stub": "jungle-forager",
+            "type": "Ally",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[natural:class]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "natural:class": 1
+            },
+            "text": "Forage: When this unit comes into play, search your draw pile. You may reveal an alteration spell without a Phoenixborn unique icon and place it into your hand. Shuffle your draw pile.",
+            "attack": 0,
+            "life": 2,
+            "recover": 1
         },
         {
             "name": "Jungle Warrior",
@@ -3127,6 +4069,9 @@
                 "basic": 1,
                 "sympathy:class": 1
             },
+            "effectMagicCost": {
+                "basic": 1
+            },
             "text": "* Last Orders 1: When this unit is destroyed, you may spend 1 [[basic]] to remove 1 exhaustion token from a target unit.\n\n* Inheritance 1: When this unit is destroyed, you may place 1 status token on a target unit.",
             "attack": 2,
             "life": 2,
@@ -3147,6 +4092,9 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "illusion:class": 1
+            },
             "text": "After 1 or more dice in an opponent’s active pool are re-rolled, lowered in level, or changed to a side of your choice, place 1 status token on this spell for each affected die, without exceeding four on this spell.\n\n[[main]], 1 [[illusion:class]]: Discard this spell. Deal damage to a target unit equal to the number of status tokens that were on this spell."
         },
         {
@@ -3172,6 +4120,32 @@
                 "divine:class": 1
             },
             "text": "Place 1 exhaustion token on each unexhausted unit."
+        },
+        {
+            "name": "Knowledge Seeker",
+            "stub": "knowledge-seeker",
+            "type": "Ally",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[time:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "time:class": 1
+            },
+            "text": "**Seek 3:** When this unit comes into play, look at the top 3 cards of your draw pile. Place each card on the top or bottom of your draw pile.\n\n* **Bequest 1:** When this unit is destroyed, you may draw up to 1 card.",
+            "attack": 2,
+            "life": 2,
+            "recover": 1
         },
         {
             "name": "Koji Wolfcub",
@@ -3208,7 +4182,7 @@
             "text": "When this spell comes into play, change all dice in your active pool to their class side.\n\nPlayers may not re-roll or change the level of dice in an opponent's active pool.\n\n* Bound: This card cannot be discarded from your spellboard when you Meditate.\n\n* Fleeting: Discard this card at the end of this round."
         },
         {
-            "name": "Law Of Domination",
+            "name": "Law of Domination",
             "stub": "law-of-domination",
             "type": "Ready Spell",
             "release": {
@@ -3250,7 +4224,7 @@
             "text": "When this spell comes into play, you may place 1 exhaustion token on a target unit with an attack value of 0.\n\nWhile in battle, the attack value of all attacking units is reduced by 1.\n\n* Bound: This card cannot be discarded from your spellboard when you Meditate.\n\n* Fleeting: Discard this card at the end of this round."
         },
         {
-            "name": "Law Of Grace",
+            "name": "Law of Grace",
             "stub": "law-of-grace",
             "type": "Ready Spell",
             "release": {
@@ -3394,8 +4368,7 @@
                 ]
             ],
             "dice": [
-                "ceremonial",
-                "charm"
+                "ceremonial"
             ],
             "altDice": [
                 "charm",
@@ -3493,6 +4466,9 @@
                 "stub": "the-protector-of-argaia"
             },
             "placement": "Battlefield",
+            "effectMagicCost": {
+                "basic": 1
+            },
             "text": "Gigantic 1: This unit cannot be blocked or guarded against by units with a life value of 1 or less.\n\n* Renew: [[main]] - 1 [[basic]]: Discard a copy of Summon Majestic Titan from your spellboard to remove all exhaustion tokens and discard all alteration spells from this unit.",
             "attack": 3,
             "life": 4,
@@ -3500,7 +4476,7 @@
             "copies": 1
         },
         {
-            "name": "Mark Of The Goddess",
+            "name": "Mark of the Goddess",
             "stub": "mark-of-the-goddess",
             "type": "Action Spell",
             "release": {
@@ -3640,6 +4616,9 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]]: Look at a target player's hand. That player may discard 1 card of your choice from that hand. If they do not or cannot, place 1 wound token on their Phoenixborn."
         },
         {
@@ -3696,6 +4675,9 @@
                 "basic"
             ],
             "magicCost": {
+                "basic": 1
+            },
+            "effectMagicCost": {
                 "basic": 1
             },
             "text": "* This unit cannot attack, block, or guard.\n\n* Escape: [[main]] - [[side]] - 1 [[basic]] - 1 [[discard]]: Discard this card.\n\n* Lost: Discard this unit at the end of the round.",
@@ -3916,6 +4898,28 @@
             "spellboard": 4
         },
         {
+            "name": "Ocean's Gift",
+            "stub": "oceans-gift",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[side]]",
+                "1 [[time:class]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "magicCost": {
+                "time:class": 1
+            },
+            "text": "When this spell comes into play, raise 3 dice in your active pool 1 level.\n\nThis unit now has the following ability:\n\n**Bestow 1:** When this unit is declared as an attacker, you may place 1 status token on a unit you control.",
+            "attack": "+1"
+        },
+        {
             "name": "Odette Diamondcrest",
             "stub": "odette-diamondcrest",
             "type": "Phoenixborn",
@@ -3929,6 +4933,32 @@
             "spellboard": 3
         },
         {
+            "name": "Old Salt",
+            "stub": "old-salt",
+            "type": "Ally",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "ceremonial:class": 1
+            },
+            "text": "Wounded 1: When this unit comes into play, place 1 wound token onto it.\n\nThrow 1: When this unit comes into play, you may deal 1 damage to another target unit.",
+            "attack": 2,
+            "life": 3,
+            "recover": 1
+        },
+        {
             "name": "Omen Bringer",
             "stub": "omen-bringer",
             "type": "Conjuration",
@@ -3937,7 +4967,7 @@
                 "stub": "the-gorrenrock-survivors"
             },
             "placement": "Battlefield",
-            "text": "Forwarn 2: When this unit comes into play, you may look at the top 2 cards of a target opponent's draw pile. Place each card on the top or bottom of that player's draw pile.\n\nHasten: When this unit is declared as an attacker, if it has 1 or more status tokens on it, you may remove 1 exhaustion token from a ready spell you control.",
+            "text": "Forewarn 2: When this unit comes into play, you may look at the top 2 cards of a target opponent's draw pile. Place each card on the top or bottom of that player's draw pile.\n\nHasten: When this unit is declared as an attacker, if it has 1 or more status tokens on it, you may remove 1 exhaustion token from a ready spell you control.",
             "attack": 2,
             "life": 2,
             "recover": 0,
@@ -4037,7 +5067,7 @@
             "text": "You may play this spell after an opponent declares attackers. Add 4 to the attack value of a target unit you control for the remainder of the turn."
         },
         {
-            "name": "Out Of The Mist",
+            "name": "Out of the Mist",
             "stub": "out-of-the-mist",
             "type": "Action Spell",
             "release": {
@@ -4059,6 +5089,22 @@
                 "illusion:power": 1
             },
             "text": "Deal X amount of damage to a target unit. You may draw 1 card.\n\nX = the number of units you have in play."
+        },
+        {
+            "name": "Pack Wolf",
+            "stub": "pack-wolf",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Battlefield",
+            "text": "* Fade: Destroy this unit at the end of this round.",
+            "phoenixborn": "Koji Wolfcub",
+            "attack": 1,
+            "life": 1,
+            "recover": 0,
+            "copies": 3
         },
         {
             "name": "Pain Shaman",
@@ -4135,6 +5181,32 @@
             "text": "You may play this spell after a unit you control is dealt damage. Prevent 1 damage from being received. Draw 1 card."
         },
         {
+            "name": "Phoenix Attendant",
+            "stub": "phoenix-attendant",
+            "type": "Ally",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "ceremonial:class": 1
+            },
+            "text": "Alleviate 1: [[side]]: If there are no wound tokens on this unit, move 1 wound token from your Phoenixborn onto this unit.",
+            "attack": 1,
+            "life": 4,
+            "recover": 2
+        },
+        {
             "name": "Phoenix Barrage",
             "stub": "phoenix-barrage",
             "type": "Action Spell",
@@ -4176,6 +5248,35 @@
                 "divine:power": 1
             },
             "text": "All units you control with a divine die on them have the following ability:\n\nOverkill 1: After this unit destroys a unit an opponent controls by attacking, deal 1 damage to that opponent's target Phoenixborn."
+        },
+        {
+            "name": "Playtime",
+            "stub": "playtime",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "When this unit is declared as an attacker, blocker, or guard, deal 1 damage to your Phoenixborn.\n\nWhen this unit is destroyed, place a [[Blood Puppet]] conjuration from the conjuration pile of this spell's owner onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Blood Puppet",
+                    "stub": "blood-puppet"
+                }
+            ],
+            "phoenixborn": "Jessa Na Ni",
+            "attack": "-1"
         },
         {
             "name": "Polarity Mage",
@@ -4231,6 +5332,42 @@
             "attack": "+1"
         },
         {
+            "name": "Pride",
+            "stub": "pride",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[side]]",
+                "1 [[divine:power]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "divine:power": 1
+            },
+            "text": "When attaching this spell to a unit you control, you may choose a divine die in your exhausted pool and resolve its dice power without paying its cost.\n\n* This unit now has the following ability:\n\n* Pride: This unit cannot be guarded or guarded against."
+        },
+        {
+            "name": "Prism Tetra",
+            "stub": "prism-tetra",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Battlefield",
+            "text": "**Fearful:** This unit cannot block.\n\n**Group Tactics 1:** After you declare three or more attackers, you may add 1 to this unit's attack value for the remainder of the turn.\n\n* **Scatter:** Discard this unit at the end of the round unless it has 1 or more status tokens on it.",
+            "attack": 0,
+            "life": 1,
+            "recover": 0,
+            "copies": 9
+        },
+        {
             "name": "Psychic Vampire",
             "stub": "psychic-vampire",
             "type": "Ally",
@@ -4255,6 +5392,51 @@
             "recover": 0
         },
         {
+            "name": "Ptera Hatchling",
+            "stub": "ptera-hatchling",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "text": "Shock 1: When this unit is declared as an attacker, if its current attack value is greater than its printed attack value, you may deal 1 damage to a target unit an opponent controls.",
+            "attack": 0,
+            "life": 1,
+            "recover": 0,
+            "copies": 3
+        },
+        {
+            "name": "Ptera Herder",
+            "stub": "ptera-herder",
+            "type": "Ally",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[divine:class]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "divine:class": 1
+            },
+            "text": "Call Ptera Hatchling: When this unit comes into play, place a [[Ptera Hatchling]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Ptera Hatchling",
+                    "stub": "ptera-hatchling"
+                }
+            ],
+            "attack": 1,
+            "life": 1,
+            "recover": 1
+        },
+        {
             "name": "Purge",
             "stub": "purge",
             "type": "Ready Spell",
@@ -4269,6 +5451,9 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]]: Choose a target player to discard 1 card off the top of their draw pile.\n\nFocus 1: You may pay 1 [[basic]]  to have the target player discard 1 additional card."
         },
         {
@@ -4294,7 +5479,49 @@
             "phoenixborn": "Sembali Grimtongue"
         },
         {
-            "name": "Rally The Troops",
+            "name": "Radiant Leviathan",
+            "stub": "radiant-leviathan",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Battlefield",
+            "text": "**Coalesced:** Other units you control cannot be targeted by attacks an opponent controls.\n\n* **Refract:** When this unit is destroyed, place 1 [[Prism Tetra]] conjuration onto your battlefield for each status token on this unit.",
+            "conjurations": [
+                {
+                    "name": "Prism Tetra",
+                    "stub": "prism-tetra"
+                }
+            ],
+            "attack": 3,
+            "life": 5,
+            "recover": 0,
+            "copies": 1
+        },
+        {
+            "name": "Radiant Light",
+            "stub": "radiant-light",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]",
+                "1 [[divine:power]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "divine:power": 1
+            },
+            "text": "When this spell comes into play, you may choose a divine die in your exhausted pool and resolve its dice power without paying its cost.\n\nWhile a divine die is on a unit you control, its life value and recover value are increased by 1.\n\n* Flicker: Shuffle this card into your draw pile at the end of the round."
+        },
+        {
+            "name": "Rally the Troops",
             "stub": "rally-the-troops",
             "type": "Action Spell",
             "release": {
@@ -4367,6 +5594,27 @@
             "recover": 1
         },
         {
+            "name": "Rapture",
+            "stub": "rapture",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "Destroy an unexhausted ally you control to deal 1 damage to all units opponents control."
+        },
+        {
             "name": "Rayward Knight",
             "stub": "rayward-knight",
             "type": "Ally",
@@ -4385,7 +5633,7 @@
             "magicCost": {
                 "basic": 3
             },
-            "text": "To Arms: When this unit comes into play, you may search your discard pile for an ally and shuffle it into your draw pile.\n\nCharge:[[side]]: Take an Attack action, targeting a unit and declaring this unit as the attacker.",
+            "text": "To Arms: When this unit comes into play, you may search your discard pile for an ally and shuffle it into your draw pile.\n\nCharge: [[side]]: Take an Attack action, targeting a unit and declaring this unit as the attacker.",
             "phoenixborn": "Dimona Odinstar",
             "attack": 3,
             "life": 3,
@@ -4436,8 +5684,8 @@
             ],
             "magicCost": {
                 "basic": 1,
-                "illusion:power": 1,
-                "time:class": 1
+                "time:class": 1,
+                "illusion:power": 1
             },
             "text": "Isolate 1: When this unit is declared as an attacker, choose a target opponent to place 1 exhaustion token onto an unexhausted unit of their choice that they control.",
             "attack": 3,
@@ -4470,6 +5718,22 @@
             "attack": 2,
             "life": 2,
             "recover": 2
+        },
+        {
+            "name": "Reborn Chimera",
+            "stub": "reborn-chimera",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Battlefield",
+            "text": "**Overkill 3:** After this unit destroys a unit an opponent controls by attacking, deal 3 damage to that opponent's target Phoenixborn.",
+            "phoenixborn": "Rowan Umberend",
+            "attack": 4,
+            "life": 4,
+            "recover": 0,
+            "copies": 1
         },
         {
             "name": "Reclaim Soul",
@@ -4514,6 +5778,29 @@
             "text": "Choose a ready spell you control. Search your discard pile for all cards with the same title and place them into your hand."
         },
         {
+            "name": "Red Flower",
+            "stub": "red-flower",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[natural:class]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "basic": 1,
+                "natural:class": 1
+            },
+            "text": "Remove all tokens from a target unit you control with 1 or more status tokens on it or alteration spells attached to it. If 3 or more tokens were removed, deal 1 damage to a target unit an opponent controls."
+        },
+        {
             "name": "Redirect",
             "stub": "redirect",
             "type": "Reaction Spell",
@@ -4532,6 +5819,25 @@
                 "charm:power": 1
             },
             "text": "You may play this spell after your Phoenixborn is dealt damage if you control at least 1 unit. Choose a unit you control to receive that damage instead."
+        },
+        {
+            "name": "Red Raindrop",
+            "stub": "red-raindrop",
+            "type": "Conjured Alteration Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Phoenixborn",
+            "text": "At the end of the round, you may deal 1 damage to a target unit. Then, if there are 3 Red Raindrops attached to your Phoenixborn, place a [[Reborn Chimera]] conjuration onto your battlefield.\n\n* **Spell Guard:** This spell cannot be affected by an opponent's spell.",
+            "conjurations": [
+                {
+                    "name": "Reborn Chimera",
+                    "stub": "reborn-chimera"
+                }
+            ],
+            "phoenixborn": "Rowan Umberend",
+            "copies": 3
         },
         {
             "name": "Reflections in the Water",
@@ -4622,7 +5928,7 @@
                 "illusion",
                 "time"
             ],
-            "text": "After you pay for a dice power using a [[time:power]] or [[illusion:power]], you may place that die and 1 exhaustion token on this spell if it has no dice on it.\n\n* You may use dice on this spell to pay the cost of reactions. You may place any dice on this spell in your exhausted pool at the end of the round."
+            "text": "After you pay for a dice power using a [[time:power]] or [[illusion:power]], you may place that die and 1 exhaustion token on this spell if it has no dice on it.\n\n* You may use dice on this spell to pay the cost of reactions.\n\n* You may place any dice on this spell in your exhausted pool at the end of the round."
         },
         {
             "name": "Reinforce",
@@ -4644,6 +5950,24 @@
                 "time:class": 1
             },
             "text": "[[main]] - [[exhaust]]: Look at the top 5 cards of your draw pile. You may reveal an ally or alteration spell and place it into your hand. Shuffle your draw pile. You may immediately play the revealed card, without paying any main or side action costs."
+        },
+        {
+            "name": "Rejuvenate",
+            "stub": "rejuvenate",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]"
+            ],
+            "effectMagicCost": {
+                "basic": 1
+            },
+            "text": "After a conjuration comes into play onto your battlefield, place 1 status token on this spell.\n\n[[main]] - [[exhaust]] - 1 [[basic]]: Remove all status tokens from this spell. Remove 1 exhaustion token from a conjuration you control with an attack value equal to or less than the number of status tokens removed.",
+            "phoenixborn": "Aradel Summergaard"
         },
         {
             "name": "Remorse",
@@ -4704,6 +6028,10 @@
                 "ceremonial",
                 "illusion"
             ],
+            "effectMagicCost": {
+                "illusion:class": 1,
+                "ceremonial:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]] - 1 [[illusion:class]]: Destroy a conjuration you control. Then, place that conjuration onto your battlefield."
         },
         {
@@ -4780,7 +6108,8 @@
             "text": "Visions: [[side]]: Look at the top 3 cards of a target draw pile. You may spend 1 [[basic]] and place 1 exhaustion token on this card to place 1 of those cards on the bottom of that draw pile. Place the remaining looked at cards on the top of that draw pile in the order of your choice.",
             "battlefield": 4,
             "life": 20,
-            "spellboard": 5
+            "spellboard": 5,
+            "imageStub": "https://cdn.ashteki.com/archive/rimea-careworn.jpg"
         },
         {
             "name": "Rin Northfell",
@@ -4848,6 +6177,30 @@
                     "stub": "fallen"
                 }
             ],
+            "attack": 1,
+            "life": 1,
+            "recover": 1
+        },
+        {
+            "name": "Ritualist",
+            "stub": "ritualist",
+            "type": "Ally",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "**Incant:** When this unit comes into play, you may search your draw pile or discard pile for a ready spell with \"Chant\" in its title, reveal it, and place it into your hand. If you searched your draw pile, shuffle it.",
             "attack": 1,
             "life": 1,
             "recover": 1
@@ -4925,6 +6278,49 @@
             "recover": 0
         },
         {
+            "name": "Rose Gardener",
+            "stub": "rose-gardener",
+            "type": "Ally",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Prune 1: When this unit comes into play, you may remove 1 status token from a target unit or spell.\n\nCultivate 1: [[side]]: Change 1 charm die in your active pool to a side of your choice.",
+            "attack": 1,
+            "life": 1,
+            "recover": 1
+        },
+        {
+            "name": "Rowan Umberend",
+            "stub": "rowan-umberend",
+            "type": "Phoenixborn",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "dice": [
+                "basic"
+            ],
+            "effectMagicCost": {
+                "basic": 1
+            },
+            "text": "**Conscript:** After an ally you control is destroyed, you may place it face down under this card, discarding any other allies underneath this card.\n\n**Exhume:** [[main]] - [[exhaust]] - 1 [[basic]]: Place an ally that is underneath this card onto your battlefield, and then destroy it.",
+            "battlefield": 5,
+            "life": 18,
+            "spellboard": 5
+        },
+        {
             "name": "Royal Charm",
             "stub": "royal-charm",
             "type": "Ready Spell",
@@ -4952,6 +6348,21 @@
             "life": 2,
             "recover": 0,
             "copies": 3
+        },
+        {
+            "name": "Ruin Dweller",
+            "stub": "ruin-dweller",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Battlefield",
+            "text": "**Blight 1**: At the end of the round or when this unit is destroyed as a result of an attack an opponent controls, deal 1 damage to a target Phoenixborn.",
+            "attack": 3,
+            "life": 2,
+            "recover": 0,
+            "copies": 2
         },
         {
             "name": "Sacred Ground",
@@ -5025,11 +6436,11 @@
                 "stub": "the-song-of-soaksend"
             },
             "placement": "Battlefield",
-            "text": "* Transparent: This unit cannot block or be chosen as the target of an attack.",
-            "attack": 1,
+            "text": "* Fleeting: Discard this card at the end of the round.",
+            "attack": 0,
             "life": 1,
             "recover": 0,
-            "copies": 3
+            "copies": 2
         },
         {
             "name": "Saria Guideman",
@@ -5046,6 +6457,21 @@
             "battlefield": 5,
             "life": 20,
             "spellboard": 4
+        },
+        {
+            "name": "Seafoam Snapper",
+            "stub": "seafoam-snapper",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Battlefield",
+            "text": "**Hungry 1:** When this unit comes into play, destroy an exhausted conjuration you control. If you do, place 1 status token on this unit.\n\n**Tough 1:** After this unit is dealt damage, if there are any status tokens on it, remove them all to prevent 1 damage from being received.",
+            "attack": 2,
+            "life": 1,
+            "recover": 0,
+            "copies": 2
         },
         {
             "name": "Seal",
@@ -5102,10 +6528,13 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "illusion:class": 1
+            },
             "text": "[[side]] - [[exhaust]] - 1 [[illusion:class]]: Choose a target unit you control with a life value of 1. It cannot be blocked for the remainder of the turn."
         },
         {
-            "name": "Seeds Of Aggression",
+            "name": "Seeds of Aggression",
             "stub": "seeds-of-aggression",
             "type": "Action Spell",
             "release": {
@@ -5145,6 +6574,48 @@
             "battlefield": 5,
             "life": 19,
             "spellboard": 4
+        },
+        {
+            "name": "Serve the City",
+            "stub": "serve-the-city",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]",
+                "1 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "[[main]] - [[exhaust]]: Deal 1 damage to an unexhausted unit you control to add 1 to its attack value for the remainder of the turn. If that unit can attack, you may take an Attack action, declaring that unit as the only attacker."
+        },
+        {
+            "name": "Shadowblade",
+            "stub": "shadowblade",
+            "type": "Reaction Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Discard",
+            "cost": [
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "You may play this spell after a player declares attackers. Draw 2 cards. Deal 1 damage to a target unit an opponent controls. Deal 1 damage to another target unit an opponent controls.",
+            "phoenixborn": "Noah Redmoon"
         },
         {
             "name": "Shadow Guard",
@@ -5244,6 +6715,28 @@
             "text": "Discard 1 card from your hand with a magic play cost of 1 or more. Search your discard pile for another card with a magic play cost of X and place it into your hand. Deal X damage to a target unit.\n\nX = the magic play cost of the discarded card."
         },
         {
+            "name": "Shattering Fist",
+            "stub": "shattering-fist",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Discard an alteration spell attached to a unit you control to place 3 wound tokens on a target unit an opponent controls.",
+            "phoenixborn": "Rin Northfell"
+        },
+        {
             "name": "Shatter Pulse",
             "stub": "shatter-pulse",
             "type": "Reaction Spell",
@@ -5266,7 +6759,7 @@
             "text": "You may play this spell after a unit you control is destroyed. Destroy a target unit. You may change 2 dice in a target player's active pool to a side of your choice."
         },
         {
-            "name": "Shepherd Of Lost Souls",
+            "name": "Shepherd of Lost Souls",
             "stub": "shepherd-of-lost-souls",
             "type": "Ally",
             "release": {
@@ -5338,6 +6831,30 @@
             "text": "[[side]] - [[exhaust]]: Change 2 dice in your active pool to a side of your choice."
         },
         {
+            "name": "Shimmer Wing",
+            "stub": "shimmer-wing",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Battlefield",
+            "effectMagicCost": {
+                "basic": 1
+            },
+            "text": "Ritual Flames: [[main]] - 1 [[basic]]: Discard this unit and another [[Shimmer Wing]] you control to place an [[Eternity Flame]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Eternity Flame",
+                    "stub": "eternity-flame"
+                }
+            ],
+            "attack": 0,
+            "life": 2,
+            "recover": 0,
+            "copies": 3
+        },
+        {
             "name": "Shining Hydra",
             "stub": "shining-hydra",
             "type": "Conjuration",
@@ -5371,6 +6888,49 @@
             "attack": "+1",
             "recover": "+1",
             "copies": 3
+        },
+        {
+            "name": "Shining Stag Mount",
+            "stub": "shining-stag-mount",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "text": "Armed: When this unit comes into play, you may choose a divine die in your exhausted pool and resolve its dice power without paying its cost.\n\n* Dismount: When this unit is destroyed, place any allies you own underneath this unit into your hand.",
+            "attack": 2,
+            "life": 2,
+            "recover": 0,
+            "copies": 3
+        },
+        {
+            "name": "Silver Paladin",
+            "stub": "silver-paladin",
+            "type": "Ally",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "1 [[divine:power]]",
+                "1 [[divine:class]]",
+                "2 [[basic]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "magicCost": {
+                "basic": 2,
+                "divine:class": 1,
+                "divine:power": 1
+            },
+            "text": "Smite 1: When this unit comes into play, you may destroy a target unit an opponent controls with an attack value of 1 or less.\n\nExalt: After this unit destoys a unit an opponent controls during your turn, you may choose a divine die in your exhausted pool and resolve its dice power without paying its cost.",
+            "attack": 3,
+            "life": 5,
+            "recover": 2
         },
         {
             "name": "Silver Snake",
@@ -5464,7 +7024,31 @@
             "dice": [
                 "ceremonial"
             ],
+            "effectMagicCost": {
+                "ceremonial:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]]: Deal 1 damage to a target unit on your battlefield. If you do, you may deal 1 damage to a target unit on an opponent's battlefield.\n\nFocus 1: If both targeted units are unexhausted, you may place 1 exhaustion token on both units instead of damage."
+        },
+        {
+            "name": "Snake Bite",
+            "stub": "snake-bite",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[side]]",
+                "1 [[charm:power]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "magicCost": {
+                "charm:power": 1
+            },
+            "text": "When this spell comes into play, you may choose a charm die in your exhausted pool and resolve its dice power without paying its cost.\n\n[[main]] - [[exhaust]]: Deal 1 damage to a target unit with a charm die on it.\n\nFocus 1: You may instead deal 1 damage to a target Phoenixborn whose owner has no cards in their draw pile."
         },
         {
             "name": "Sonic Swordsman",
@@ -5494,6 +7078,28 @@
             "attack": 3,
             "life": 4,
             "recover": 2
+        },
+        {
+            "name": "Soulfire",
+            "stub": "soulfire",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Search your discard pile for up to 3 allies and remove them from the game. For each ally removed, resolve the following effect:\n\nChoose a player. Deal 1 damage to a target unit they control, or deal 1 damage to their target Phoenixborn if they control no units.",
+            "phoenixborn": "James Endersight"
         },
         {
             "name": "Spark",
@@ -5555,6 +7161,34 @@
             "copies": 2
         },
         {
+            "name": "Stamina Burst",
+            "stub": "stamina-burst",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Remove 1 wound token from your Phoenixborn. Attach a [[Spark]] conjured alteration spell to a unit you control. You may give the first player token to a player of your choice.",
+            "conjurations": [
+                {
+                    "name": "Spark",
+                    "stub": "spark"
+                }
+            ],
+            "phoenixborn": "Lulu Firststone"
+        },
+        {
             "name": "Standard Bearer",
             "stub": "standard-bearer",
             "type": "Ally",
@@ -5579,6 +7213,27 @@
             "attack": 1,
             "life": 3,
             "recover": 1
+        },
+        {
+            "name": "Stand Still",
+            "stub": "stand-still",
+            "type": "Reaction Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Discard",
+            "cost": [
+                "1 [[time:class]]",
+                "1 [[discard]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "magicCost": {
+                "time:class": 1
+            },
+            "text": "You may play this spell after you declare attackers. Choose a target unit an opponent controls. Units with that unit's current title cannot be declared as blockers for the remainder of the turn."
         },
         {
             "name": "Stasis",
@@ -5739,6 +7394,32 @@
             "recover": 2
         },
         {
+            "name": "Summon Adaptodon",
+            "stub": "summon-adaptodon",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "effectMagicCost": {
+                "natural:class": 2
+            },
+            "text": "[[main]] - [[exhaust]] - 2 [[natural:class]]: Place an [[Adaptodon]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Adaptodon",
+                    "stub": "adaptodon"
+                }
+            ]
+        },
+        {
             "name": "Summon Admonisher",
             "stub": "summon-admonisher",
             "type": "Ready Spell",
@@ -5753,6 +7434,9 @@
             "dice": [
                 "divine"
             ],
+            "effectMagicCost": {
+                "divine:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[divine:class]]: Place an [[Admonisher]] conjuration onto your battlefield.\n\nFocus 1: If you cannot, deal 1 damage to a target Phoenixborn.",
             "conjurations": [
                 {
@@ -5776,6 +7460,9 @@
             "dice": [
                 "sympathy"
             ],
+            "effectMagicCost": {
+                "sympathy:power": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[sympathy:power]]: Place an [[Ancestor Spirit]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -5849,6 +7536,32 @@
             ]
         },
         {
+            "name": "Summon Bastion Badger",
+            "stub": "summon-bastion-badger",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[charm:class]] - 1 [[basic]]: Place a [[Bastion Badger]] conjuration onto your battlefield. Then, you may raise 1 charm class die in your active pool one level.",
+            "conjurations": [
+                {
+                    "name": "Bastion Badger",
+                    "stub": "bastion-badger"
+                }
+            ]
+        },
+        {
             "name": "Summon Biter",
             "stub": "summon-biter",
             "type": "Ready Spell",
@@ -5863,6 +7576,10 @@
             "dice": [
                 "natural"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "natural:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:class]] - 1 [[basic]]: Place a [[Biter]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -5886,7 +7603,10 @@
             "dice": [
                 "ceremonial"
             ],
-            "text": "[[main]] - 1 [[ceremonial:class]] - [[exhaust]]: Place a [[Blood Puppet]] conjuration onto a target player's battlefield.",
+            "effectMagicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]]: Place a [[Blood Puppet]] conjuration onto a target player's battlefield.",
             "conjurations": [
                 {
                     "name": "Blood Puppet",
@@ -5906,6 +7626,9 @@
             "cost": [
                 "[[main]]"
             ],
+            "effectMagicCost": {
+                "basic": 2
+            },
             "text": "[[main]] - [[exhaust]] - 2 [[basic]]: Place a [[Blue Jaguar]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -5914,6 +7637,32 @@
                 }
             ],
             "phoenixborn": "Aradel Summergaard"
+        },
+        {
+            "name": "Summon Bone Crow",
+            "stub": "summon-bone-crow",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "effectMagicCost": {
+                "ceremonial:class": 1
+            },
+            "text": "[[side]] - [[exhaust]] - 1 [[ceremonial:class]]: If a unit was destroyed this turn, place a [[Bone Crow]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Bone Crow",
+                    "stub": "bone-crow"
+                }
+            ]
         },
         {
             "name": "Summon Butterfly Monk",
@@ -5930,11 +7679,41 @@
             "dice": [
                 "natural"
             ],
+            "effectMagicCost": {
+                "natural:power": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:power]]: Place a [[Butterfly Monk]] conjuration onto your battlefield.",
             "conjurations": [
                 {
                     "name": "Butterfly Monk",
                     "stub": "butterfly-monk"
+                }
+            ]
+        },
+        {
+            "name": "Summon Calamity Golem",
+            "stub": "summon-calamity-golem",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Corpse of Viros",
+                "stub": "the-corpse-of-viros"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "3 [[ceremonial:class]]"
+            ],
+            "dice": [
+                "ceremonial"
+            ],
+            "magicCost": {
+                "ceremonial:class": 3
+            },
+            "text": "Destroy an ally you control to place a [[Calamity Golem]] conjuration onto your battlefield. Place wound tokens on it equal to the printed recover value of the destroyed ally.",
+            "conjurations": [
+                {
+                    "name": "Calamity Golem",
+                    "stub": "calamity-golem"
                 }
             ]
         },
@@ -5956,6 +7735,10 @@
             ],
             "magicCost": {
                 "basic": 1
+            },
+            "effectMagicCost": {
+                "divine:class": 1,
+                "natural:class": 1
             },
             "text": "[[side]] - [[exhaust]] - 1 [[natural:class]] - 1 [[divine:class]]: Remove an unexhausted ally you control from play. If you do, place a [[Cerasaurus Mount]] conjuration onto your battlefield and place that ally face down under that unit.",
             "conjurations": [
@@ -5981,6 +7764,10 @@
                 "divine",
                 "time"
             ],
+            "effectMagicCost": {
+                "time:class": 1,
+                "divine:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[divine:class]] - 1 [[time:class]]: Place a [[Cloudburst Gryphon]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6004,7 +7791,10 @@
             "dice": [
                 "ceremonial"
             ],
-            "text": "[[main]] - [[exhaust]] - 3 [[ceremonial:class]]: Place a [[Dread Wraith]] conjuration on to your battlefield. Focus 2: You may remove 1 exhaustion token from a Dread Wraith you control.",
+            "effectMagicCost": {
+                "ceremonial:class": 3
+            },
+            "text": "[[main]] - [[exhaust]] - 3 [[ceremonial:class]]: Place a [[Dread Wraith]] conjuration on to your battlefield.\n\nFocus 2: You may remove 1 exhaustion token from a Dread Wraith you control.",
             "conjurations": [
                 {
                     "name": "Dread Wraith",
@@ -6057,6 +7847,10 @@
             "dice": [
                 "divine"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "divince:class": 2
+            },
             "text": "[[main]] - [[exhaust]] - 2 [[divine:class]] - 1 [[basic]]:  Place an [[Emperor Lion]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6080,13 +7874,17 @@
             "dice": [
                 "ceremonial"
             ],
+            "effectMagicCost": {
+                "ceremonial:class": 1
+            },
             "text": "After an ally you control is destroyed, place 1 status token on this spell.\n\n[[main]] - 1 [[ceremonial:class]]: Remove up to 1 status token from each copy of Summon Fallen you control. Place 1 [[Fallen]] conjuration onto your battlefield for each status token removed.",
             "conjurations": [
                 {
                     "name": "Fallen",
                     "stub": "fallen"
                 }
-            ]
+            ],
+            "effectRepeats": true
         },
         {
             "name": "Summon False Demon",
@@ -6103,6 +7901,10 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "illusion:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[illusion:class]] - 1 [[basic]]: Place a [[False Demon]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6129,6 +7931,9 @@
             ],
             "magicCost": {
                 "basic": 1
+            },
+            "effectMagicCost": {
+                "illusion:class": 1
             },
             "text": "[[main]] - [[exhaust]] - 1 [[illusion:class]]: Place a [[Fox Spirit]] conjuration onto your battlefield.\n\nFocus 1: You may change the activation cost of this spell to [[side]] - [[exhaust]] - 1 [[illusion:class]].",
             "conjurations": [
@@ -6157,11 +7962,41 @@
             "magicCost": {
                 "natural:power": 1
             },
+            "effectMagicCost": {
+                "basic": 1,
+                "natural:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:class]] - 1 [[basic]]: Place a [[Frostback Bear]] conjuration onto your battlefield.",
             "conjurations": [
                 {
                     "name": "Frostback Bear",
                     "stub": "frostback-bear"
+                }
+            ]
+        },
+        {
+            "name": "Summon Frost Frog",
+            "stub": "summon-frost-frog",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "effectMagicCost": {
+                "natural:power": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[natural:power]]: Place a [[Frost Frog]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Frost Frog",
+                    "stub": "frost-frog"
                 }
             ]
         },
@@ -6184,6 +8019,10 @@
             ],
             "magicCost": {
                 "basic": 1
+            },
+            "effectMagicCost": {
+                "illusion:class": 1,
+                "sympathy:class": 1
             },
             "text": "[[main]] or [[side]] - [[exhaust]] - 1 [[illusion:class]] - 1 [[sympathy:class]]: Remove an unexhausted ally you control from play. If you do, place a [[Pale Steed Mount]] or [[Spectral Charger Mount]] conjuration onto your battlefield and place that ally face down under that unit.\n\nFocus 2: You may place a [[Nightmare Mount]] conjuration instead.",
             "conjurations": [
@@ -6221,6 +8060,9 @@
             "magicCost": {
                 "charm:class": 1
             },
+            "effectMagicCost": {
+                "natural:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:class]]: Place a [[Gilder]] conjuration onto your battlefield. You may deal 1 damage to a target unit.",
             "conjurations": [
                 {
@@ -6244,6 +8086,10 @@
             "dice": [
                 "natural"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "natural:class": 2
+            },
             "text": "[[main]] - [[exhaust]] - 2 [[natural:class]] - 1 [[basic]]: Place an [[Ice Golem]] conjuration onto your battlefield.\n\nFocus 2: You may remove 1 wound token from all Ice Golems you control.",
             "conjurations": [
                 {
@@ -6268,11 +8114,23 @@
                 "natural",
                 "sympathy"
             ],
+            "effectMagicCost": {
+                "natural:class": 1,
+                "sympathy:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[natural:class]] - 1 [[sympathy:class]]: Place an [[Indiglow Creeper]] conjuration onto your battlefield.\n\nFocus 1: You may place 1 status token on a target unit you control.",
             "conjurations": [
                 {
                     "name": "Indiglow Creeper",
                     "stub": "indiglow-creeper"
+                },
+                {
+                    "name": "Luminous Seedling",
+                    "stub": "luminous-seedling"
+                },
+                {
+                    "name": "Brilliant Thorn",
+                    "stub": "brilliant-thorn"
                 }
             ]
         },
@@ -6294,6 +8152,9 @@
             ],
             "magicCost": {
                 "natural:class": 1
+            },
+            "effectMagicCost": {
+                "basic": 6
             },
             "text": "[[main]] - [[exhaust]] - 6 [[basic]]: Place an [[Iron Rhino]] conjuration onto your battlefield.\n\nFocus 1: Reduce the activate cost of this spell by 1 [[basic]].\n\nFocus 2: Reduce the activation cost of this spell by an additional 1 [[basic]].",
             "conjurations": [
@@ -6318,6 +8179,9 @@
             "dice": [
                 "divine"
             ],
+            "effectMagicCost": {
+                "divine:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[divine:class]]: Place a [[Light Bringer]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6346,6 +8210,11 @@
             "magicCost": {
                 "basic": 1
             },
+            "effectMagicCost": {
+                "basic": 1,
+                "charm:class": 1,
+                "sympathy:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]] - 1 [[sympathy:class]] - 1 [[basic]]: Place a [[Majestic Titan]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6373,6 +8242,9 @@
             "magicCost": {
                 "basic": 1
             },
+            "effectMagicCost": {
+                "illusion:class": 1
+            },
             "text": "[[side]] - [[exhaust]] - 1 [[illusion:class]]: Place a [[Masked Wolf]] conjuration onto your battlefield.\n\nFocus 1: If you spent any [[illusion:power]] to activate this spell, you may take an additional side action this turn.",
             "conjurations": [
                 {
@@ -6397,6 +8269,10 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "charm:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]] - 1 [[basic]]: Place a [[Mind Fog Owl]] conjuration onto your battlefield.\n\nFocus 1: If you spent any [[charm:power]] to activate this spell, you may choose 1 [[charm:power]] spent and resolve its dice power without paying its cost.",
             "conjurations": [
                 {
@@ -6420,6 +8296,10 @@
             "dice": [
                 "sympathy"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "sympathy:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[sympathy:class]] - 1 [[basic]]: Place a [[Mirror Spirit]] conjuration onto your battlefield.\n\nFocus 1: You may remove all status tokens from a Mirror Spirit you control. If you remove at least 1 status token, place 1 exhaustion token on a target unit.",
             "conjurations": [
                 {
@@ -6443,6 +8323,10 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "illusion:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[illusion:class]]: Place a [[Mist Spirit]] conjuration onto your battlefield. You may spend an additional 1 [[basic]] when activating this spell to place an additional [[Mist Spirit]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6466,6 +8350,9 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 2
+            },
             "text": "[[main]] - [[exhaust]] - 2 [[charm:class]]: Place a [[Nightshade Swallow]] conjuration onto your battlefield.\n\nFocus 1: You may choose a target player to discard 1 card off the top of their draw pile if you have fewer dice in your active pool than an opponent.",
             "conjurations": [
                 {
@@ -6489,7 +8376,11 @@
             "dice": [
                 "sympathy"
             ],
-            "text": "[[main]] - [[exhaust]] - 1 [[sympathy:class]] - 1 [[basic]]: Place a [[Nightsong Cricket]] conjuration onto your battlefield.\n\nFocus 1: If you spent any[[sympathy:power]] to activate this spell, you may search a target player's discard pile for 1 card and remove it from the game.",
+            "effectMagicCost": {
+                "basic": 1,
+                "sympathy:class": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[sympathy:class]] - 1 [[basic]]: Place a [[Nightsong Cricket]] conjuration onto your battlefield.\n\nFocus 1: If you spent any [[sympathy:power]] to activate this spell, you may search a target player's discard pile for 1 card and remove it from the game.",
             "conjurations": [
                 {
                     "name": "Nightsong Cricket",
@@ -6539,11 +8430,72 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]]: Place an [[Orchid Dove]] conjuration onto your battlefield.\n\nFocus 1: You may change the activation cost of this spell to [[main]] - [[exhaust]] - 1 [[basic]].\n\nFocus 2: You may deal 1 damage to a target player's Phoenixborn if they do not have any cards in their draw pile.",
             "conjurations": [
                 {
                     "name": "Orchid Dove",
                     "stub": "orchid-dove"
+                }
+            ]
+        },
+        {
+            "name": "Summon Prism Tetra",
+            "stub": "summon-prism-tetra",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "sympathy"
+            ],
+            "effectMagicCost": {
+                "sympathy:class": 2
+            },
+            "text": "[[main]] - [[exhaust]] - 2 [[sympathy:class]]: Place three [[Prism Tetra]] conjurations onto your battlefield.\n\n**Focus 1:** Until the start of your next turn or the next round, Prism Tetras you control cannot be targeted by spells, abilities, or dice powers an opponent controls.",
+            "conjurations": [
+                {
+                    "name": "Prism Tetra",
+                    "stub": "prism-tetra"
+                }
+            ]
+        },
+        {
+            "name": "Summon Radiant Leviathan",
+            "stub": "summon-radiant-leviathan",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[sympathy:power]]",
+                "1 [[time:class]]",
+                "2 [[basic]]"
+            ],
+            "dice": [
+                "sympathy",
+                "time"
+            ],
+            "magicCost": {
+                "basic": 2,
+                "time:class": 1,
+                "sympathy:power": 1
+            },
+            "text": "Place a [[Radiant Leviathan]] conjuration onto your battlefield. Place 1 status token on it for each other conjuration you control.",
+            "conjurations": [
+                {
+                    "name": "Radiant Leviathan",
+                    "stub": "radiant-leviathan"
                 }
             ]
         },
@@ -6574,6 +8526,34 @@
             ]
         },
         {
+            "name": "Summon Ruin Dweller",
+            "stub": "summon-ruin-dweller",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Scholar of Ruin",
+                "stub": "the-scholar-of-ruin"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "ceremonial",
+                "time"
+            ],
+            "effectMagicCost": {
+                "time:class": 1,
+                "ceremonial:class": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]] - 1 [[time:class]]: Place a [[Ruin Dweller]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Ruin Dweller",
+                    "stub": "ruin-dweller"
+                }
+            ]
+        },
+        {
             "name": "Summon Salamander Monk",
             "stub": "summon-salamander-monk",
             "type": "Ready Spell",
@@ -6588,11 +8568,40 @@
             "dice": [
                 "sympathy"
             ],
+            "effectMagicCost": {
+                "sympathy:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[sympathy:class]]: Place a [[Salamander Monk]] conjuration onto your battlefield.",
             "conjurations": [
                 {
                     "name": "Salamander Monk",
                     "stub": "salamander-monk"
+                }
+            ]
+        },
+        {
+            "name": "Summon Seafoam Snapper",
+            "stub": "summon-seafoam-snapper",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "time"
+            ],
+            "effectMagicCost": {
+                "time:power": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[time:power]]: Place a [[Seafoam Snapper]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Seafoam Snapper",
+                    "stub": "seafoam-snapper"
                 }
             ]
         },
@@ -6608,6 +8617,9 @@
             "cost": [
                 "[[main]]"
             ],
+            "effectMagicCost": {
+                "basic": 3
+            },
             "text": "[[main]] - [[exhaust]] - 3 [[basic]]: Place a [[Seaside Raven]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6632,6 +8644,9 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "illusion:class": 3
+            },
             "text": "[[main]] - [[exhaust]] - 3 [[illusion:class]]: Place a [[Shadow Hound]] conjuration onto your battlefield.\n\nFocus 1: You may deal 1 damage to a target unit.\n\nFocus 2: Then you may deal 1 damage to a target unit.",
             "conjurations": [
                 {
@@ -6655,11 +8670,40 @@
             "dice": [
                 "illusion"
             ],
+            "effectMagicCost": {
+                "illusion:power": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[illusion:power]]: Place a [[Shadow Spirit]] conjuration onto your battlefield.",
             "conjurations": [
                 {
                     "name": "Shadow Spirit",
                     "stub": "shadow-spirit"
+                }
+            ]
+        },
+        {
+            "name": "Summon Shimmer Wing",
+            "stub": "summon-shimmer-wing",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "charm"
+            ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[charm:class]]: Draw 1 card. Place a [[Shimmer Wing]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Shimmer Wing",
+                    "stub": "shimmer-wing"
                 }
             ]
         },
@@ -6696,6 +8740,33 @@
             ]
         },
         {
+            "name": "Summon Shining Stag Mount",
+            "stub": "summon-shining-stag-mount",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]"
+            ],
+            "dice": [
+                "divine"
+            ],
+            "effectMagicCost": {
+                "basic": 1,
+                "divine:class": 1
+            },
+            "text": "[[side]] - [[exhaust]] - 1 [[divine:class]] - 1 [[basic]]: Remove an unexhausted ally you control from play. If you do, place a [[Shining Stag Mount]] conjuration onto your battlefield, placing that ally face down underneath it.",
+            "conjurations": [
+                {
+                    "name": "Shining Stag Mount",
+                    "stub": "shining-stag-mount"
+                }
+            ]
+        },
+        {
             "name": "Summon Silver Snake",
             "stub": "summon-silver-snake",
             "type": "Ready Spell",
@@ -6711,6 +8782,10 @@
                 "charm",
                 "natural"
             ],
+            "effectMagicCost": {
+                "charm:power": 1,
+                "natural:power": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:power]] - 1 [[natural:power]]: Place a [[Silver Snake]] conjuration onto your battlefield.\n\nFocus 1: Place 1 status token on that Silver Snake.\n\nFocus 2: Place 1 additional status token on that Silver Snake.\n\n* Spell Guard: This spell cannot be affected by an opponent's spell.",
             "conjurations": [
                 {
@@ -6794,6 +8869,10 @@
             "magicCost": {
                 "sympathy:power": 1
             },
+            "effectMagicCost": {
+                "basic": 1,
+                "sympathy:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[sympathy:class]] - 1 [[basic]]: Draw 1 card. Place a [[Squall Stallion]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6818,6 +8897,10 @@
                 "charm",
                 "divine"
             ],
+            "effectMagicCost": {
+                "charm:class": 1,
+                "divine:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]] - 1 [[divine:class]]: Place a [[Steadfast Guardian]] conjuration onto your battlefield.\n\nFocus 1: You may remove all wound tokens and exhaustion tokens from a target Steadfast Guardian you control.",
             "conjurations": [
                 {
@@ -6841,11 +8924,46 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]]: Place a [[Three-Eyed Owl]] conjuration onto your battlefield.",
             "conjurations": [
                 {
                     "name": "Three-Eyed Owl",
                     "stub": "three-eyed-owl"
+                }
+            ]
+        },
+        {
+            "name": "Summon Tidal Crab",
+            "stub": "summon-tidal-crab",
+            "type": "Ready Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Spellboard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "sympathy",
+                "time"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "effectMagicCost": {
+                "time:class": 1,
+                "sympathy:class": 1
+            },
+            "text": "[[main]] - [[exhaust]] - 1 [[sympathy:class]] - 1 [[time:class]]: Place a [[Tidal Crab]] conjuration onto your battlefield. Place 2 status tokens on it.",
+            "conjurations": [
+                {
+                    "name": "Tidal Crab",
+                    "stub": "tidal-crab"
                 }
             ]
         },
@@ -6922,6 +9040,10 @@
                 "ceremonial",
                 "sympathy"
             ],
+            "effectMagicCost": {
+                "sympathy:class": 1,
+                "ceremonial:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[ceremonial:class]] - 1 [[sympathy:class]]: Place a [[Vampire Bat Swarm]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6945,6 +9067,9 @@
             "dice": [
                 "charm"
             ],
+            "effectMagicCost": {
+                "charm:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[charm:class]]: Place a [[Weeping Spirit]] conjuration onto a target player's battlefield.\n\nFocus 1: You may search a target discard pile for 1 card and remove it from the game.",
             "conjurations": [
                 {
@@ -6968,6 +9093,10 @@
             "dice": [
                 "divine"
             ],
+            "effectMagicCost": {
+                "basic": 1,
+                "divine:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[divine:class]] - 1 [[basic]]: Place a [[Winged Lioness]] conjuration onto your battlefield.",
             "conjurations": [
                 {
@@ -6991,6 +9120,9 @@
             "dice": [
                 "time"
             ],
+            "effectMagicCost": {
+                "time:class": 1
+            },
             "text": "[[main]] - [[exhaust]] - 1 [[time:class]]: Place a [[Wishing Wing]] conjuration onto your battlefield.\n\nFocus 2: Then place 1 status token on that [[Wishing Wing]].",
             "conjurations": [
                 {
@@ -7152,6 +9284,34 @@
             "text": "You may play this spell after 1 or more wound tokens are placed on your Phoenixborn as a result of an attack, spell, ability, or dice power an opponent controls. Deal 2 damage to a target unit or Phoenixborn that opponent controls."
         },
         {
+            "name": "Take to the Skies",
+            "stub": "take-to-the-skies",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Siege of Lordswall",
+                "stub": "the-siege-of-lordswall"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[side]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "If your Phoenixborn is exhausted, place a [[Divinity Mount]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Divinity Mount",
+                    "stub": "divinity-mount"
+                }
+            ],
+            "phoenixborn": "Dimona Odinstar"
+        },
+        {
             "name": "Temple Elder",
             "stub": "temple-elder",
             "type": "Ally",
@@ -7169,6 +9329,9 @@
             ],
             "magicCost": {
                 "basic": 2
+            },
+            "effectMagicCost": {
+                "sympathy:class": 1
             },
             "text": "* Resourceful 1: When this unit comes into play, place 1 status token on this unit. At the beginning of the player turns phase, place 1 status token on this unit.\n\nWisdom 1: [[side]] - 1 [[sympathy:class]]: Remove 1 status token from this unit. If you do, draw 1 card.",
             "attack": 2,
@@ -7197,11 +9360,50 @@
                 "stub": "master-set"
             },
             "placement": "Battlefield",
-            "text": "Memory Drain 1: [[main]] - [[exhaust]]: Choose a target player to discard 1 card of their choice from their hand.",
+            "text": "Peer 1: When this unit comes into play, look at 1 random card in a target opponent's hand.\n\nMemory Drain 1: At the end of the prepare phase, choose a target opponent to discard 1 card of their choice from their hand.",
             "attack": 0,
             "life": 2,
             "recover": 0,
-            "copies": 3
+            "copies": 2
+        },
+        {
+            "name": "Tidal Crab",
+            "stub": "tidal-crab",
+            "type": "Conjuration",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Battlefield",
+            "text": "**Unburden:** [[side]]: Move 1 status token from this unit onto another unit you control.\n\n* **Slow:** Reduce this unit's attack value by 1 for each status token on it.",
+            "attack": 2,
+            "life": 3,
+            "recover": 0,
+            "copies": 2
+        },
+        {
+            "name": "Tidal Shift",
+            "stub": "tidal-shift",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[sympathy:class]]",
+                "1 [[time:class]]"
+            ],
+            "dice": [
+                "sympathy",
+                "time"
+            ],
+            "magicCost": {
+                "time:class": 1,
+                "sympathy:class": 1
+            },
+            "text": "Move 1 exhaustion token from a ready spell you control onto a target unit an opponent controls."
         },
         {
             "name": "Time Hopper",
@@ -7291,6 +9493,47 @@
             "text": "Swap any number of dice in your exhausted pool with an equal number of dice in your active pool, placing them each on a side of your choice. Change 1 die in each target player's active pool to a side of your choice."
         },
         {
+            "name": "Tristan Darkwater",
+            "stub": "tristan-darkwater",
+            "type": "Phoenixborn",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "dice": [
+                "basic"
+            ],
+            "effectMagicCost": {
+                "basic": 1
+            },
+            "text": "**Magnify:** [[side]] - [[exhaust]] - 1 [[basic]]: Choose any number of units you control with a combined life value of up to 3. During Attack actions this turn, the numeral values of their abilities are increased by 1.",
+            "battlefield": 9,
+            "life": 17,
+            "spellboard": 3
+        },
+        {
+            "name": "Tsunami Shot",
+            "stub": "tsunami-shot",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "2 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 2
+            },
+            "text": "Resolve the following effect up to four times:\n\nDeal 1 damage to a target unit an opponent controls.",
+            "phoenixborn": "Tristan Darkwater"
+        },
+        {
             "name": "Turtle Guard",
             "stub": "turtle-guard",
             "type": "Conjuration",
@@ -7340,11 +9583,15 @@
             "dice": [
                 "ceremonial"
             ],
+            "effectMagicCost": {
+                "ceremonial:class / sympathy:class": 1
+            },
             "text": "Group Tactics 1: After you declare three or more attackers, you may add 1 to this unit's attack value for the remainder of the turn.\n\nSwarm: When this unit is destroyed, you may spend 1 [[ceremonial:class]] or 1 [[sympathy:class]] to place this unit onto your battlefield.",
             "attack": 2,
             "life": 1,
             "recover": 0,
-            "copies": 3
+            "copies": 3,
+            "effectRepeats": true
         },
         {
             "name": "Vanish",
@@ -7381,6 +9628,28 @@
             ],
             "text": "Destroy X units you control. If you do, add 1 to the attack value of X target units you control for the remainder of the turn.",
             "phoenixborn": "James Endersight"
+        },
+        {
+            "name": "Venom Strike",
+            "stub": "venom-strike",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Choose a target opponent. Discard X cards off the top of their draw pile. Deal X damage to their Phoenixborn. Then, place each charm die on that opponent's exhausted units into its owner's exhausted pool.\n\nX = the number of charm dice on units that opponent controls.",
+            "phoenixborn": "Maeoni Viper"
         },
         {
             "name": "Victoria Glassfire",
@@ -7420,6 +9689,48 @@
             "phoenixborn": "Hope Everthorn"
         },
         {
+            "name": "Wallop",
+            "stub": "wallop",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[side]]",
+                "1 [[natural:power]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "natural:power": 1
+            },
+            "attack": "+2"
+        },
+        {
+            "name": "Wave Crash",
+            "stub": "wave-crash",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Ocean's Guard",
+                "stub": "the-oceans-guard"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[side]]",
+                "1 [[sympathy:class]]"
+            ],
+            "dice": [
+                "sympathy"
+            ],
+            "magicCost": {
+                "sympathy:class": 1
+            },
+            "text": "Remove 1 status token from a unit you control to deal 2 damage to a target unit an opponent controls or 1 damage to a target Phoenixborn."
+        },
+        {
             "name": "Weeping Spirit",
             "stub": "weeping-spirit",
             "type": "Conjuration",
@@ -7433,6 +9744,51 @@
             "life": 2,
             "recover": 0,
             "copies": 4
+        },
+        {
+            "name": "Willpower",
+            "stub": "willpower",
+            "type": "Action Spell",
+            "release": {
+                "name": "The Blight of Neverset",
+                "stub": "the-blight-of-neverset"
+            },
+            "placement": "Discard",
+            "cost": [
+                "[[main]]",
+                "1 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 1
+            },
+            "text": "Deal damage to a target unit an opponent controls equal to the number of cards in your hand.",
+            "phoenixborn": "Saria Guideman"
+        },
+        {
+            "name": "Will to Survive",
+            "stub": "will-to-survive",
+            "type": "Alteration Spell",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Unit",
+            "cost": [
+                "[[side]]",
+                "1 [[natural:class]]"
+            ],
+            "dice": [
+                "natural"
+            ],
+            "magicCost": {
+                "natural:class": 1
+            },
+            "text": "This unit now has the following ability:\n\nLife Drain 1: After this unit destroys a unit an opponent controls by attacking, you may remove 1 wound token from your Phoenixborn.",
+            "attack": "+1",
+            "life": "+1"
         },
         {
             "name": "Winged Lioness",
@@ -7458,11 +9814,42 @@
                 "stub": "the-artist-of-dreams"
             },
             "placement": "Battlefield",
-            "text": "Opportunist 1: When this unit comes into play, if you have a [[time:power]] in your active pool, place 1 status token on this unit.\n\n* Bequest X: When this unit is destroyed, you may draw X cards.\n\n* X = the number of status tokens on this unit.",
+            "text": "Opportunist 1: When this unit comes into play, if you have a [[time:power]] in your active pool, place 1 status token on this unit.\n\n* Bequest X: When this unit is destroyed, you may draw up to X cards.\n\n* X = the number of status tokens on this unit.",
             "attack": "X",
             "life": 1,
             "recover": 0,
             "copies": 3
+        },
+        {
+            "name": "Wolfpack Leader",
+            "stub": "wolfpack-leader",
+            "type": "Ally",
+            "release": {
+                "name": "The Frostwild Scourge",
+                "stub": "the-frostwild-scourge"
+            },
+            "placement": "Battlefield",
+            "cost": [
+                "[[main]]",
+                "2 [[basic]]"
+            ],
+            "dice": [
+                "basic"
+            ],
+            "magicCost": {
+                "basic": 2
+            },
+            "text": "Charged 2: When this unit comes into play, place 2 status tokens on it.\n\nCall the Pack: At the start of your turn, you may remove 1 status token from this unit to place a [[Pack Wolf]] conjuration onto your battlefield.",
+            "conjurations": [
+                {
+                    "name": "Pack Wolf",
+                    "stub": "pack-wolf"
+                }
+            ],
+            "phoenixborn": "Koji Wolfcub",
+            "attack": 2,
+            "life": 2,
+            "recover": 1
         },
         {
             "name": "Xander Heartsblood",
