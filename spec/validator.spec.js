@@ -187,5 +187,95 @@ describe("Validator tests", function () {
         expect(result.pbPrecon.name).toBe('The Iron Men');
         expect(result.valid).toBeTrue();
     });
+
+    it("validate RedRains Precon deck (valid)", function () {
+        const deck = {
+            "name": "The Siege of Lordswall: Dimona",
+            "phoenixborn": [
+                {
+                    "id": "dimona-odinstar",
+                    "count": 1
+                }
+            ],
+            "ultimate": null,
+            "behaviour": null,
+            "dicepool": [
+                {
+                    "magic": "divine",
+                    "count": 10
+                }
+            ],
+            "cards": [
+                {
+                    "id": "take-to-the-skies",
+                    "count": 3
+                },
+                {
+                    "id": "glory-aspirant",
+                    "count": 3
+                },
+                {
+                    "id": "silver-paladin",
+                    "count": 3
+                },
+                {
+                    "id": "radiant-light",
+                    "count": 3
+                },
+                {
+                    "id": "summon-shining-stag-mount",
+                    "count": 3
+                },
+                {
+                    "id": "ptera-herder",
+                    "count": 3
+                },
+                {
+                    "id": "hand-of-spear",
+                    "count": 3
+                },
+                {
+                    "id": "pride",
+                    "count": 3
+                },
+                {
+                    "id": "fork-lightning",
+                    "count": 3
+                },
+                {
+                    "id": "intercession",
+                    "count": 3
+                }
+            ],
+            "conjurations": [
+                {
+                    "id": "shining-stag-mount",
+                    "count": 3
+                },
+                {
+                    "id": "ptera-hatchling",
+                    "count": 3
+                },
+                {
+                    "id": "hand-of-shield",
+                    "count": 1
+                },
+                {
+                    "id": "empyrean-mount",
+                    "count": 3
+                },
+                {
+                    "id": "divinity-mount",
+                    "count": 1
+                }
+            ]
+        };
+
+        let result = validator.validateRedRainsHeroicLevel2(deck);
+        console.log(result);
+        expect(result).not.toBeNull();
+        expect(result.pbPrecon.name).toBe('The Siege of Lordswall: Dimona');
+        expect(result.valid).toBeTrue();
+    });
 });
 

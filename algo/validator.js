@@ -144,13 +144,21 @@ class Validator {
 
         // get the precon with the most cards and belonging to the pb
         result.pbPrecon = result.precons
-            .filter(p => p.deck.phoenixborn[0].id === deck.phoenixborn[0].id)
+            .filter(p => p.deck.phoenixborn[0].id === deck.phoenixborn[0].id || p.deck.precon_set)
             .reduce(
                 (prev, current) => {
                     return prev?.count > current.count ? prev : current
                 },
                 null
             );
+
+        // if pbs don't match then replace with pb deck from set (red Rains)
+        if (result.pbPrecon.deck.phoenixborn[0].id !== deck.phoenixborn[0].id
+            && result.pbPrecon.deck.precon_set) {
+            const matchingPrecon = this.findPbPreconFromSet(deck.phoenixborn[0].id, result.pbPrecon.deck.precon_set);
+            result.pbPrecon.name = matchingPrecon.name;
+            result.pbPrecon.deck = matchingPrecon;
+        }
 
         result.valid = result.pbPrecon
             && result.precons.length <= 3
@@ -171,6 +179,13 @@ class Validator {
     findCardPrecon(card) {
         const precons = Object.values(this.precons);
         return precons.find(p => p.cards.some(c => c.id === card.stub))
+    }
+
+    findPbPreconFromSet(pbId, preconSet) {
+        const precons = Object.values(this.precons);
+        return precons.find(p => p.precon_set === preconSet
+            && p.phoenixborn[0].id === pbId)
+
     }
 }
 
