@@ -298,6 +298,21 @@ client.on(Events.MessageCreate, async msg => {
             msg.channel.send("error: " + err.message);
         }
     }
+
+    // Random number generator, with optional bounds
+    if (parts[0] === '!pick') {
+        // Default boundaries if they don't specify are a coin flip between players
+        let lowerBound = 1;
+        let upperBound = 2;
+        if (parts.length === 1 || parts.length === 2) {
+            upperBound = parseInt(parts[1], 10);
+        } else if (parts.length === 3) {
+            lowerBound = parseInt(parts[1], 10);
+            upperBound = parseInt(parts[2], 10);
+        }
+        const randomNumber = Math.floor(Math.random() * (upperBound - lowerBound + 1) + lowerBound);
+        msg.reply(`I pick: **${randomNumber}**!`);
+    }
 });
 
 async function getAshesLiveDeck(deckUrl) {
