@@ -348,7 +348,8 @@
       },
       {
         "id": "ember-heart",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "glaciate",
@@ -356,7 +357,8 @@
       },
       {
         "id": "jungle-forager",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "red-flower",
@@ -364,15 +366,18 @@
       },
       {
         "id": "rejuvenate",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-adaptodon",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-frost-frog",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "wallop",
@@ -428,7 +433,8 @@
       },
       {
         "id": "ember-heart",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "glaciate",
@@ -436,7 +442,8 @@
       },
       {
         "id": "jungle-forager",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "red-flower",
@@ -444,11 +451,13 @@
       },
       {
         "id": "summon-adaptodon",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-frost-frog",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "wallop",
@@ -460,7 +469,8 @@
       },
       {
         "id": "wolfpack-leader",
-        "count": 3
+        "count": 3,
+        "ff": true
       }
     ],
     "conjurations": [
@@ -512,7 +522,8 @@
       },
       {
         "id": "ember-heart",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "glaciate",
@@ -520,7 +531,8 @@
       },
       {
         "id": "jungle-forager",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "red-flower",
@@ -528,15 +540,18 @@
       },
       {
         "id": "stamina-burst",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-adaptodon",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-frost-frog",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "wallop",
@@ -596,7 +611,8 @@
       },
       {
         "id": "ember-heart",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "glaciate",
@@ -604,7 +620,8 @@
       },
       {
         "id": "jungle-forager",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "red-flower",
@@ -612,15 +629,18 @@
       },
       {
         "id": "shattering-fist",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-adaptodon",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-frost-frog",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "wallop",
@@ -676,15 +696,18 @@
     "cards": [
       {
         "id": "chimera-charmer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-bastion-badger",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "snake-bite",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "rose-gardener",
@@ -692,7 +715,8 @@
       },
       {
         "id": "summon-shimmer-wing",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "arrogance",
@@ -712,7 +736,8 @@
       },
       {
         "id": "venom-strike",
-        "count": 3
+        "count": 3,
+        "ff": true
       }
     ],
     "conjurations": [
@@ -751,15 +776,18 @@
     "cards": [
       {
         "id": "chimera-charmer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-bastion-badger",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "snake-bite",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "rose-gardener",
@@ -767,7 +795,8 @@
       },
       {
         "id": "summon-shimmer-wing",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "arrogance",
@@ -787,7 +816,8 @@
       },
       {
         "id": "willpower",
-        "count": 3
+        "count": 3,
+        "ff": true
       }
     ],
     "conjurations": [
@@ -826,15 +856,18 @@
     "cards": [
       {
         "id": "chimera-charmer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-bastion-badger",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "snake-bite",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "rose-gardener",
@@ -842,7 +875,8 @@
       },
       {
         "id": "summon-shimmer-wing",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "arrogance",
@@ -862,7 +896,8 @@
       },
       {
         "id": "gifted-rose",
-        "count": 3
+        "count": 3,
+        "ff": true
       }
     ],
     "conjurations": [
@@ -888,7 +923,6 @@
     "precon_id": 412,
     "precon_set": "blight",
     "name": "The Blight of Neverset: Astrea",
-    "restricted": true,
     "phoenixborn": [
       {
         "id": "astrea",
@@ -906,15 +940,18 @@
     "cards": [
       {
         "id": "chimera-charmer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "summon-bastion-badger",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "snake-bite",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "rose-gardener",
@@ -922,7 +959,8 @@
       },
       {
         "id": "summon-shimmer-wing",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "arrogance",
@@ -942,7 +980,8 @@
       },
       {
         "id": "judgment",
-        "count": 3
+        "count": 3,
+        "ff": true
       }
     ],
     "conjurations": [
@@ -985,11 +1024,13 @@
       },
       {
         "id": "glory-aspirant",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "silver-paladin",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "radiant-light",
@@ -997,15 +1038,18 @@
       },
       {
         "id": "summon-shining-stag-mount",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "ptera-herder",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "hand-of-spear",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "pride",
@@ -1060,11 +1104,13 @@
       },
       {
         "id": "glory-aspirant",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "silver-paladin",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "radiant-light",
@@ -1072,15 +1118,18 @@
       },
       {
         "id": "summon-shining-stag-mount",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "ptera-herder",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "hand-of-spear",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "pride",
@@ -1135,11 +1184,13 @@
       },
       {
         "id": "glory-aspirant",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "silver-paladin",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "radiant-light",
@@ -1147,15 +1198,18 @@
       },
       {
         "id": "summon-shining-stag-mount",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "ptera-herder",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "hand-of-spear",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "pride",
@@ -1210,11 +1264,13 @@
       },
       {
         "id": "glory-aspirant",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "silver-paladin",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "radiant-light",
@@ -1222,15 +1278,18 @@
       },
       {
         "id": "summon-shining-stag-mount",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "ptera-herder",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "hand-of-spear",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "pride",
@@ -1270,7 +1329,6 @@
   },
   {
     "precon_id": 417,
-    "precon_set": "spawn",
     "name": "The Spawn of Shadowreck: Rimea",
     "phoenixborn": [
       {
@@ -1289,11 +1347,13 @@
     "cards": [
       {
         "id": "summon-shade-prowler",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "umbral-acrobat",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "backflip",
@@ -1301,7 +1361,8 @@
       },
       {
         "id": "summon-whisperer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "juggle",
@@ -1309,11 +1370,13 @@
       },
       {
         "id": "shroud",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "gates-defender",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "inkspill",
@@ -1345,7 +1408,6 @@
   },
   {
     "precon_id": 418,
-    "precon_set": "spawn",
     "name": "The Spawn of Shadowreck: Sembali",
     "phoenixborn": [
       {
@@ -1364,11 +1426,13 @@
     "cards": [
       {
         "id": "summon-shade-prowler",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "umbral-acrobat",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "backflip",
@@ -1376,7 +1440,8 @@
       },
       {
         "id": "summon-whisperer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "juggle",
@@ -1384,11 +1449,13 @@
       },
       {
         "id": "shroud",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "gates-defender",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "inkspill",
@@ -1416,7 +1483,6 @@
   },
   {
     "precon_id": 419,
-    "precon_set": "spawn",
     "name": "The Spawn of Shadowreck: Victoria",
     "phoenixborn": [
       {
@@ -1435,11 +1501,13 @@
     "cards": [
       {
         "id": "summon-shade-prowler",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "umbral-acrobat",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "backflip",
@@ -1447,7 +1515,8 @@
       },
       {
         "id": "summon-whisperer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "juggle",
@@ -1455,11 +1524,13 @@
       },
       {
         "id": "shroud",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "gates-defender",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "inkspill",
@@ -1487,7 +1558,6 @@
   },
   {
     "precon_id": 420,
-    "precon_set": "spawn",
     "name": "The Spawn of Shadowreck: Hope",
     "phoenixborn": [
       {
@@ -1506,11 +1576,13 @@
     "cards": [
       {
         "id": "summon-shade-prowler",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "umbral-acrobat",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "backflip",
@@ -1518,7 +1590,8 @@
       },
       {
         "id": "summon-whisperer",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "juggle",
@@ -1526,11 +1599,13 @@
       },
       {
         "id": "shroud",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "gates-defender",
-        "count": 3
+        "count": 3,
+        "ff": true
       },
       {
         "id": "inkspill",
@@ -1557,6 +1632,634 @@
       {
         "id": "scrawler",
         "count": 4
+      }
+    ]
+  },
+  {
+    "precon_id": 421,
+    "name": "The Flood of Moon Cove: Echo",
+    "precon_set": "flood",
+    "phoenixborn": [
+      {
+        "id": "echo-greystorm",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "summon-river-colossus",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sandstorm-sage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reverberate",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-cerulean-diver",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "twilight-alchemist",
+        "count": 3
+      },
+      {
+        "id": "moons-blessing",
+        "count": 3
+      },
+      {
+        "id": "undaunted",
+        "count": 3
+      },
+      {
+        "id": "transmogrify",
+        "count": 3
+      },
+      {
+        "id": "absorption",
+        "count": 3
+      },
+      {
+        "id": "weight-of-the-world",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "river-colossus",
+        "count": 2
+      },
+      {
+        "id": "cerulean-diver",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 422,
+    "name": "The Flood of Moon Cove: Namine",
+    "precon_set": "flood",
+    "phoenixborn": [
+      {
+        "id": "namine-hymntide",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "summon-river-colossus",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sandstorm-sage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reverberate",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-cerulean-diver",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "twilight-alchemist",
+        "count": 3
+      },
+      {
+        "id": "moons-blessing",
+        "count": 3
+      },
+      {
+        "id": "undaunted",
+        "count": 3
+      },
+      {
+        "id": "transmogrify",
+        "count": 3
+      },
+      {
+        "id": "absorption",
+        "count": 3
+      },
+      {
+        "id": "surging-tempest",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "river-colossus",
+        "count": 2
+      },
+      {
+        "id": "cerulean-diver",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 423,
+    "name": "The Flood of Moon Cove: Harold",
+    "precon_set": "flood",
+    "phoenixborn": [
+      {
+        "id": "harold-westraven",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "summon-river-colossus",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sandstorm-sage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reverberate",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-cerulean-diver",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "twilight-alchemist",
+        "count": 3
+      },
+      {
+        "id": "moons-blessing",
+        "count": 3
+      },
+      {
+        "id": "undaunted",
+        "count": 3
+      },
+      {
+        "id": "transmogrify",
+        "count": 3
+      },
+      {
+        "id": "absorption",
+        "count": 3
+      },
+      {
+        "id": "full-moon",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "river-colossus",
+        "count": 2
+      },
+      {
+        "id": "cerulean-diver",
+        "count": 2
+      },
+      {
+        "id": "hunters-mark",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "precon_id": 424,
+    "name": "The Flood of Moon Cove: Fiona",
+    "precon_set": "flood",
+    "phoenixborn": [
+      {
+        "id": "fiona-mercywind",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "sympathy",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "summon-river-colossus",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "sandstorm-sage",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "reverberate",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "summon-cerulean-diver",
+        "count": 3,
+        "ff": true
+      },
+      {
+        "id": "twilight-alchemist",
+        "count": 3
+      },
+      {
+        "id": "moons-blessing",
+        "count": 3
+      },
+      {
+        "id": "undaunted",
+        "count": 3
+      },
+      {
+        "id": "transmogrify",
+        "count": 3
+      },
+      {
+        "id": "absorption",
+        "count": 3
+      },
+      {
+        "id": "summon-metamorpher",
+        "count": 3,
+        "ff": true
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "river-colossus",
+        "count": 2
+      },
+      {
+        "id": "cerulean-diver",
+        "count": 2
+      },
+      {
+        "id": "metamorpher",
+        "count": 3
+      },
+      {
+        "id": "sun-scarab",
+        "count": 2
+      },
+      {
+        "id": "moon-moth",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "precon_id": 425,
+    "name": "The End of Argaia: Jericho",
+    "precon_set": "argaia",
+    "restricted": true,
+    "phoenixborn": [
+      {
+        "id": "jericho-reborn",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "time",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "timestopper",
+        "count": 3
+      },
+      {
+        "id": "summon-tusk-mount",
+        "count": 3
+      },
+      {
+        "id": "afterimage",
+        "count": 3
+      },
+      {
+        "id": "summon-cinder-spirit",
+        "count": 3
+      },
+      {
+        "id": "vermillion-sage",
+        "count": 3
+      },
+      {
+        "id": "spear-master",
+        "count": 3
+      },
+      {
+        "id": "rising-tides",
+        "count": 3
+      },
+      {
+        "id": "tranquility",
+        "count": 3
+      },
+      {
+        "id": "fatal-strike",
+        "count": 3
+      },
+      {
+        "id": "double-edge",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "tusk-mount",
+        "count": 2
+      },
+      {
+        "id": "rubble-spirit",
+        "count": 4
+      },
+      {
+        "id": "cinder-spirit",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 426,
+    "name": "The End of Argaia: Tristan",
+    "precon_set": "argaia",
+    "restricted": true,
+    "phoenixborn": [
+      {
+        "id": "tristan-darkwater",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "time",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "timestopper",
+        "count": 3
+      },
+      {
+        "id": "summon-tusk-mount",
+        "count": 3
+      },
+      {
+        "id": "afterimage",
+        "count": 3
+      },
+      {
+        "id": "summon-cinder-spirit",
+        "count": 3
+      },
+      {
+        "id": "vermillion-sage",
+        "count": 3
+      },
+      {
+        "id": "spear-master",
+        "count": 3
+      },
+      {
+        "id": "rising-tides",
+        "count": 3
+      },
+      {
+        "id": "tranquility",
+        "count": 3
+      },
+      {
+        "id": "fatal-strike",
+        "count": 3
+      },
+      {
+        "id": "summon-oceans-eyes",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "tusk-mount",
+        "count": 2
+      },
+      {
+        "id": "rubble-spirit",
+        "count": 4
+      },
+      {
+        "id": "cinder-spirit",
+        "count": 3
+      },
+      {
+        "id": "oceans-eye",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "precon_id": 427,
+    "name": "The End of Argaia: Orrick",
+    "precon_set": "argaia",
+    "restricted": true,
+    "phoenixborn": [
+      {
+        "id": "orrick-gilstream",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "time",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "timestopper",
+        "count": 3
+      },
+      {
+        "id": "summon-tusk-mount",
+        "count": 3
+      },
+      {
+        "id": "afterimage",
+        "count": 3
+      },
+      {
+        "id": "summon-cinder-spirit",
+        "count": 3
+      },
+      {
+        "id": "vermillion-sage",
+        "count": 3
+      },
+      {
+        "id": "spear-master",
+        "count": 3
+      },
+      {
+        "id": "rising-tides",
+        "count": 3
+      },
+      {
+        "id": "tranquility",
+        "count": 3
+      },
+      {
+        "id": "fatal-strike",
+        "count": 3
+      },
+      {
+        "id": "realization",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "tusk-mount",
+        "count": 2
+      },
+      {
+        "id": "rubble-spirit",
+        "count": 4
+      },
+      {
+        "id": "cinder-spirit",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "precon_id": 428,
+    "name": "The End of Argaia: Rowan",
+    "precon_set": "argaia",
+    "restricted": true,
+    "phoenixborn": [
+      {
+        "id": "rowan-umberend",
+        "count": 1
+      }
+    ],
+    "ultimate": null,
+    "behaviour": null,
+    "dicepool": [
+      {
+        "magic": "time",
+        "count": 10
+      }
+    ],
+    "cards": [
+      {
+        "id": "timestopper",
+        "count": 3
+      },
+      {
+        "id": "summon-tusk-mount",
+        "count": 3
+      },
+      {
+        "id": "afterimage",
+        "count": 3
+      },
+      {
+        "id": "summon-cinder-spirit",
+        "count": 3
+      },
+      {
+        "id": "vermillion-sage",
+        "count": 3
+      },
+      {
+        "id": "spear-master",
+        "count": 3
+      },
+      {
+        "id": "rising-tides",
+        "count": 3
+      },
+      {
+        "id": "tranquility",
+        "count": 3
+      },
+      {
+        "id": "fatal-strike",
+        "count": 3
+      },
+      {
+        "id": "cataclysm",
+        "count": 3
+      }
+    ],
+    "conjurations": [
+      {
+        "id": "tusk-mount",
+        "count": 2
+      },
+      {
+        "id": "rubble-spirit",
+        "count": 4
+      },
+      {
+        "id": "cinder-spirit",
+        "count": 3
       }
     ]
   }
