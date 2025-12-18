@@ -9,7 +9,11 @@ class Carousel {
         return caro.pb.name + ' ' + diceIcons + ' (' + caro.dice.map((dObj) => dObj.text).join('') + ')';
     }
 
-    getCarousel(pbStub = null) {
+    getCoalOff() {
+        return this.getCarousel('coal-roarkwin', 7);
+    }
+
+    getCarousel(pbStub = null, diceTypes = 3) {
         if (this.pbs.length === 0) {
             this.pbs.push(...this.getPBs());
         }
@@ -25,17 +29,17 @@ class Carousel {
 
         let pb = null;
         if (pbStub) {
-            pb = this.pbs.find(pb => pb.stub === pbStub)
+            pb = this.pbs.find((pb) => pb.stub === pbStub);
         }
         if (!pb) {
             // Returns a random integer from 1 to pb count:
-            const i = Math.floor(Math.random() * (this.pbs.length));
+            const i = Math.floor(Math.random() * this.pbs.length);
             pb = this.pbs[i];
         }
 
         const d = [];
-        for (let j = 0; j < 3; j++) {
-            const dIndex = Math.floor(Math.random() * (dice.length));
+        for (let j = 0; j < diceTypes; j++) {
+            const dIndex = Math.floor(Math.random() * dice.length);
             d[j] = dice[dIndex];
             dice = dice.filter((d) => d !== dice[dIndex]);
         }
@@ -43,7 +47,7 @@ class Carousel {
         const caro = {
             pb: pb,
             dice: d
-        }
+        };
 
         // don't remove for coal-off
         if (!pbStub) {

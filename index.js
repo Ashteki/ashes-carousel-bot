@@ -63,7 +63,7 @@ client.on(Events.MessageCreate, async msg => {
     }
 
     if (parts[0] === '!coaloff') {
-        const caro = carousel.getCarousel('coal-roarkwin');
+        const caro = carousel.getCoalOff();
         const diceString = caro.dice.map((dObj) => dObj.text).join('');
         const deck = new Forge().createDeck(caro.pb.stub, diceString, { maxCardCount: 1, noExtras: true });
         const deckText = new TextExporter().export(deck);

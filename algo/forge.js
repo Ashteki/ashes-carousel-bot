@@ -3,7 +3,7 @@ const path = require('path');
 const _ = require('underscore');
 const ExtrasFactory = require('./extrasFactory');
 
-const PathToSubModulePacks = path.join(__dirname, '../data');
+const PathToSubModulePacks = path.join(__dirname, '../data/cards');
 
 class Forge {
     constructor() {
